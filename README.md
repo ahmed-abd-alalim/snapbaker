@@ -60,4 +60,4 @@ $ npm run build:linux
 
 Copyright (c) 2025 Ahmed Abd Alalim. All rights reserved.
 
-This program has been licensed under the [MIT](LICENSE.txt) License. If you are a true FOSS (Free And Open Source Software) Lover, you wont customize this and redistribute this under your name
+This program has been licensed under the [MIT](LICENSE) License. If you are a true FOSS (Free And Open Source Software) Lover, you wont customize this and redistribute this under your name
