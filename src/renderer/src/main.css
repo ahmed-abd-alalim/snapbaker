@@ -1,0 +1,83 @@
+:root {
+  /* view port size */
+  /* 
+    ---> dashboard
+  */
+  --dashboard-navbar-width: 100%;
+  --dashboard-navbar-hight: 40px;
+
+  --dashboard-menubar-width: 50px;
+  --dashboard-menubar-hight: calc(100vh - (var(--dashboard-navbar-hight) + var(--dashboard-footer-hight)));
+
+  --dashboard-pages-width: calc(100vw - var(--dashboard-menubar-width));
+
+  --dashboard-footer-width: 100%;
+  --dashboard-footer-hight: 25px;
+
+
+  /* color */
+  --color-background: #171717;
+  --color-background-transparent: #17171791;
+  --color-gray-transparent-frist: #212121;
+  --color-gray-transparent-secound: #303030;
+  --color-gray-transparent-thred: rgb(64, 64, 64);
+  --color-white-text: rgba(255, 255, 245, 0.86);
+  --color-yellow: #f1a218;
+  --color-yellow-transparent: #f6e7ce5e;
+  --color-red-transparent: rgba(251, 74, 74, 0.686);
+
+  /* border */
+  --border_1: .1rem solid var(--color-gray-transparent-secound);
+
+  /* border-radius */
+  --border-radius_3: 3px;
+  --border-radius_5: 5px;
+  --border-radius_8: 8px;
+  --border-radius_10: 10px;
+  --border-radius_15: 15px;
+  --border-radius_30: 30px;
+  --border-radius_50: 50%;
+
+  /* box shadow */
+  --dark-box-shadow: 3px 4px 7px #171717be;
+
+  /* transition */
+  --transition_2: .2s ease all;
+  --transition_3: .3s ease all;
+  --transition_4: .4s ease all;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+body {
+  user-select: none;
+  background: var(--color-background);
+  height: 100%;
+  font-family: 'Segoe UI';
+}
+
+
+/* ::-webkit-scrollbar {
+  width: 0px;
+} */
+
+@media (max-width: 720px) {}
+
+@media (max-width: 620px) {}
+
+@media (max-width: 350px) {}
