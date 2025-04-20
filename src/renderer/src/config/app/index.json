@@ -2,7 +2,7 @@
   "name": "SnapBaker",
   "version": "1.0.0",
   "created": "Thursday, April 3, 2025, 3:24:34 AM",
-  "description": "innovative e-learning platform designed to provide interactive and engaging educational experiences. With a diverse range of courses, personalized learning paths.",
+  "description": "SnapBaker - Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.",
   "author": "Ahmed Abd Alalim",
   "gitHubAccount": "https://github.com/ahmed-abd-alalim",
 
@@ -12,7 +12,7 @@
   },
 
   "language": {
-    "default": "ar",
-    "supportedLanguages": [{ "code": "ar", "name": "Arabic" }]
+    "default": "en",
+    "supportedLanguages": [{ "code": "en", "name": "English" }]
   }
 }
