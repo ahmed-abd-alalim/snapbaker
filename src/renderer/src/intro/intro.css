@@ -1,0 +1,149 @@
+/*###############
+--> intro
+################# */
+#Intro {
+    height: 100vh;
+    background-color: var(--color-gray-transparent-frist);
+    -webkit-app-region: drag;
+}
+
+
+/* ====== logo secton ======  */
+#Intro .logo_section {
+    width: 1.8rem;
+    animation: scale 1s 1s ease forwards;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.8) translateX(-100%) translateY(100%);
+    z-index: 3;
+}
+
+#Intro .logo_section .resizable-path {
+    stroke: var(--color-white-text);
+    stroke-width: 10;
+    fill: none;
+    stroke-dasharray: 3400;
+    stroke-dashoffset: 3400;
+    animation: draw 1.5s ease forwards, fill 1s .8s forwards;
+}
+
+#Intro .logo_section .filr_section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: opacty 1s 1s ease forwards;
+}
+
+
+/* ====== name secton ======  */
+#Intro .name_section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#Intro .name_section span {
+    font-size: 1.1rem;
+    letter-spacing: .8px;
+    font-weight: 600;
+    color: var(--color-white-text);
+    /* animation: flicker .37s 3s ease forwards; */
+    text-transform: uppercase;
+    margin: 0 1.3rem;
+}
+
+#Intro .name_section .black_layer {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-gray-transparent-frist);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    animation: textOpacty 1s 2s ease forwards;
+}
+
+/* ====== key frames ======  */
+@keyframes draw {
+    0% {
+        stroke-dashoffset: 3400;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    0% {
+        fill: none;
+    }
+
+    100% {
+        stroke: var(--color-white-text);
+        fill: var(--color-white-text);
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: translate(-50%, -50%) scale(.8) translateX(-100%) translateY(100%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1) translateX(-28%) translateY(0);
+    }
+}
+
+@keyframes opacty {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes textOpacty {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+@keyframes flicker {
+    0% {
+
+        filter: brightness(1)
+    }
+
+    25% {
+        filter: brightness(.4);
+        text-shadow: 0 0 .8vw var(--color-yellow);
+    }
+
+    50% {
+
+        filter: brightness(1)
+    }
+
+    75% {
+        filter: brightness(.4);
+        text-shadow: 0 0 .8vw var(--color-yellow);
+    }
+
+    100% {
+        filter: brightness(1)
+    }
+
+}

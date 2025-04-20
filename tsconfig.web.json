@@ -11,10 +11,9 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/renderer/src/*"],
-      "@home-screen/*": ["src/renderer/src/home-screen/*"],
-      "@workspace/*": ["src/renderer/src/workspace/*"],
-      "@config'/*": ["src/renderer/src/config/*"]
+      "@/*": [
+        "src/renderer/src/*"
+      ]
     }
   }
 }

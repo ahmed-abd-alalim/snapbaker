@@ -1,0 +1,18 @@
+{
+  "name": "SnapBaker",
+  "version": "1.0.0",
+  "created": "Thursday, April 3, 2025, 3:24:34 AM",
+  "description": "innovative e-learning platform designed to provide interactive and engaging educational experiences. With a diverse range of courses, personalized learning paths.",
+  "author": "Ahmed Abd Alalim",
+  "gitHubAccount": "https://github.com/ahmed-abd-alalim",
+
+  "theme": {
+    "default": "dark",
+    "availableThemes": ["dark"]
+  },
+
+  "language": {
+    "default": "ar",
+    "supportedLanguages": [{ "code": "ar", "name": "Arabic" }]
+  }
+}
