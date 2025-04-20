@@ -1,3 +1,9 @@
 declare global {
-  interface Window {}
+  interface Window {
+    controlar: {
+      closeWindow: () => void
+      minimizeWindow: () => void
+      toggleMaximizeWindow: () => void
+    }
+  }
 }

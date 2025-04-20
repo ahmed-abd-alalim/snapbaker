@@ -3,9 +3,11 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
+let mainWindow: BrowserWindow
+
 function createWindow(): void {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     minWidth: 550,
@@ -58,6 +60,26 @@ app.whenReady().then(() => {
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+  console.log('\x1b[32mstart snapBaker...\x1b[0m \n')
+})
+
+// close window action
+ipcMain.on('close-window', () => {
+  mainWindow.close()
+})
+
+// minimize window action
+ipcMain.on('minimize-window', () => {
+  mainWindow.minimize()
+})
+
+// maximize window action
+ipcMain.on('toggle-maximize-window', () => {
+  if (mainWindow.isMaximized()) {
+    mainWindow.unmaximize()
+  } else {
+    mainWindow.maximize()
+  }
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
