@@ -1,0 +1,76 @@
+/* #############
+--> menubar
+################# */
+#menubar {
+    width: var(--dashboard-menubar-width);
+    height: var(--dashboard-menubar-hight);
+    background-color: var(--color-gray-transparent-frist);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0 1rem 0;
+    position: relative;
+}
+
+
+/* -----> bar border */
+#menubar .bar_border {
+    height: 100.15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+#menubar .bar_border .curved_top,
+#menubar .bar_border .curved_botton {
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    position: relative;
+    margin-left: var(--dashboard-menubar-width);
+    display: inline-block;
+}
+
+#menubar .bar_border .curved_top:before,
+#menubar .bar_border .curved_botton:before {
+    content: "";
+    display: block;
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    border-radius: var(--border-radius_15);
+}
+
+#menubar .bar_border .curved_top:before {
+    top: 0;
+    left: 0;
+    box-shadow: -50px -50px 0 0 var(--color-gray-transparent-frist);
+}
+
+#menubar .bar_border .curved_botton:before {
+    bottom: 0;
+    left: 0;
+    box-shadow: -50px 50px 0 0 var(--color-gray-transparent-frist);
+}
+
+
+/* -----> menubar button */
+#menubar .menubar_button {
+    font-size: 1.4rem;
+    color: var(--color-yellow-transparent);
+    cursor: pointer;
+    transition: var(--transition_2);
+    position: relative;
+    z-index: 4;
+}
+
+#menubar .menubar_button:hover,
+#menubar .menubar_button.active {
+    color: var(--color-white-text);
+}

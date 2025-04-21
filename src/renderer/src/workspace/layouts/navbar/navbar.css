@@ -1,0 +1,118 @@
+/* #############
+--> navbar
+################# */
+#navbar {
+    width: var(--dashboard-navbar-width);
+    height: var(--dashboard-navbar-hight);
+    background-color: var(--color-gray-transparent-frist);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 .5rem;
+    -webkit-app-region: drag;
+}
+
+
+/* -----> app icon */
+#navbar .app_icon {
+    width: 40px;
+    height: 32px;
+    background-color: var(--color-background);
+    padding: 10.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius_5);
+    transform: translateY(1px) translateX(-2px);
+    z-index: 3;
+}
+
+
+/* -----> screen size bar */
+#navbar .screen_size_bar {
+    width: 140px;
+    height: 33px;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius_5);
+    border: 0.01rem solid var(--color-gray-transparent-secound);
+    padding: .25rem .8rem;
+    margin-left: 5.3rem;
+    -webkit-app-region: no-drag;
+}
+
+#navbar .screen_size_bar .icon_section {
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius_5);
+    transition: var(--transition_3);
+}
+
+#navbar .screen_size_bar .icon_section .device_icon {
+    color: var(--color-white-text);
+    font-size: .9rem;
+}
+
+#navbar .screen_size_bar .icon_section.active,
+#navbar .screen_size_bar .icon_section:hover {
+    background-color: var(--color-gray-transparent-secound);
+}
+
+#navbar .screen_size_bar .icon_section.active .device_icon,
+#navbar .screen_size_bar .icon_section:hover .device_icon {
+    color: var(--color-yellow);
+}
+
+/* -----> controlaer buttons */
+#navbar .controlaer_buttons {
+    display: flex;
+    align-items: center;
+    -webkit-app-region: no-drag;
+}
+
+#navbar .controlaer_buttons .close,
+#navbar .controlaer_buttons .maximize,
+#navbar .controlaer_buttons .minimize {
+    width: 3rem;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition_3);
+}
+
+#navbar .controlaer_buttons .con_icon {
+    color: var(--color-white-text);
+    font-size: 1.2rem;
+}
+
+#navbar .controlaer_buttons .maximize {
+    transform: scaleX(-1);
+}
+
+#navbar .controlaer_buttons .minimize {
+    padding-top: .68rem;
+}
+
+#navbar .controlaer_buttons .minimize .con_icon {
+    font-size: 1.05rem;
+}
+
+#navbar .controlaer_buttons .close:hover {
+    background-color: var(--color-red-transparent);
+}
+
+#navbar .controlaer_buttons .maximize:hover,
+#navbar .controlaer_buttons .minimize:hover {
+    background-color: var(--color-gray-transparent-thred);
+}
+
+#navbar .controlaer_buttons .close:hover .con_icon,
+#navbar .controlaer_buttons .maximize:hover .con_icon,
+#navbar .controlaer_buttons .minimize:hover .con_icon {
+    color: var(--color-yellow);
+}

@@ -1,0 +1,6 @@
+#designPanel {
+    width: var(--dashboard-pages-width);
+    background-image: url("/images/patterns/boxes.svg");
+    background-position: center;
+    background-repeat: repeat;
+}

@@ -1,0 +1,32 @@
+/* #############
+--> footer
+################# */
+#footer {
+    width: var(--dashboard-footer-width);
+    height: var(--dashboard-footer-hight);
+    background-color: var(--color-gray-transparent-frist);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .8rem 0 1.4rem;
+}
+
+
+
+/* -----> notfcation icon */
+#footer .notfcation_icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#footer .notfcation_icon .bell_icon {
+    font-size: 1.05rem;
+    color: var(--color-yellow-transparent);
+    transition: var(--transition_2);
+    cursor: pointer;
+}
+
+#footer .notfcation_icon .bell_icon:hover {
+    color: var(--color-white-text);
+}
