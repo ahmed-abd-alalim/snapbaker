@@ -1,0 +1,43 @@
+/* #############
+--> Window
+################# */
+:root {
+    --page-start-anymation: pageApprrFromDown .2s ease;
+}
+
+#Window {
+    width: 100%;
+    height: calc(100vh - 40px);
+    background-color: var(--color-gray-transparent-frist);
+    overflow: auto;
+    padding: .5rem .6rem;
+}
+
+#Window::-webkit-scrollbar {
+    width: 14px;
+}
+
+#Window::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray-transparent-thred);
+    border: 5px solid var(--color-gray-transparent-frist);
+    border-radius: var(--border-radius_10);
+}
+
+#Window::-webkit-scrollbar-button:single-button {
+    background-color: transparent;
+}
+
+#Window::-webkit-scrollbar-corner {
+    display: none;
+}
+
+/* ======== anymayion ======= */
+@keyframes pageApprrFromDown {
+    from {
+        transform: translateY(5%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}

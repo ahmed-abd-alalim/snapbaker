@@ -1,0 +1,172 @@
+/* #############
+--> start menubar
+################# */
+:root {
+    --startMenubar-width: 55px;
+    --startMenubar-padding: .2rem 0 .3rem 0;
+    --up_icons-animation: downAnymation .2s ease;
+    --icon_box_menu-display: flex;
+    --icon_box-justify-content: center;
+    --icon_box-padding: 0;
+    --icon_box-span: none;
+    --close_menubar-display: none;
+}
+
+[menu-size-lg="lg"] {
+    --startMenubar-width: 280px;
+    --startMenubar-padding: .4rem 0 .3rem 0;
+    --up_icons-animation: upAnymation .2s ease;
+    --icon_box_menu-display: none;
+    --icon_box-justify-content: start;
+    --icon_box-padding: 0 10px;
+    --icon_box-span: block;
+    --close_menubar-display: flex;
+}
+
+#startMenubar {
+    width: var(--startMenubar-width);
+    height: 100vh;
+    background-color: var(--color-background);
+    padding: var(--startMenubar-padding);
+    position: relative;
+}
+
+
+/* ======== close menubar  ======== */
+#startMenubar .close_menubar {
+    width: 2rem;
+    height: 2.2rem;
+    background-color: var(--color-background);
+    border-radius: 0 var(--border-radius_10) var(--border-radius_10) 0;
+    display: var(--close_menubar-display);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, 0);
+    margin-right: -2rem;
+}
+
+#startMenubar .close_menubar .close_icon {
+    font-size: 1.3rem;
+    color: var(--color-yellow-transparent);
+    cursor: pointer;
+}
+
+#startMenubar .close_menubar .close_icon:hover {
+    color: var(--color-white-text);
+}
+
+/* ======== up icons  ======== */
+#startMenubar .up_icons {
+    animation: var(--up_icons-animation);
+}
+
+#startMenubar .icon_box_menu {
+    width: 90%;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: var(--icon_box_menu-display);
+    justify-content: center;
+    align-items: center;
+}
+
+#startMenubar .icon_box {
+    width: 90%;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    display: flex;
+    justify-content: var(--icon_box-justify-content);
+    align-items: center;
+    gap: 10px;
+    padding: var(--icon_box-padding);
+}
+
+#startMenubar .icon_box span {
+    display: var(--icon_box-span);
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--color-yellow-transparent);
+    text-transform: capitalize;
+    opacity: .8;
+}
+
+#startMenubar .bar_icon {
+    font-size: 1.4rem;
+    color: var(--color-yellow-transparent);
+    transition: var(--transition_2);
+}
+
+#startMenubar .icon_box .user_img {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: var(--border-radius_50);
+    overflow: hidden;
+    background-color: var(--color-gray-transparent-frist);
+    border: 1px solid var(--color-yellow-transparent);
+}
+
+#startMenubar .icon_box_menu:hover,
+#startMenubar .icon_box:hover,
+#startMenubar .icon_box.active {
+    border-radius: var(--border-radius_5);
+    background-color: var(--color-gray-transparent-frist);
+}
+
+#startMenubar .icon_box:hover span,
+#startMenubar .icon_box.active span {
+    color: var(--color-white-text);
+}
+
+#startMenubar .icon_box:hover .user_img,
+#startMenubar .icon_box.active .user_img {
+    border: 1px solid var(--color-white-text);
+}
+
+#startMenubar .icon_box_menu:hover .bar_icon,
+#startMenubar .icon_box:hover .bar_icon,
+#startMenubar .icon_box.active .bar_icon {
+    color: var(--color-white-text);
+}
+
+/* ======== anymation  ======== */
+@keyframes upAnymation {
+    from {
+        transform: translateY(14px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes downAnymation {
+    from {
+        transform: translateY(-14px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+/* ======== media quary ======== */
+@media (min-width: 768px) {
+    :root {
+        --startMenubar-width: 280px;
+        --startMenubar-padding: .4rem 0 .3rem 0;
+        --up_icons-animation: upAnymation .2s ease;
+        --icon_box_menu-display: none;
+        --icon_box-justify-content: start;
+        --icon_box-padding: 0 10px;
+        --icon_box-span: block;
+        --close_menubar-display: none;
+    }
+}

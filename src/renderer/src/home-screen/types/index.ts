@@ -18,16 +18,16 @@ export type dataType = {
 }
 
 //<<=== setting context types ===>>
-export type appDirectionsType = {
+export type appDirectionsType = Partial<{
   home: string
   projects: string
   setting: string
-}
+}>
 
-export type projectFromVisibilityType = {
+export type projectFromVisibilityType = Partial<{
   projects: number
   new: number
-}
+}>
 
 export type settingType = {
   appDirections: appDirectionsType
@@ -53,4 +53,13 @@ export type projectFromOpjectType = {
   jsFram: string
   themeColor: string
   pagesNum: number
+}
+
+// ################
+// --> pages types
+// ################
+export type editUserInfoInbutType = {
+  fName: string
+  lName: string
+  userAvatar: string
 }

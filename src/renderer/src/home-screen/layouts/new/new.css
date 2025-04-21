@@ -1,0 +1,30 @@
+/*###########
+--> New
+############# */
+#New {
+    width: 3.7rem;
+    height: 3rem;
+    position: fixed;
+    bottom: 3.5%;
+    right: 3.5%;
+    background-color: var(--color-gray-transparent-frist);
+    border: 1px solid var(--color-gray-transparent-secound);
+    border-radius: var(--border-radius_8);
+    box-shadow: var(--dark-box-shadow);
+    cursor: pointer;
+    transition: var(--transition_2);
+}
+
+#New .add_icon {
+    font-size: 1.8rem;
+    color: var(--color-yellow-transparent);
+}
+
+#New:hover {
+    background-color: var(--color-gray-transparent-secound);
+    border-color: var(--color-gray-transparent-thred);
+}
+
+#New:hover .add_icon {
+    color: var(--color-white-text);
+}

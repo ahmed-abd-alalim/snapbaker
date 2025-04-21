@@ -1,0 +1,220 @@
+/* #############
+--> Setting
+################# */
+#Setting {
+    animation: var(--page-start-anymation)
+}
+
+#Setting .topic_section .topic_name span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-white-text);
+}
+
+#Setting .topic_section .row {
+    background-color: var(--color-gray-transparent-secound);
+    border-radius: var(--border-radius_5);
+}
+
+#Setting .account .row {
+    padding: .9rem .5rem;
+}
+
+/* ======== account section ======== */
+#Setting .topic_section .img_box {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: var(--color-gray-transparent-thred);
+    border-radius: var(--border-radius_50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#Setting .topic_section .img_box .user_img {
+    font-size: 2.1rem;
+    color: var(--color-white-text);
+    opacity: .3;
+}
+
+#Setting .topic_section .user_data_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+}
+
+#Setting .topic_section .user_data_box .user_name {
+    font-size: 1rem;
+    color: var(--color-white-text);
+    text-transform: capitalize;
+}
+
+#Setting .topic_section .edit_button {
+    width: 6.8rem;
+    height: 2.5rem;
+    background-color: var(--color-gray-transparent-thred);
+    border-radius: var(--border-radius_5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+#Setting .topic_section .edit_button .edit_icon {
+    font-size: 1.05rem;
+    color: var(--color-white-text);
+}
+
+#Setting .topic_section .edit_button span {
+    font-size: .85rem;
+    letter-spacing: .5px;
+    color: var(--color-white-text);
+    text-transform: capitalize;
+}
+
+#Setting .topic_section .edit_button.checked,
+#Setting .topic_section .edit_button:hover {
+    opacity: .8;
+}
+
+/*----> account_edit_sction*/
+:root {
+    --account-edit-sction-height: 0;
+
+    /* form-box */
+    --account-edit-sction-form-box-transform: translateY(-100%);
+    --account-edit-sction-form-box-opacity: 0;
+}
+
+[account-edit-sction="on"] {
+    --account-edit-sction-height: 10rem;
+
+    /* form-box */
+    --account-edit-sction-form-box-transform: translateY(0);
+    --account-edit-sction-form-box-opacity: 1;
+}
+
+#Setting .topic_section .account_edit_sction {
+    height: var(--account-edit-sction-height);
+    overflow: hidden;
+    transition: var(--transition_4);
+}
+
+#Setting .topic_section .account_edit_sction .form_box {
+    width: 100%;
+    height: 100%;
+    transform: var(--account-edit-sction-form-box-transform);
+    background-color: var(--color-gray-transparent-thred);
+    border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
+    transition: var(--transition_4);
+    transition-delay: .1s;
+    padding: .7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: var(--account-edit-sction-form-box-opacity);
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_img_box {
+    width: 5.5rem;
+    height: 5.5rem;
+    position: relative;
+    background-color: var(--color-gray-transparent-secound);
+    border-radius: var(--border-radius_50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_img_box .add_layer {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-background-transparent);
+    transition: var(--transition_3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_img_box .add_layer .add_icon {
+    font-size: 1.9rem;
+    color: var(--color-white-text);
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_img_box:hover .add_layer {
+    opacity: 1;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_img_box .user_icon {
+    font-size: 2.2rem;
+    color: var(--color-white-text);
+    opacity: .3;
+}
+
+
+#Setting .topic_section .account_edit_sction .form_box .user_name_box {
+    width: 12rem;
+    height: 2.3rem;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_name_box input {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    color: var(--color-white-text);
+    background-color: var(--color-gray-transparent-secound);
+    border: 1px solid var(--color-gray-transparent-secound);
+    padding: 0 .5rem;
+    box-sizing: border-box;
+    font-size: .9rem;
+    border-radius: var(--border-radius_5);
+    transition: var(--transition_3);
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_name_box input::placeholder {
+    opacity: .7;
+    font-size: .8rem;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .user_name_box input:focus,
+#Setting .topic_section .account_edit_sction .form_box .user_name_box input:hover {
+    border: 1px solid var(--color-yellow-transparent);
+}
+
+#Setting .topic_section .account_edit_sction .form_box .submit_button {
+    width: 5rem;
+    height: 2.2rem;
+    margin: 0 auto;
+    margin-right: 0;
+    background-color: var(--color-gray-transparent-secound);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius_5);
+    cursor: pointer;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .submit_button .save_icon {
+    color: var(--color-white-text);
+    font-size: 1.1;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .submit_button span {
+    color: var(--color-white-text);
+    font-size: .85rem;
+    text-transform: capitalize;
+}
+
+#Setting .topic_section .account_edit_sction .form_box .submit_button:hover {
+    opacity: .8;
+}

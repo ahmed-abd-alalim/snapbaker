@@ -19,7 +19,7 @@ import { FaSortDown, FaReact } from 'react-icons/fa'
 import { FaBootstrap } from 'react-icons/fa6'
 import { RxRocket } from 'react-icons/rx'
 
-const Index = ({ data }: { data: projectFromOpjectType }): React.JSX.Element => {
+const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element => {
   const { projectstData, setProjectstData } = useDataContext()
   const { projectFromVisibility, setProjectFromVisibility } = useSettingContext()
   // const navigate = useNavigate()
@@ -87,7 +87,7 @@ const Index = ({ data }: { data: projectFromOpjectType }): React.JSX.Element => 
   }
 
   const HandelSaveButton: () => void = () => {
-    const updateData = projectstData.filter((item) => item.siteName !== data.siteName)
+    const updateData = projectstData.filter((item) => item.siteName !== data!.siteName)
     const uniqueName = updateData.filter((item) => item.siteName === inbutDtata.siteName)
     if (!uniqueName.length) {
       setProjectstData([inbutDtata, ...updateData])

@@ -1,0 +1,220 @@
+/* #############
+--> Projects
+################# */
+#Projects {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#Projects .card_transition {
+    transition: var(--transition_2);
+}
+
+
+/* ======== empty layer ======= */
+#Projects .empty_layer {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: .6;
+}
+
+#Projects .empty_layer img {
+    position: absolute;
+}
+
+#Projects .empty_layer .fLayer {
+    opacity: .5;
+    animation: circleVisibility .3s ease;
+}
+
+#Projects .empty_layer .sLayer {
+    opacity: 0;
+    transform: translateX(-8%) translateY(-8%);
+    animation: cardLeft .8s ease forwards .2s;
+}
+
+#Projects .empty_layer .tLayer {
+    opacity: 0;
+    transform: translateX(8%) translateY(8%);
+    animation: cardRight .8s ease forwards .2s;
+}
+
+
+@keyframes circleVisibility {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .5;
+    }
+}
+
+@keyframes cardLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-5%) translateY(-5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+@keyframes cardRight {
+    from {
+        opacity: 0;
+        transform: translateX(5%) translateY(5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* ======== site card ======= */
+#Projects .site_card {
+    min-height: 12rem;
+    max-height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.2rem;
+    background-color: var(--color-gray-transparent-secound);
+    border-radius: var(--border-radius_5);
+    box-shadow: var(--dark-box-shadow);
+    border: 1px solid var(--color-gray-transparent-secound);
+    cursor: pointer;
+    padding: 4px;
+    animation: var(--page-start-anymation);
+}
+
+#Projects .site_card:hover {
+    border: 1px solid var(--color-gray-transparent-thred);
+    opacity: .8;
+}
+
+/* ======== card bar ======= */
+#Projects .site_card .card_bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#Projects .site_card .card_bar .date_setion {
+    height: 2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: .3rem;
+    padding-left: .5rem;
+}
+
+#Projects .site_card .card_bar .date_setion .date {
+    color: var(--color-white-text);
+    font-size: .8rem;
+    letter-spacing: -.5px;
+}
+
+#Projects .site_card .card_bar .edit_section,
+#Projects .site_card .card_bar .delet_section {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius_5);
+    transition: var(--transition_2);
+}
+
+#Projects .site_card .card_bar .date_setion .card_icon,
+#Projects .site_card .card_bar .edit_section .card_icon,
+#Projects .site_card .card_bar .delet_section .card_icon {
+    color: var(--color-yellow-transparent);
+    font-size: 1.2rem;
+}
+
+#Projects .site_card .card_bar .edit_section:hover,
+#Projects .site_card .card_bar .delet_section:hover {
+    background-color: var(--color-gray-transparent-thred);
+}
+
+#Projects .site_card .card_bar .edit_section:hover .card_icon {
+    color: var(--color-white-text);
+}
+
+#Projects .site_card .card_bar .delet_section:hover .card_icon {
+    color: var(--color-red-transparent);
+}
+
+
+/* ======== site name ======= */
+#Projects .site_card .site_name {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Projects .site_card .site_name span {
+    color: var(--color-white-text);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+
+/* ======== site info ======= */
+#Projects .site_card .site_info {
+    overflow: auto;
+}
+
+#Projects .site_card .site_info::-webkit-scrollbar {
+    width: 14px;
+}
+
+#Projects .site_card .site_info::-webkit-scrollbar-thumb {
+    background-color: var(--color-gray-transparent-thred);
+    border: 5px solid var(--color-gray-transparent-secound);
+    border-radius: var(--border-radius_10);
+}
+
+#Projects .site_card .site_info::-webkit-scrollbar-button:single-button {
+    background-color: transparent;
+}
+
+#Projects .site_card .site_info::-webkit-scrollbar-corner {
+    display: none;
+}
+
+#Projects .site_card .site_info .site_featcher_section {
+    padding: 2px 2px;
+}
+
+#Projects .site_card .site_info .site_featcher_box {
+    width: 100%;
+    height: 2.3rem;
+    background-color: var(--color-gray-transparent-frist);
+    border: 1px solid var(--color-gray-transparent-thred);
+    border-radius: var(--border-radius_5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .3rem;
+}
+
+#Projects .site_card .site_info span {
+    font-size: 55%;
+    text-transform: capitalize;
+    color: var(--color-yellow-transparent);
+}
+
+#Projects .site_card .site_info .featcher_value {
+    color: var(--color-white-text);
+}
