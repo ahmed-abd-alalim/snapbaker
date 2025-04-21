@@ -80,7 +80,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
       setProjectstData((prevData) => [...prevData, inbutDtata])
       HandleCardClose()
       // window.controlar.toggleMaximizeWindow()
-      // navigate(routes.dashboard)
+      // navigate(routes.workspace)
     } else {
       setErrorMessage('This name is already used change it.')
     }
@@ -144,7 +144,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
     if (data) {
       setInbutData({ ...data })
     }
-  }, [])
+  }, [data])
 
   return (
     <section id="AppForm">
