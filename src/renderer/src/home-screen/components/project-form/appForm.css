@@ -232,7 +232,8 @@
 
 #AppForm .inbut_section .inbut_box .numper_section .spinner span {
     color: var(--color-white-text);
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: .2rem;
 }
 
 #AppForm .inbut_section .inbut_box .numper_section .spinner:hover {
