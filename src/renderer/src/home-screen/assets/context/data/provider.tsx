@@ -6,7 +6,7 @@ export const DataProvider = ({ children }: props): React.JSX.Element => {
   const [projectstData, setProjectstData] = useState<projectstDataArrayType>([])
   const [userInfo, setUserInfo] = useState<userInfoType>({
     name: '',
-    avatar: ''
+    img: ''
   })
 
   return (

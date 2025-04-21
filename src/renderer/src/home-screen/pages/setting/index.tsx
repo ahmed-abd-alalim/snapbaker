@@ -49,8 +49,8 @@ const Index = (): React.JSX.Element => {
           <div className="row">
             <div className="col-9 p-0 d-flex gap-2">
               <div className="img_box">
-                {userInfo.avatar ? (
-                  <img src={userInfo.avatar} alt={userInfo.name} width={'100%'} />
+                {userInfo.img ? (
+                  <img src={userInfo.img} alt={userInfo.name} width={'100%'} />
                 ) : (
                   <CiUser className="user_img" />
                 )}
@@ -82,8 +82,8 @@ const Index = (): React.JSX.Element => {
                   </div>
                   {editUserInfoInbut.userImg ? (
                     <img src={editUserInfoInbut.userImg} alt={userInfo.name} width={'100%'} />
-                  ) : userInfo.avatar ? (
-                    <img src={userInfo.avatar} alt={userInfo.name} width={'100%'} />
+                  ) : userInfo.img ? (
+                    <img src={userInfo.img} alt={userInfo.name} width={'100%'} />
                   ) : (
                     <CiUser className="user_icon" />
                   )}
