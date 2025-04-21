@@ -1,5 +1,3 @@
-export {}
-
 declare global {
   interface Window {
     controlar: {
@@ -7,5 +5,10 @@ declare global {
       minimizeWindow: () => void
       toggleMaximizeWindow: () => void
     }
+    userImg: {
+      getPath: () => Promise<string | null>
+    }
   }
 }
+
+export {}

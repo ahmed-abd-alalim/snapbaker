@@ -61,5 +61,5 @@ export type projectFromOpjectType = {
 export type editUserInfoInbutType = {
   fName: string
   lName: string
-  userAvatar: string
+  userImg: string
 }

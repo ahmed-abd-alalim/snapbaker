@@ -19,8 +19,17 @@ const Index = (): React.JSX.Element => {
   const [editUserInfoInbut, setEditUserInfoInbut] = useState<editUserInfoInbutType>({
     fName: '',
     lName: '',
-    userAvatar: ''
+    userImg: ''
   })
+
+  const handleSelect = async (): Promise<void> => {
+    const base64 = await window.userImg.getPath()
+    if (base64)
+      setEditUserInfoInbut((prevData) => ({
+        ...prevData,
+        userImg: base64
+      }))
+  }
 
   useEffect(() => {
     if (editCard) {
@@ -68,11 +77,11 @@ const Index = (): React.JSX.Element => {
             <div className="form_box">
               <div className="w-100 h-75 d-flex  justify-content-around align-items-center">
                 <div className="user_img_box">
-                  <div className="add_layer">
+                  <div className="add_layer" onClick={handleSelect}>
                     <IoIosAdd className="add_icon" />
                   </div>
-                  {editUserInfoInbut.userAvatar ? (
-                    <img src={editUserInfoInbut.userAvatar} alt={userInfo.name} width={'100%'} />
+                  {editUserInfoInbut.userImg ? (
+                    <img src={editUserInfoInbut.userImg} alt={userInfo.name} width={'100%'} />
                   ) : userInfo.avatar ? (
                     <img src={userInfo.avatar} alt={userInfo.name} width={'100%'} />
                   ) : (

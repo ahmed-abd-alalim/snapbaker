@@ -11,6 +11,9 @@ if (process.contextIsolated) {
       minimizeWindow: () => ipcRenderer.send('minimize-window'),
       toggleMaximizeWindow: () => ipcRenderer.send('toggle-maximize-window')
     })
+    contextBridge.exposeInMainWorld('userImg', {
+      getPath: () => ipcRenderer.invoke('get-user-image-path')
+    })
   } catch (error) {
     console.error(error)
   }
@@ -20,5 +23,9 @@ if (process.contextIsolated) {
     closeWindow: () => ipcRenderer.send('close-window'),
     minimizeWindow: () => ipcRenderer.send('minimize-window'),
     toggleMaximizeWindow: () => ipcRenderer.send('toggle-maximize-window')
+  }
+  // @ts-ignore (define in dts)
+  window.userImg = {
+    getPath: () => ipcRenderer.invoke('get-user-image-path')
   }
 }
