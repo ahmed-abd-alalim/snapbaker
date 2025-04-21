@@ -18,7 +18,7 @@
 }
 
 #Setting .account .row {
-    padding: .9rem .5rem;
+    padding: .7rem .5rem;
 }
 
 /* ======== account section ======== */
@@ -120,8 +120,8 @@
 }
 
 #Setting .topic_section .account_edit_sction .form_box .user_img_box {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 5.2rem;
+    height: 5.2rem;
     position: relative;
     background-color: var(--color-gray-transparent-secound);
     border-radius: var(--border-radius_50);
@@ -178,7 +178,7 @@
     box-sizing: border-box;
     font-size: .9rem;
     border-radius: var(--border-radius_5);
-    transition: var(--transition_3);
+    transition: var(--transition_2);
 }
 
 #Setting .topic_section .account_edit_sction .form_box .user_name_box input::placeholder {

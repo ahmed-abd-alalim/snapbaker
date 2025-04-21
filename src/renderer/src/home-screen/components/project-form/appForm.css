@@ -108,6 +108,7 @@
     font-size: .87rem;
     padding: 0rem .5rem;
     box-sizing: border-box;
+    transition: var(--transition_2);
 }
 
 #AppForm .inbut_section .inbut_box input::placeholder {
@@ -130,6 +131,7 @@
     justify-content: end;
     align-items: center;
     cursor: pointer;
+    transition: var(--transition_2);
 }
 
 #AppForm .inbut_section .inbut_box .drop_down_section .up_layer .down_icon {
@@ -213,6 +215,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    transition: var(--transition_2);
 }
 
 #AppForm .inbut_section .inbut_box .numper_section>span {
