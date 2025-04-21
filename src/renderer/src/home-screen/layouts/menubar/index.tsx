@@ -27,8 +27,8 @@ const Index = (): React.JSX.Element => {
   return (
     <section id="startMenubar">
       {isOpen && (
-        <div className="close_menubar">
-          <LuChevronsLeft onClick={() => HandelMenuCloseIcon('close')} className="close_icon" />
+        <div className="close_menubar" onClick={() => HandelMenuCloseIcon('close')}>
+          <LuChevronsLeft className="close_icon" />
         </div>
       )}
       <div className="up_icons h-75">

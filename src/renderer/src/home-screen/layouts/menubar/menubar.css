@@ -46,15 +46,15 @@
     right: 0;
     transform: translate(-50%, 0);
     margin-right: -2rem;
+    cursor: pointer;
 }
 
 #startMenubar .close_menubar .close_icon {
     font-size: 1.3rem;
     color: var(--color-yellow-transparent);
-    cursor: pointer;
 }
 
-#startMenubar .close_menubar .close_icon:hover {
+#startMenubar .close_menubar:hover .close_icon {
     color: var(--color-white-text);
 }
 
