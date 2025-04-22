@@ -4,9 +4,10 @@ import { projectstDataArrayType, userInfoType, props } from '@/home-screen/types
 
 // import json data
 import accountInfo from '@data/account.json'
+import projectsDataInfo from '@data/projectsData.json'
 
 export const DataProvider = ({ children }: props): React.JSX.Element => {
-  const [projectstData, setProjectstData] = useState<projectstDataArrayType>([])
+  const [projectsData, setProjectsData] = useState<projectstDataArrayType>(projectsDataInfo)
   const [userInfo, setUserInfo] = useState<userInfoType>({
     fName: accountInfo.fName,
     lName: accountInfo.lName,
@@ -21,8 +22,16 @@ export const DataProvider = ({ children }: props): React.JSX.Element => {
     }
   }, [userInfo])
 
+  useEffect(() => {
+    if (JSON.stringify(projectsDataInfo) === JSON.stringify(projectsData)) {
+      return
+    } else {
+      window.systemFile.WriteFile(projectsData, 'src/data/projectsData.json')
+    }
+  }, [projectsData])
+
   return (
-    <DataContext.Provider value={{ projectstData, setProjectstData, userInfo, setUserInfo }}>
+    <DataContext.Provider value={{ projectsData, setProjectsData, userInfo, setUserInfo }}>
       {children}
     </DataContext.Provider>
   )

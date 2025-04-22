@@ -15,8 +15,8 @@ export type userInfoType = {
 }
 
 export type dataType = {
-  projectstData: projectstDataArrayType
-  setProjectstData: React.Dispatch<React.SetStateAction<projectstDataArrayType>>
+  projectsData: projectstDataArrayType
+  setProjectsData: React.Dispatch<React.SetStateAction<projectstDataArrayType>>
   userInfo: userInfoType
   setUserInfo: React.Dispatch<React.SetStateAction<userInfoType>>
 }
@@ -50,14 +50,14 @@ export type droPMenuVisibilityType = {
   themeColor: number
 }
 
-export type projectFromOpjectType = {
+export type projectFromOpjectType = Partial<{
   projectDate: string
   siteName: string
   cssFram: string
   jsFram: string
   themeColor: string
   pagesNum: number
-}
+}>
 
 // ################
 // --> pages types

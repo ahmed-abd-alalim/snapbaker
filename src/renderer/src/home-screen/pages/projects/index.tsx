@@ -21,7 +21,7 @@ import sLayer from '/images/projects-layers/2.png'
 import tLayer from '/images/projects-layers/3.png'
 
 const Index = (): React.JSX.Element => {
-  const { projectstData, setProjectstData } = useDataContext()
+  const { projectsData, setProjectsData } = useDataContext()
   const { projectFromVisibility, setProjectFromVisibility } = useSettingContext()
 
   const [formData, setFormData] = useState<projectFromOpjectType>()
@@ -34,14 +34,14 @@ const Index = (): React.JSX.Element => {
   }
 
   const HandleDeletCard: (cardData: projectFromOpjectType) => void = (cardData) => {
-    const newData = projectstData.filter((item) => item.siteName !== cardData.siteName)
-    setProjectstData([...newData])
+    const newData = projectsData.filter((item) => item.siteName !== cardData.siteName)
+    setProjectsData([...newData])
   }
 
   return (
     <>
       <section id="Projects">
-        {projectstData.length === 0 ? (
+        {projectsData.length === 0 ? (
           <div className="empty_layer">
             <img src={fLayer} alt="" width={'100%'} className="fLayer" />
             <img src={sLayer} alt="" width={'100%'} className="sLayer" />
@@ -50,7 +50,7 @@ const Index = (): React.JSX.Element => {
         ) : (
           <div className="container">
             <div className="row">
-              {projectstData.map((item, i) => (
+              {projectsData.map((item, i) => (
                 <div key={i} className="col-12 col-md-6 col-lg-4 p-1 card_transition">
                   <div className="site_card">
                     <div className="card_bar">

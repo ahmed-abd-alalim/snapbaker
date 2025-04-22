@@ -20,7 +20,7 @@ import { FaBootstrap } from 'react-icons/fa6'
 import { RxRocket } from 'react-icons/rx'
 
 const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element => {
-  const { projectstData, setProjectstData } = useDataContext()
+  const { projectsData, setProjectsData } = useDataContext()
   const { projectFromVisibility, setProjectFromVisibility } = useSettingContext()
   // const navigate = useNavigate()
   const today = new Date()
@@ -75,9 +75,9 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
   }
 
   const HandleCreatButton: () => void = () => {
-    const uniqueName = projectstData.filter((item) => item.siteName === inbutDtata.siteName)
+    const uniqueName = projectsData.filter((item) => item.siteName === inbutDtata.siteName)
     if (!uniqueName.length) {
-      setProjectstData((prevData) => [...prevData, inbutDtata])
+      setProjectsData((prevData) => [...prevData, inbutDtata])
       HandleCardClose()
       // window.controlar.toggleMaximizeWindow()
       // navigate(routes.workspace)
@@ -87,10 +87,10 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
   }
 
   const HandelSaveButton: () => void = () => {
-    const updateData = projectstData.filter((item) => item.siteName !== data!.siteName)
+    const updateData = projectsData.filter((item) => item.siteName !== data!.siteName)
     const uniqueName = updateData.filter((item) => item.siteName === inbutDtata.siteName)
     if (!uniqueName.length) {
-      setProjectstData([inbutDtata, ...updateData])
+      setProjectsData([inbutDtata, ...updateData])
       HandleCardClose()
     } else {
       setErrorMessage('This name is already used change it.')
@@ -295,7 +295,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
                   setInbutData((prevData) => ({
                     ...prevData,
                     pagesNum:
-                      inbutDtata.pagesNum !== 0 ? inbutDtata.pagesNum-- : inbutDtata.pagesNum
+                      inbutDtata.pagesNum !== 0 ? inbutDtata.pagesNum!-- : inbutDtata.pagesNum
                   }))
                 }
               >
@@ -308,7 +308,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
                   setInbutData((prevData) => ({
                     ...prevData,
                     pagesNum:
-                      inbutDtata.pagesNum !== 10 ? inbutDtata.pagesNum++ : inbutDtata.pagesNum
+                      inbutDtata.pagesNum !== 10 ? inbutDtata.pagesNum!++ : inbutDtata.pagesNum
                   }))
                 }
               >
