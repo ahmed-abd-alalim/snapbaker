@@ -75,7 +75,7 @@ const Index = (): React.JSX.Element => {
           </div>
           <div className="account_edit_sction">
             <div className="form_box">
-              <div className="w-100 h-75 d-flex  justify-content-around align-items-center">
+              <div className="w-100 h-100  d-flex  justify-content-around align-items-center">
                 <div className="user_img_box">
                   <div className="add_layer" onClick={handleSelect}>
                     <IoIosAdd className="add_icon" />
@@ -113,22 +113,20 @@ const Index = (): React.JSX.Element => {
                       }
                     />
                   </div>
-                </div>
-              </div>
-              <div>
-                <div
-                  className="submit_button d-flex gap-1"
-                  onClick={() => {
-                    setUserInfo(() => ({
-                      fName: editUserInfoInbut.fName,
-                      lName: editUserInfoInbut.lName,
-                      img: editUserInfoInbut.userImg
-                    }))
-                    setEditCard(editCard === 0 ? 1 : 0)
-                  }}
-                >
-                  <LiaSaveSolid className="save_icon" />
-                  <span>save</span>
+                  <div
+                    className="submit_button d-flex gap-1 mt-2"
+                    onClick={() => {
+                      setUserInfo(() => ({
+                        fName: editUserInfoInbut.fName,
+                        lName: editUserInfoInbut.lName,
+                        img: editUserInfoInbut.userImg
+                      }))
+                      setEditCard(editCard === 0 ? 1 : 0)
+                    }}
+                  >
+                    <LiaSaveSolid className="save_icon" />
+                    <span>save</span>
+                  </div>
                 </div>
               </div>
             </div>
