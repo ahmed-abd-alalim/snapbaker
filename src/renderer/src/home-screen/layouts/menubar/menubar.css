@@ -89,6 +89,10 @@
     padding: var(--icon_box-padding);
 }
 
+#startMenubar .icon_box.ignore {
+    cursor: default;
+}
+
 #startMenubar .icon_box span {
     display: var(--icon_box-span);
     font-size: .85rem;
@@ -96,6 +100,11 @@
     color: var(--color-yellow-transparent);
     text-transform: capitalize;
     opacity: .8;
+}
+
+#startMenubar .icon_box.ignore span {
+    font-size: .8rem;
+    text-transform: none;
 }
 
 #startMenubar .bar_icon {
@@ -125,15 +134,19 @@
     color: var(--color-white-text);
 }
 
-#startMenubar .icon_box:hover .user_img,
-#startMenubar .icon_box.active .user_img {
-    border: 1px solid var(--color-white-text);
-}
-
 #startMenubar .icon_box_menu:hover .bar_icon,
 #startMenubar .icon_box:hover .bar_icon,
 #startMenubar .icon_box.active .bar_icon {
     color: var(--color-white-text);
+}
+
+#startMenubar .icon_box.ignore:hover {
+    border-radius: var(--border-radius_5);
+    background-color: unset;
+}
+
+#startMenubar .icon_box.ignore:hover span {
+    color: var(--color-yellow-transparent);
 }
 
 /* ======== anymation  ======== */

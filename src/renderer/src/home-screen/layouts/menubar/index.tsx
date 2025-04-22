@@ -2,6 +2,7 @@ import './menubar.css'
 import { useState } from 'react'
 
 // import setting context
+import { useDataContext } from '@/home-screen/assets/context/data'
 import { useSettingContext } from '@/home-screen/assets/context/setting'
 
 // import icon
@@ -12,6 +13,7 @@ import { LuChevronsLeft } from 'react-icons/lu'
 
 const Index = (): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(true)
+  const { userInfo } = useDataContext()
   const { appDirections, setAppDirections } = useSettingContext()
 
   const HandelMenuCloseIcon: (orderName: string) => void = (orderName) => {
@@ -59,12 +61,14 @@ const Index = (): React.JSX.Element => {
         </div>
       </div>
       <div className="h-25 d-flex flex-column justify-content-end">
-        {/* <div className="icon_box">
-          <div className="user_img">
-            <img src="" alt="" width={'100%'} />
+        {userInfo.img && (
+          <div className="icon_box ignore">
+            <div className="user_img">
+              <img src={userInfo.img} alt={userInfo.name} width={'100%'} />
+            </div>
+            <span>{userInfo.name}</span>
           </div>
-          <span>Login</span>
-        </div> */}
+        )}
         <div
           className={`icon_box ${appDirections.setting}`}
           onClick={() => setAppDirections({ setting: 'active' })}

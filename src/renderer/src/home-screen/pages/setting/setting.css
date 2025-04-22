@@ -47,9 +47,9 @@
 }
 
 #Setting .topic_section .user_data_box .user_name {
-    font-size: 1rem;
+    font-size: .9rem;
     color: var(--color-white-text);
-    text-transform: capitalize;
+    font-weight: 500;
 }
 
 #Setting .topic_section .edit_button {
@@ -91,7 +91,7 @@
 }
 
 [account-edit-sction="on"] {
-    --account-edit-sction-height: 10rem;
+    --account-edit-sction-height: 9rem;
 
     /* form-box */
     --account-edit-sction-form-box-transform: translateY(0);
@@ -112,7 +112,7 @@
     border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
     transition: var(--transition_4);
     transition-delay: .1s;
-    padding: .7rem;
+    padding: .4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -178,7 +178,7 @@
     border: 1px solid var(--color-gray-transparent-secound);
     padding: 0 .5rem;
     box-sizing: border-box;
-    font-size: .9rem;
+    font-size: .8rem;
     border-radius: var(--border-radius_5);
     transition: var(--transition_2);
 }
@@ -186,11 +186,6 @@
 #Setting .topic_section .account_edit_sction .form_box .user_name_box input::placeholder {
     opacity: .7;
     font-size: .8rem;
-}
-
-#Setting .topic_section .account_edit_sction .form_box .user_name_box input:focus,
-#Setting .topic_section .account_edit_sction .form_box .user_name_box input:hover {
-    border: 1px solid var(--color-yellow-transparent);
 }
 
 #Setting .topic_section .account_edit_sction .form_box .submit_button {

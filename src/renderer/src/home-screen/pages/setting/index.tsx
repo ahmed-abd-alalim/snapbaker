@@ -123,7 +123,8 @@ const Index = (): React.JSX.Element => {
                   onClick={() => {
                     setUserInfo((prveData) => ({
                       ...prveData,
-                      name: `${editUserInfoInbut.fName} ${editUserInfoInbut.lName}`
+                      name: `${editUserInfoInbut.fName} ${editUserInfoInbut.lName}`,
+                      img: editUserInfoInbut.userImg
                     }))
                     setEditCard(editCard === 0 ? 1 : 0)
                   }}
