@@ -91,6 +91,7 @@ const Index = (): React.JSX.Element => {
                     <input
                       type="text"
                       placeholder="Enter frist name"
+                      maxLength={8}
                       value={editUserInfoInbut.fName}
                       onChange={(e) =>
                         setEditUserInfoInbut((prveData) => ({
@@ -104,6 +105,7 @@ const Index = (): React.JSX.Element => {
                     <input
                       type="text"
                       placeholder="Enter last name"
+                      maxLength={12}
                       value={editUserInfoInbut.lName}
                       onChange={(e) =>
                         setEditUserInfoInbut((prveData) => ({
