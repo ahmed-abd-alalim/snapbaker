@@ -14,6 +14,9 @@ if (process.contextIsolated) {
     contextBridge.exposeInMainWorld('userImg', {
       getPath: () => ipcRenderer.invoke('get-user-image-path')
     })
+    contextBridge.exposeInMainWorld('systemFile', {
+      WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path)
+    })
   } catch (error) {
     console.error(error)
   }
@@ -27,5 +30,9 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.userImg = {
     getPath: () => ipcRenderer.invoke('get-user-image-path')
+  }
+  // @ts-ignore (define in dts)
+  window.systemFile = {
+    WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path)
   }
 }

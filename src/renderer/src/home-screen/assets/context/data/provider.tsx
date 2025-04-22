@@ -3,27 +3,23 @@ import { DataContext } from './context'
 import { projectstDataArrayType, userInfoType, props } from '@/home-screen/types'
 
 // import json data
-import setting from '@data/setting.json'
+import accountInfo from '@data/account.json'
 
 export const DataProvider = ({ children }: props): React.JSX.Element => {
-  const [jsonSetting, setJsonSetting] = useState(setting)
   const [projectstData, setProjectstData] = useState<projectstDataArrayType>([])
   const [userInfo, setUserInfo] = useState<userInfoType>({
-    fName: jsonSetting.account.fName,
-    lName: jsonSetting.account.lName,
-    img: jsonSetting.account.img
+    fName: accountInfo.fName,
+    lName: accountInfo.lName,
+    img: accountInfo.img
   })
 
   useEffect(() => {
-    if (JSON.stringify(userInfo) === JSON.stringify(jsonSetting.account)) {
+    if (JSON.stringify(userInfo) === JSON.stringify(accountInfo)) {
       return
     } else {
-      setJsonSetting((settingPveData) => ({
-        ...settingPveData,
-        account: userInfo
-      }))
+      window.systemFile.WriteFile(userInfo, 'src/data/account.json')
     }
-  }, [userInfo, jsonSetting.account])
+  }, [userInfo])
 
   return (
     <DataContext.Provider value={{ projectstData, setProjectstData, userInfo, setUserInfo }}>

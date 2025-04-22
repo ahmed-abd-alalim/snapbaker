@@ -8,6 +8,9 @@ import icon from '../../resources/icon.png?asset'
 // home-screen funcs
 import { GetUserImagePath } from './home-screen'
 
+// file system funcs
+import { WriteFile } from './file-system'
+
 let mainWindow: BrowserWindow
 
 function createWindow(): void {
@@ -63,6 +66,9 @@ app.whenReady().then(() => {
 
   // get user image path func
   GetUserImagePath()
+
+  // write file
+  WriteFile()
 })
 
 // close window action
