@@ -5,7 +5,8 @@ import { projectstDataArrayType, userInfoType, props } from '@/home-screen/types
 export const DataProvider = ({ children }: props): React.JSX.Element => {
   const [projectstData, setProjectstData] = useState<projectstDataArrayType>([])
   const [userInfo, setUserInfo] = useState<userInfoType>({
-    name: '',
+    fName: '',
+    lName: '',
     img: ''
   })
 

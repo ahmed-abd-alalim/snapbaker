@@ -8,7 +8,11 @@ export type props = {
 //<<=== data context types ===>>
 export type projectstDataArrayType = projectFromOpjectType[]
 
-export type userInfoType = { name: string; img: string }
+export type userInfoType = {
+  fName: string
+  lName: string
+  img: string
+}
 
 export type dataType = {
   projectstData: projectstDataArrayType

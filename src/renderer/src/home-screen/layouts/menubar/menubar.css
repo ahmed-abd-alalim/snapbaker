@@ -95,16 +95,11 @@
 
 #startMenubar .icon_box span {
     display: var(--icon_box-span);
-    font-size: .85rem;
+    font-size: .82rem;
     font-weight: 600;
     color: var(--color-yellow-transparent);
     text-transform: capitalize;
     opacity: .8;
-}
-
-#startMenubar .icon_box.ignore span {
-    font-size: .8rem;
-    text-transform: none;
 }
 
 #startMenubar .bar_icon {
@@ -114,12 +109,15 @@
 }
 
 #startMenubar .icon_box .user_img {
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
     border-radius: var(--border-radius_50);
     overflow: hidden;
     background-color: var(--color-gray-transparent-frist);
     border: 1px solid var(--color-yellow-transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #startMenubar .icon_box_menu:hover,

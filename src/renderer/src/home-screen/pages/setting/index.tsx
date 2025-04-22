@@ -17,9 +17,9 @@ const Index = (): React.JSX.Element => {
   const { userInfo, setUserInfo } = useDataContext()
   const [editCard, setEditCard] = useState<number>(0)
   const [editUserInfoInbut, setEditUserInfoInbut] = useState<editUserInfoInbutType>({
-    fName: '',
-    lName: '',
-    userImg: ''
+    fName: userInfo.fName,
+    lName: userInfo.lName,
+    userImg: userInfo.img
   })
 
   const handleSelect = async (): Promise<void> => {
@@ -50,13 +50,13 @@ const Index = (): React.JSX.Element => {
             <div className="col-9 p-0 d-flex gap-2">
               <div className="img_box">
                 {userInfo.img ? (
-                  <img src={userInfo.img} alt={userInfo.name} width={'100%'} />
+                  <img src={userInfo.img} alt={userInfo.fName} width={'100%'} />
                 ) : (
                   <CiUser className="user_img" />
                 )}
               </div>
               <div className="user_data_box">
-                <span className="user_name">{userInfo.name}</span>
+                <span className="user_name">{`${userInfo.fName} ${userInfo.lName}`}</span>
               </div>
             </div>
             <div className="col-3 p-0 d-flex align-items-center justify-content-center">
@@ -81,9 +81,7 @@ const Index = (): React.JSX.Element => {
                     <IoIosAdd className="add_icon" />
                   </div>
                   {editUserInfoInbut.userImg ? (
-                    <img src={editUserInfoInbut.userImg} alt={userInfo.name} width={'100%'} />
-                  ) : userInfo.img ? (
-                    <img src={userInfo.img} alt={userInfo.name} width={'100%'} />
+                    <img src={editUserInfoInbut.userImg} alt={userInfo.fName} width={'100%'} />
                   ) : (
                     <CiUser className="user_icon" />
                   )}
@@ -121,9 +119,9 @@ const Index = (): React.JSX.Element => {
                 <div
                   className="submit_button d-flex gap-1"
                   onClick={() => {
-                    setUserInfo((prveData) => ({
-                      ...prveData,
-                      name: `${editUserInfoInbut.fName} ${editUserInfoInbut.lName}`,
+                    setUserInfo(() => ({
+                      fName: editUserInfoInbut.fName,
+                      lName: editUserInfoInbut.lName,
                       img: editUserInfoInbut.userImg
                     }))
                     setEditCard(editCard === 0 ? 1 : 0)

@@ -64,9 +64,9 @@ const Index = (): React.JSX.Element => {
         {userInfo.img && (
           <div className="icon_box ignore">
             <div className="user_img">
-              <img src={userInfo.img} alt={userInfo.name} width={'100%'} />
+              <img src={userInfo.img} alt={userInfo.fName} width={'100%'} />
             </div>
-            <span>{userInfo.name}</span>
+            <span>{userInfo.fName}</span>
           </div>
         )}
         <div
