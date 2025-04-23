@@ -1,9 +1,9 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 
-// app icon
-import icon from '../../resources/icon.png?asset'
+// window controls
+import { Close, Minimize, Maximize } from './window-controls'
 
 // home-screen funcs
 import { GetUserImagePath } from './home-screen'
@@ -11,11 +11,12 @@ import { GetUserImagePath } from './home-screen'
 // file system funcs
 import { WriteFile } from './file-system'
 
-let mainWindow: BrowserWindow
+// app icon
+import icon from '../../resources/icon.png?asset'
 
 function createWindow(): void {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     minWidth: 550,
@@ -71,24 +72,14 @@ app.whenReady().then(() => {
   WriteFile()
 })
 
-// close window action
-ipcMain.on('close-window', () => {
-  mainWindow.close()
-})
+// close window func
+Close()
 
-// minimize window action
-ipcMain.on('minimize-window', () => {
-  mainWindow.minimize()
-})
+// minimize window func
+Minimize()
 
-// maximize window action
-ipcMain.on('toggle-maximize-window', () => {
-  if (mainWindow.isMaximized()) {
-    mainWindow.unmaximize()
-  } else {
-    mainWindow.maximize()
-  }
-})
+// maximize window func
+Maximize()
 
 // Quit when all windows are closed
 app.on('window-all-closed', () => {
