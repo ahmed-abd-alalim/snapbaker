@@ -1,6 +1,5 @@
 import './appForm.css'
 import { useState, useEffect } from 'react'
-// import { useNavigate } from 'react-router-dom'
 
 // import context
 import { useDataContext } from '@/home-screen/assets/context/data'
@@ -8,9 +7,6 @@ import { useSettingContext } from '@/home-screen/assets/context/setting'
 
 // import types
 import { projectFromOpjectType, droPMenuVisibilityType } from '@/home-screen/types'
-
-// import config
-// import { routes } from '@/config'
 
 // import icon
 import { MdClose } from 'react-icons/md'
@@ -79,8 +75,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
     if (!uniqueName.length) {
       setProjectsData((prevData) => [...prevData, inbutDtata])
       HandleCardClose()
-      // window.controlar.toggleMaximizeWindow()
-      // navigate(routes.workspace)
+      window.newWindow.openNewWindow()
     } else {
       setErrorMessage('This name is already used change it.')
     }

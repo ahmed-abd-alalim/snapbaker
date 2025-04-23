@@ -1,5 +1,8 @@
 declare global {
   interface Window {
+    newWindow: {
+      openNewWindow: () => void
+    }
     controlar: {
       closeWindow: () => void
       minimizeWindow: () => void

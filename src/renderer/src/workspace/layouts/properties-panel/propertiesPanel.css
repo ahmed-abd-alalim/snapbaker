@@ -2,43 +2,23 @@
 --> propertiesPanel
 ################# */
 #propertiesPanel {
-    width: 3rem;
-    min-height: 20rem;
-    max-height: 24rem;
+    width: 14rem;
+    height: 100vh;
     position: absolute;
-    top: 50%;
-    left: 96%;
-    transform: translate(-96%, -50%);
+    top: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+}
+
+.panel_card {
+    width: 100%;
+    height: calc(var(--dashboard-menubar-hight) - 5rem);
     background-color: var(--color-gray-transparent-frist);
     border-radius: var(--border-radius_5);
     border: var(--border_1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-}
-
-#propertiesPanel .mouse_section {
-    width: 100%;
-    height: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: var(--transition_3);
-}
-
-#propertiesPanel .mouse_section .mouse_icon {
-    font-size: 1.25rem;
-    color: var(--color-yellow-transparent);
-}
-
-#propertiesPanel .mouse_section:hover,
-#propertiesPanel .mouse_section.active {
-    background-color: var(--color-gray-transparent-secound);
-}
-
-#propertiesPanel .mouse_section:hover .mouse_icon,
-#propertiesPanel .mouse_section.active .mouse_icon {
-    color: var(--color-white-text);
 }

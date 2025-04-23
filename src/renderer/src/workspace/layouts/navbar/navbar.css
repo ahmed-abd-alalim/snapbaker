@@ -10,6 +10,8 @@
     align-items: center;
     padding: 0 0 0 .5rem;
     -webkit-app-region: drag;
+    position: relative;
+    z-index: 2;
 }
 
 

@@ -1,4 +1,4 @@
-import { app, shell, BrowserWindow } from 'electron'
+import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 
@@ -54,6 +54,41 @@ function createWindow(): void {
   }
 }
 
+function createOtherWindow(): void {
+  const newWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    minWidth: 550,
+    minHeight: 500,
+    show: false,
+    frame: false,
+    autoHideMenuBar: true,
+    icon: icon,
+    webPreferences: {
+      preload: join(__dirname, '../preload/index.js'),
+      sandbox: false
+    }
+  })
+
+  newWindow.once('ready-to-show', () => {
+    newWindow.show()
+  })
+
+  newWindow.webContents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url)
+    return { action: 'deny' }
+  })
+
+  // Load the remote URL for development or the local html file for production.
+  if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
+    newWindow.loadURL(`${process.env['ELECTRON_RENDERER_URL']}/workspace`)
+  } else {
+    newWindow.loadFile(join(__dirname, '../renderer/index.html'), {
+      hash: '/workspace'
+    })
+  }
+}
+
 app.whenReady().then(() => {
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron')
@@ -71,6 +106,10 @@ app.whenReady().then(() => {
   })
 
   console.log('\x1b[32mstart snapBaker...\x1b[0m \n')
+
+  ipcMain.on('open-new-window', () => {
+    createOtherWindow()
+  })
 
   // call funcs
   funAppReady.forEach((funcName) => {
