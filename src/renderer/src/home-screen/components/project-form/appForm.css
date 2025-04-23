@@ -276,7 +276,7 @@
 }
 
 #AppForm .buttons_section .submit_but {
-    background-color: var(--color-yellow);
+    background-color: var(--color-white-text);
 }
 
 #AppForm .buttons_section .cancel_but {
