@@ -5,14 +5,20 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 // window controls
 import { Close, Minimize, Maximize } from './window-controls'
 
-// home-screen funcs
-import { GetUserImagePath } from './home-screen'
-
 // file system funcs
 import { WriteFile } from './file-system'
 
+// home-screen funcs
+import { GetUserImagePath } from './home-screen'
+
 // app icon
 import icon from '../../resources/icon.png?asset'
+
+// array for func in appReady func
+const funAppReady = [GetUserImagePath, WriteFile]
+
+// array for func out appReady func
+const funOut = [Close, Minimize, Maximize]
 
 function createWindow(): void {
   // Create the browser window.
@@ -63,23 +69,19 @@ app.whenReady().then(() => {
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+
   console.log('\x1b[32mstart snapBaker...\x1b[0m \n')
 
-  // get user image path func
-  GetUserImagePath()
-
-  // write file
-  WriteFile()
+  // call funcs
+  funAppReady.forEach((funcName) => {
+    funcName()
+  })
 })
 
-// close window func
-Close()
-
-// minimize window func
-Minimize()
-
-// maximize window func
-Maximize()
+// call funcs
+funOut.forEach((funcName) => {
+  funcName()
+})
 
 // Quit when all windows are closed
 app.on('window-all-closed', () => {
