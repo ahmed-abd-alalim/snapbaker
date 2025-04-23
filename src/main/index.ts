@@ -25,7 +25,7 @@ function createWindow(): void {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    minWidth: 550,
+    minWidth: 600,
     minHeight: 500,
     show: false,
     frame: false,
@@ -56,10 +56,10 @@ function createWindow(): void {
 
 function createOtherWindow(): void {
   const newWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    minWidth: 550,
-    minHeight: 500,
+    width: 900,
+    height: 700,
+    minWidth: 800,
+    minHeight: 600,
     show: false,
     frame: false,
     autoHideMenuBar: true,
