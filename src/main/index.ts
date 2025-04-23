@@ -37,6 +37,9 @@ function createWindow(): void {
     }
   })
 
+  // @ts-ignore (define in dts)
+  mainWindow.name = 'main'
+
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
   })
@@ -69,6 +72,9 @@ function createOtherWindow(): void {
       sandbox: false
     }
   })
+
+  // @ts-ignore (define in dts)
+  newWindow.name = 'workspace'
 
   newWindow.once('ready-to-show', () => {
     newWindow.show()
