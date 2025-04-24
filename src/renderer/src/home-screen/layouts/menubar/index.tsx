@@ -10,6 +10,7 @@ import { FiMenu } from 'react-icons/fi'
 import { HiWindow, HiOutlineWindow } from 'react-icons/hi2'
 import { IoSettingsOutline, IoSettingsSharp, IoHomeOutline, IoHome } from 'react-icons/io5'
 import { LuChevronsLeft } from 'react-icons/lu'
+import { CiUser } from 'react-icons/ci'
 
 const Index = (): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState<boolean>(true)
@@ -61,11 +62,18 @@ const Index = (): React.JSX.Element => {
         </div>
       </div>
       <div className="h-25 d-flex flex-column justify-content-end">
-        {userInfo.img && (
+        {userInfo.fName && (
           <div className="icon_box ignore">
-            <div className="user_img">
-              <img src={userInfo.img} alt={userInfo.fName} width={'100%'} />
-            </div>
+            {userInfo.img ? (
+              <div className="user_img">
+                <img src={userInfo.img} alt={userInfo.fName} width={'100%'} />
+              </div>
+            ) : (
+              <div className="user_img">
+                <CiUser className="user_icon" />
+              </div>
+            )}
+
             <span>{userInfo.fName}</span>
           </div>
         )}
