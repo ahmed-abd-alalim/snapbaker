@@ -33,11 +33,15 @@ export type projectFromVisibilityType = Partial<{
   new: number
 }>
 
+export type activeSessionNameType = string
+
 export type settingType = {
   appDirections: appDirectionsType
   setAppDirections: React.Dispatch<React.SetStateAction<appDirectionsType>>
   projectFromVisibility: projectFromVisibilityType
   setProjectFromVisibility: React.Dispatch<React.SetStateAction<projectFromVisibilityType>>
+  activeSessionName: activeSessionNameType
+  setActiveSessionName: React.Dispatch<React.SetStateAction<activeSessionNameType>>
 }
 
 // ################
