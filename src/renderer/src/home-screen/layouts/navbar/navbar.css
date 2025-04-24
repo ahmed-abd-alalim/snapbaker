@@ -47,8 +47,3 @@
 #navebsrStart .controlaer_buttons .minimize:hover {
     background-color: var(--color-gray-transparent-thred);
 }
-
-#navebsrStart .controlaer_buttons .close:hover .con_icon,
-#navebsrStart .controlaer_buttons .minimize:hover .con_icon {
-    color: var(--color-yellow);
-}
