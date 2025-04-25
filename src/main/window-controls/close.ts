@@ -9,6 +9,7 @@ export default (): void => {
       BrowserWindow.getAllWindows().forEach((win) => win.close())
     } else {
       BrowserWindow.getAllWindows().forEach((win) => {
+        // @ts-ignore (define in dts)
         if (win.name === 'main') {
           win.webContents.send('session-not-active', 'true')
         }
