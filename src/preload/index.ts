@@ -22,6 +22,12 @@ if (process.contextIsolated) {
     contextBridge.exposeInMainWorld('systemFile', {
       WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path)
     })
+
+    contextBridge.exposeInMainWorld('fromBackEnd', {
+      notActive: (callback: (event: Electron.IpcRendererEvent, data: boolean) => void) => {
+        ipcRenderer.on('session-not-active', callback)
+      }
+    })
   } catch (error) {
     console.error(error)
   }
@@ -46,5 +52,12 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.systemFile = {
     WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path)
+  }
+
+  // @ts-ignore (define in dts)
+  window.fromBackEnd = {
+    notActive: (callback: (event: Electron.IpcRendererEvent, data: boolean) => void) => {
+      ipcRenderer.on('session-not-active', callback)
+    }
   }
 }

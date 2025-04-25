@@ -1,14 +1,27 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 // pages
 import Intro from '@/intro'
 import HomeScreen from '@/home-screen'
 import Workspace from '@/workspace'
 
+// import Glopal context
+import { useGlopalContext } from '@/assets/context'
+
 // import config
 import { routes } from '@/config'
 
 function App(): React.JSX.Element {
+  const { setActiveSessionName } = useGlopalContext()
+
+  useEffect(() => {
+    window.fromBackEnd.notActive((_, data: boolean) => {
+      setActiveSessionName(data)
+      console.log('data')
+    })
+  }, [setActiveSessionName])
+
   return (
     <div className="app-container">
       <Router>
