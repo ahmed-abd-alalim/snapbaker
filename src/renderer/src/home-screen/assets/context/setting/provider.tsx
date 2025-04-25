@@ -1,6 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { SettingContext } from './context'
-import { appDirectionsType, projectFromVisibilityType, props } from '@/home-screen/types'
+import {
+  appDirectionsType,
+  projectFromVisibilityType,
+  activeSessionNameType,
+  props
+} from '@/home-screen/types'
 
 export const SettingProvider = ({ children }: props): React.JSX.Element => {
   const [appDirections, setAppDirections] = useState<appDirectionsType>({
@@ -14,13 +19,24 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
     new: 0
   })
 
+  const [activeSessionName, setActiveSessionName] = useState<activeSessionNameType>('')
+
+  useEffect(() => {
+    window.fromBackEnd.notActive((_, data: string) => {
+      // setActiveSessionName(data)
+      console.log(data)
+    })
+  }, [])
+
   return (
     <SettingContext.Provider
       value={{
         appDirections,
         setAppDirections,
         projectFromVisibility,
-        setProjectFromVisibility
+        setProjectFromVisibility,
+        activeSessionName,
+        setActiveSessionName
       }}
     >
       {children}

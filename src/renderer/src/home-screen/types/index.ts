@@ -40,6 +40,8 @@ export type settingType = {
   setAppDirections: React.Dispatch<React.SetStateAction<appDirectionsType>>
   projectFromVisibility: projectFromVisibilityType
   setProjectFromVisibility: React.Dispatch<React.SetStateAction<projectFromVisibilityType>>
+  activeSessionName: activeSessionNameType
+  setActiveSessionName: React.Dispatch<React.SetStateAction<activeSessionNameType>>
 }
 
 // ################

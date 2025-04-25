@@ -24,7 +24,7 @@ if (process.contextIsolated) {
     })
 
     contextBridge.exposeInMainWorld('fromBackEnd', {
-      notActive: (callback: (event: Electron.IpcRendererEvent, data: boolean) => void) => {
+      notActive: (callback: (event: Electron.IpcRendererEvent, data: string) => void) => {
         ipcRenderer.on('session-not-active', callback)
       }
     })
@@ -56,7 +56,7 @@ if (process.contextIsolated) {
 
   // @ts-ignore (define in dts)
   window.fromBackEnd = {
-    notActive: (callback: (event: Electron.IpcRendererEvent, data: boolean) => void) => {
+    notActive: (callback: (event: Electron.IpcRendererEvent, data: string) => void) => {
       ipcRenderer.on('session-not-active', callback)
     }
   }

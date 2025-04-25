@@ -15,7 +15,7 @@ declare global {
       WriteFile: (data: object, path: string) => void
     }
     fromBackEnd: {
-      notActive: (callback: (event: Electron.IpcRendererEvent, data: boolean) => void) => void
+      notActive: (callback: (event: Electron.IpcRendererEvent, data: string) => void) => void
     }
   }
 }
