@@ -18,7 +18,6 @@ function App(): React.JSX.Element {
   useEffect(() => {
     window.fromBackEnd.notActive((_, data: boolean) => {
       setActiveSessionName(data)
-      console.log('data')
     })
   }, [setActiveSessionName])
 
