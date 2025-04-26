@@ -167,7 +167,7 @@
     transform: translate(-50%, -50%) translateX(-150%) translateY(150%) scale(0);
     z-index: 4;
     animation: LogoSectionMoveMent 15s ease forwards .2s infinite;
-    opacity: .9;
+    opacity: .95;
 }
 
 #Projects .site_card .up_layer_for_work_project .logo_section .resizable-path {
