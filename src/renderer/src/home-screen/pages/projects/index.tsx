@@ -85,10 +85,11 @@ const Index = (): React.JSX.Element => {
                       <div className="up_layer_for_work_project">
                         <div className="anymation_circle"> </div>
                         <div className="speed_shadow">
-                          <div className="speed_shadow_line me-3"></div>
-                          <div className="speed_shadow_line ms-1 my-1"></div>
-                          <div className="speed_shadow_line ms-1 my-1"></div>
-                          <div className="speed_shadow_line me-3"></div>
+                          <div className="speed_shadow_line me-1"></div>
+                          <div className="speed_shadow_line ms-3"></div>
+                          <div className="speed_shadow_line ms-4"></div>
+                          <div className="speed_shadow_line ms-3"></div>
+                          <div className="speed_shadow_line me-1"></div>
                         </div>
                         <div className="logo_section ">
                           <svg
