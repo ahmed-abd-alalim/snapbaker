@@ -17,7 +17,12 @@ import { RxRocket } from 'react-icons/rx'
 
 const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element => {
   const { projectsData, setProjectsData } = useDataContext()
-  const { projectFromVisibility, setProjectFromVisibility } = useSettingContext()
+  const {
+    projectFromVisibility,
+    setProjectFromVisibility,
+    setActiveSessionName,
+    activeSessionName
+  } = useSettingContext()
   // const navigate = useNavigate()
   const today = new Date()
   const newFormTemplet: projectFromOpjectType = {
@@ -75,7 +80,10 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
     if (!uniqueName.length) {
       setProjectsData((prevData) => [...prevData, inbutDtata])
       HandleCardClose()
-      window.newWindow.openNewWindow()
+      if (!activeSessionName) {
+        setActiveSessionName(inbutDtata.siteName!)
+        window.newWindow.openNewWindow()
+      }
     } else {
       setErrorMessage('This name is already used change it.')
     }

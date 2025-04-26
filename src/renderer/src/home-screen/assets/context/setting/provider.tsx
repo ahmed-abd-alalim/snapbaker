@@ -23,10 +23,9 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
 
   useEffect(() => {
     window.fromBackEnd.notActive((_, data: string) => {
-      // setActiveSessionName(data)
-      console.log(data)
+      setActiveSessionName(activeSessionName !== '' ? '' : activeSessionName)
     })
-  }, [])
+  }, [activeSessionName])
 
   return (
     <SettingContext.Provider

@@ -11,7 +11,6 @@
     transition: var(--transition_2);
 }
 
-
 /* ======== empty layer ======= */
 #Projects .empty_layer {
     width: 8rem;
@@ -83,6 +82,7 @@
 #Projects .site_card {
     min-height: 12rem;
     max-height: 15rem;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -94,11 +94,232 @@
     cursor: pointer;
     padding: 4px;
     animation: var(--page-start-anymation);
+    overflow: hidden;
+    transition: var(--transition_3);
 }
 
 #Projects .site_card:hover {
     border: 1px solid var(--color-gray-transparent-thred);
     opacity: .8;
+}
+
+#Projects .site_card.stop-hover:hover {
+    border: 1px solid var(--color-gray-transparent-secound);
+    opacity: 1;
+}
+
+/* ======== up layer for work project ======= */
+#Projects .site_card .up_layer_for_work_project {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-gray-transparent-thred-part-two);
+    cursor: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Projects .site_card .up_layer_for_work_project .anymation_circle {
+    width: 5.2rem;
+    height: 5.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: .1rem dashed var(--color-yellow-transparent);
+    border-radius: var(--border-radius_50);
+    opacity: .5;
+    animation: AnymationCircle 15s ease forwards infinite;
+}
+
+#Projects .site_card .up_layer_for_work_project .speed_shadow {
+    height: 2.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-46deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    animation: SpeedShadowAnymation 15s ease forwards .3s infinite;
+}
+
+#Projects .site_card .up_layer_for_work_project .speed_shadow .speed_shadow_line {
+    width: 75%;
+    height: .01rem;
+    background-color: var(--color-yellow-transparent);
+    opacity: .9;
+    border-radius: var(--border-radius_3);
+}
+
+#Projects .site_card .up_layer_for_work_project .logo_section {
+    width: 1.8rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: LogoSectionMoveMent 15s ease forwards .3s infinite;
+    opacity: .9;
+}
+
+#Projects .site_card .up_layer_for_work_project .logo_section .resizable-path {
+    fill: var(--color-white-text);
+}
+
+#Projects .site_card .up_layer_for_work_project .logo_section .filr_section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: FilrSection 15s ease forwards .3s infinite;
+}
+
+
+@keyframes AnymationCircle {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .5;
+    }
+
+    97% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes SpeedShadowAnymation {
+    0% {
+        width: 0rem;
+    }
+
+    5% {
+        width: 8rem;
+    }
+
+    94% {
+        width: 8rem;
+    }
+
+    100% {
+        width: 0rem;
+    }
+}
+
+@keyframes LogoSectionMoveMent {
+    0% {
+        transform: translate(-50%, -50%) translateX(-150%) translateY(150%) scale(0);
+    }
+
+    5% {
+        transform: translate(-50%, -50%) translateX(0%) translateY(0%) scale(1);
+    }
+
+    95% {
+        transform: translate(-50%, -50%) translateX(0%) translateY(0%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateX(-150%) translateY(150%) scale(0);
+    }
+}
+
+@keyframes FilrSection {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: .5;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+
+    20% {
+        opacity: .5;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+
+    30% {
+        opacity: .5;
+    }
+
+    35% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: .5;
+    }
+
+
+    45% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: .5;
+    }
+
+    65% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: .5;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .5;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: .5;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* ======== card bar ======= */
