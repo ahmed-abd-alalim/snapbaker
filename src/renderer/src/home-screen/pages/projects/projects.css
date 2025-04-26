@@ -132,7 +132,7 @@
     border: .1rem dashed var(--color-yellow-transparent);
     border-radius: var(--border-radius_50);
     opacity: 0;
-    animation: AnymationCircle 15s ease forwards .3s infinite;
+    animation: AnymationCircle 15s ease forwards .1s infinite;
 }
 
 #Projects .site_card .up_layer_for_work_project .speed_shadow {
@@ -146,7 +146,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    animation: SpeedShadowAnymation 15s ease forwards .6s infinite;
+    animation: SpeedShadowAnymation 15s ease forwards .2s infinite;
 }
 
 #Projects .site_card .up_layer_for_work_project .speed_shadow .speed_shadow_line {
@@ -163,7 +163,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateX(-150%) translateY(150%) scale(0);
-    animation: LogoSectionMoveMent 15s ease forwards .6s infinite;
+    animation: LogoSectionMoveMent 15s ease forwards .2s infinite;
     opacity: .95;
 }
 
@@ -177,7 +177,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: FilrSection 15s ease forwards .6s infinite;
+    animation: FilrSection 15s ease forwards .2s infinite;
 }
 
 
