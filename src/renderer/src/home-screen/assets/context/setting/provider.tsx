@@ -22,7 +22,7 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
   const [activeSessionName, setActiveSessionName] = useState<activeSessionNameType>('')
 
   useEffect(() => {
-    window.fromBackEnd.notActive((_, data: string) => {
+    window.fromBackEnd.notActive(() => {
       setActiveSessionName(activeSessionName !== '' ? '' : activeSessionName)
     })
   }, [activeSessionName])
