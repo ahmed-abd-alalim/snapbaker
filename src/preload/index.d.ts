@@ -13,6 +13,8 @@ declare global {
     }
     systemFile: {
       WriteFile: (data: object, path: string) => void
+      newApp: (data: object) => void
+      deleteApp: (appName: string) => void
     }
     fromBackEnd: {
       notActive: (callback: (event: Electron.IpcRendererEvent) => void) => void

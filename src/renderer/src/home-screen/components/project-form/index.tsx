@@ -83,6 +83,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
       if (!activeSessionName) {
         setActiveSessionName(inbutDtata.siteName!)
         window.newWindow.openNewWindow()
+        window.systemFile.newApp(inbutDtata)
       }
     } else {
       setErrorMessage('This name is already used change it.')

@@ -60,6 +60,7 @@ const Index = (): React.JSX.Element => {
     if (cardData.siteName !== activeSessionName) {
       const newData = projectsData.filter((item) => item.siteName !== cardData.siteName)
       setProjectsData([...newData])
+      window.systemFile.deleteApp(cardData.siteName!)
     }
   }
 
