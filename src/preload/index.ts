@@ -24,7 +24,8 @@ if (process.contextIsolated) {
       newApp: (data: object) => ipcRenderer.send('new-app', data),
       deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
       updateApp: (newData: object, oldData: object) =>
-        ipcRenderer.send('update-app', newData, oldData)
+        ipcRenderer.send('update-app', newData, oldData),
+      getAllProjectsInfo: () => ipcRenderer.invoke('get-all-projects-info')
     })
 
     contextBridge.exposeInMainWorld('fromBackEnd', {
@@ -59,7 +60,8 @@ if (process.contextIsolated) {
     newApp: (data: object) => ipcRenderer.send('new-app', data),
     deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
     updateApp: (newData: object, oldData: object) =>
-      ipcRenderer.send('update-app', newData, oldData)
+      ipcRenderer.send('update-app', newData, oldData),
+    getAllProjectsInfo: () => ipcRenderer.invoke('get-all-projects-info')
   }
 
   // @ts-ignore (define in dts)

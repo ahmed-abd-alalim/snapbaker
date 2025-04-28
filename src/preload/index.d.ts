@@ -16,6 +16,7 @@ declare global {
       newApp: (data: object) => void
       deleteApp: (appName: string) => void
       updateApp: (newData: object, oldData: object) => void
+      getAllProjectsInfo: () => Promise<object[]>
     }
     fromBackEnd: {
       notActive: (callback: (event: Electron.IpcRendererEvent) => void) => void

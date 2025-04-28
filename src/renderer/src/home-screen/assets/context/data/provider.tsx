@@ -4,10 +4,9 @@ import { projectstDataArrayType, userInfoType, props } from '@/home-screen/types
 
 // import json data
 import accountInfo from '@data/account.json'
-import projectsDataInfo from '@data/projectsData.json'
 
 export const DataProvider = ({ children }: props): React.JSX.Element => {
-  const [projectsData, setProjectsData] = useState<projectstDataArrayType>(projectsDataInfo)
+  const [projectsData, setProjectsData] = useState<projectstDataArrayType>([])
   const [userInfo, setUserInfo] = useState<userInfoType>({
     fName: accountInfo.fName,
     lName: accountInfo.lName,
@@ -18,17 +17,18 @@ export const DataProvider = ({ children }: props): React.JSX.Element => {
     if (JSON.stringify(userInfo) === JSON.stringify(accountInfo)) {
       return
     } else {
-      window.systemFile.WriteFile(userInfo, 'src/data/account.json')
+      window.systemFile.WriteFile(userInfo, 'account.json')
     }
   }, [userInfo])
 
   useEffect(() => {
-    if (JSON.stringify(projectsDataInfo) === JSON.stringify(projectsData)) {
-      return
-    } else {
-      window.systemFile.WriteFile(projectsData, 'src/data/projectsData.json')
+    const fetchData = async (): Promise<void> => {
+      // Send IPC message to Electron backend
+      setProjectsData(await window.systemFile.getAllProjectsInfo())
     }
-  }, [projectsData])
+
+    fetchData()
+  }, [])
 
   return (
     <DataContext.Provider value={{ projectsData, setProjectsData, userInfo, setUserInfo }}>
