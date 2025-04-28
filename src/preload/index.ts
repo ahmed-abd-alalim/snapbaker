@@ -22,7 +22,9 @@ if (process.contextIsolated) {
     contextBridge.exposeInMainWorld('systemFile', {
       WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
       newApp: (data: object) => ipcRenderer.send('new-app', data),
-      deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName)
+      deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
+      updateApp: (newData: object, oldData: object) =>
+        ipcRenderer.send('update-app', newData, oldData)
     })
 
     contextBridge.exposeInMainWorld('fromBackEnd', {
@@ -55,7 +57,9 @@ if (process.contextIsolated) {
   window.systemFile = {
     WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
     newApp: (data: object) => ipcRenderer.send('new-app', data),
-    deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName)
+    deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
+    updateApp: (newData: object, oldData: object) =>
+      ipcRenderer.send('update-app', newData, oldData)
   }
 
   // @ts-ignore (define in dts)

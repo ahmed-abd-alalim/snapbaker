@@ -95,6 +95,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
     const uniqueName = updateData.filter((item) => item.siteName === inbutDtata.siteName)
     if (!uniqueName.length) {
       setProjectsData([inbutDtata, ...updateData])
+      window.systemFile.updateApp(inbutDtata, data!)
       HandleCardClose()
     } else {
       setErrorMessage('This name is already used change it.')

@@ -6,7 +6,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { Close, Minimize, Maximize } from './window-controls'
 
 // file system funcs
-import { WriteFile, NewApp, DeleteApp } from './file-system'
+import { WriteFile, NewApp, DeleteApp, updateApp } from './file-system'
 
 // home-screen funcs
 import { GetUserImagePath } from './home-screen'
@@ -15,7 +15,7 @@ import { GetUserImagePath } from './home-screen'
 import icon from '../../resources/icon.png?asset'
 
 // array for func in appReady func
-const funAppReady = [GetUserImagePath, WriteFile, NewApp, DeleteApp]
+const funAppReady = [GetUserImagePath, WriteFile, NewApp, DeleteApp, updateApp]
 
 // array for func out appReady func
 const funOut = [Close, Minimize, Maximize]

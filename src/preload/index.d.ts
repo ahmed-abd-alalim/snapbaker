@@ -15,6 +15,7 @@ declare global {
       WriteFile: (data: object, path: string) => void
       newApp: (data: object) => void
       deleteApp: (appName: string) => void
+      updateApp: (newData: object, oldData: object) => void
     }
     fromBackEnd: {
       notActive: (callback: (event: Electron.IpcRendererEvent) => void) => void
