@@ -27,6 +27,10 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
     })
   }, [activeSessionName])
 
+  useEffect(() => {
+    window.systemFile.WriteFile({ activeSession: activeSessionName }, 'setting.json')
+  }, [activeSessionName])
+
   return (
     <SettingContext.Provider
       value={{

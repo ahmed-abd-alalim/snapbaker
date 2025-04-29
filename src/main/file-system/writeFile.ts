@@ -2,10 +2,24 @@ import { ipcMain } from 'electron'
 import fs from 'fs'
 
 export default (): void => {
-  ipcMain.on('save-file', (_event, data: object, path: string) => {
-    const dataPath = `src/data/${path}`
+  ipcMain.on('save-file', async (_event, data: object, path: string): Promise<void> => {
+    const modules = {
+      'setting.json': () => import('../../data/setting.json'),
+      'account.json': () => import('../../data/account.json')
+      // Add more as needed
+    }
 
-    fs.writeFile(dataPath, JSON.stringify(data), (err) => {
+    const jsondata = await modules[path]()
+
+    const jsonFilePath = `src/data/${path}`
+
+    Object.keys(data).forEach((key) => {
+      if (data[key] !== jsondata.default[key]) {
+        jsondata.default[key] = data[key]
+      }
+    })
+
+    fs.writeFile(jsonFilePath, JSON.stringify(jsondata.default), (err) => {
       if (err) {
         console.error('Error writing file:', err)
         return
