@@ -4,8 +4,11 @@ import {
   appDirectionsType,
   projectFromVisibilityType,
   activeSessionNameType,
-  props
+  props,
+  colorThemeType
 } from '@/home-screen/types'
+
+import setting from '@data/setting.json'
 
 export const SettingProvider = ({ children }: props): React.JSX.Element => {
   const [appDirections, setAppDirections] = useState<appDirectionsType>({
@@ -19,7 +22,25 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
     new: 0
   })
 
+  const colorThemeRaw = {
+    dark: false,
+    white: false,
+    blue: false
+  }
+
+  const [colorTheme, setColorTheme] = useState<colorThemeType>({
+    ...colorThemeRaw,
+    [setting.colorTheme]: true
+  })
+
   const [activeSessionName, setActiveSessionName] = useState<activeSessionNameType>('')
+
+  useEffect(() => {
+    const getActiveTheme = Object.keys(colorTheme).filter((item) => colorTheme[item] === true)
+    if (setting.colorTheme !== getActiveTheme[0]) {
+      window.systemFile.WriteFile({ colorTheme: getActiveTheme[0] }, 'setting.json')
+    }
+  }, [colorTheme])
 
   useEffect(() => {
     window.fromBackEnd.notActive(() => {
@@ -28,7 +49,9 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
   }, [activeSessionName])
 
   useEffect(() => {
-    window.systemFile.WriteFile({ activeSession: activeSessionName }, 'setting.json')
+    if (setting.activeSession !== activeSessionName) {
+      window.systemFile.WriteFile({ activeSession: activeSessionName }, 'setting.json')
+    }
   }, [activeSessionName])
 
   return (
@@ -39,7 +62,9 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
         projectFromVisibility,
         setProjectFromVisibility,
         activeSessionName,
-        setActiveSessionName
+        setActiveSessionName,
+        colorTheme,
+        setColorTheme
       }}
     >
       {children}

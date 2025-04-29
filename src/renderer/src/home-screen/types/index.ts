@@ -33,6 +33,12 @@ export type projectFromVisibilityType = Partial<{
   new: number
 }>
 
+export type colorThemeType = Partial<{
+  dark: boolean
+  white: boolean
+  blue: boolean
+}>
+
 export type activeSessionNameType = string
 
 export type settingType = {
@@ -42,6 +48,8 @@ export type settingType = {
   setProjectFromVisibility: React.Dispatch<React.SetStateAction<projectFromVisibilityType>>
   activeSessionName: activeSessionNameType
   setActiveSessionName: React.Dispatch<React.SetStateAction<activeSessionNameType>>
+  colorTheme: colorThemeType
+  setColorTheme: React.Dispatch<React.SetStateAction<colorThemeType>>
 }
 
 // ################
@@ -71,9 +79,3 @@ export type editUserInfoInbutType = {
   lName: string
   userImg: string
 }
-
-export type colorThemeType = Partial<{
-  dark: boolean
-  white: boolean
-  blue: boolean
-}>

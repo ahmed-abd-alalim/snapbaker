@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react'
 
 // import context
 import { useDataContext } from '@/home-screen/assets/context/data'
+import { useSettingContext } from '@/home-screen/assets/context/setting'
 
 // import type
-import { editUserInfoInbutType, colorThemeType } from '@/home-screen/types'
+import { editUserInfoInbutType } from '@/home-screen/types'
 
 // import config
 import { app } from '@/config'
@@ -24,18 +25,18 @@ import appIcom from '/icon.png'
 
 const Index = (): React.JSX.Element => {
   const { userInfo, setUserInfo } = useDataContext()
+  const colorThemeRaw = {
+    dark: false,
+    white: false,
+    blue: false
+  }
+  const { colorTheme, setColorTheme } = useSettingContext()
   const [editCard, setEditCard] = useState<number>(0)
   const [colorThemeCard, setColorThemeCard] = useState<number>(0)
   const [editUserInfoInbut, setEditUserInfoInbut] = useState<editUserInfoInbutType>({
     fName: userInfo.fName,
     lName: userInfo.lName,
     userImg: userInfo.img
-  })
-
-  const [colorTheme, setColorTheme] = useState<colorThemeType>({
-    dark: false,
-    white: false,
-    blue: false
   })
 
   const handleSelect = async (): Promise<void> => {
@@ -179,7 +180,9 @@ const Index = (): React.JSX.Element => {
                 className="drop_down_button"
                 onClick={() => setColorThemeCard(colorThemeCard === 0 ? 1 : 0)}
               >
-                <span className="theme_name">Dark</span>
+                <span className="theme_name">
+                  {Object.keys(colorTheme).filter((item) => colorTheme[item] === true)}
+                </span>
                 <TbChevronDown className={`down_icon ${colorThemeCard && 'rotate'}`} />
               </div>
             </div>
@@ -190,9 +193,10 @@ const Index = (): React.JSX.Element => {
                 <input
                   type="checkbox"
                   checked={colorTheme.dark}
-                  onChange={(e) =>
+                  onChange={() =>
                     setColorTheme({
-                      dark: e.target.checked
+                      ...colorThemeRaw,
+                      dark: true
                     })
                   }
                 />
@@ -202,9 +206,10 @@ const Index = (): React.JSX.Element => {
                 <input
                   type="checkbox"
                   checked={colorTheme.white}
-                  onChange={(e) =>
+                  onChange={() =>
                     setColorTheme({
-                      white: e.target.checked
+                      ...colorThemeRaw,
+                      white: true
                     })
                   }
                 />
@@ -214,9 +219,10 @@ const Index = (): React.JSX.Element => {
                 <input
                   type="checkbox"
                   checked={colorTheme.blue}
-                  onChange={(e) =>
+                  onChange={() =>
                     setColorTheme({
-                      blue: e.target.checked
+                      ...colorThemeRaw,
+                      blue: true
                     })
                   }
                 />
