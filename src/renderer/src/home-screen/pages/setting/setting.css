@@ -118,6 +118,7 @@
     flex-direction: column;
     justify-content: space-between;
     opacity: var(--account-edit-section-form-box-opacity);
+    overflow: hidden;
 }
 
 #Setting .account .account_edit_section .form_box .user_img_box {
@@ -291,6 +292,7 @@
     flex-direction: column;
     justify-content: space-between;
     opacity: var(--theme_color_section-checkboxs_section-opacity);
+    overflow: hidden;
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option {
@@ -301,8 +303,8 @@
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"] {
     all: unset;
-    width: 11px;
-    height: 11px;
+    width: 12px;
+    height: 12px;
     border: 1px solid var(--color-white-text);
     appearance: none;
     border-radius: var(--border-radius_3);
@@ -313,19 +315,18 @@
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"]:checked {
-    background-color: var(--color-white-text);
+    background-color: var(--color-gray-transparent-thred);
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"]:checked::after {
     content: '\2713';
-    color: var(--color-black);
-    font-size: 10px;
+    color: var(--color-white-text);
+    font-size: 8px;
     font-weight: 600;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) translateY(-2.6%);
-    opacity: .8;
+    transform: translate(-50%, -50%) translateY(-2%);
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option span {
