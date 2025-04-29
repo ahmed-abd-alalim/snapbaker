@@ -13,13 +13,18 @@
     padding: .5rem .6rem;
 }
 
+
 #Window::-webkit-scrollbar {
-    width: 14px;
+    width: 0px;
+}
+
+/* #Window::-webkit-scrollbar {
+    width: 8px;
 }
 
 #Window::-webkit-scrollbar-thumb {
     background-color: var(--color-gray-transparent-thred);
-    border: 5px solid var(--color-gray-transparent-frist);
+    border: 3px solid var(--color-gray-transparent-frist);
     border-radius: var(--border-radius_10);
 }
 
@@ -29,7 +34,7 @@
 
 #Window::-webkit-scrollbar-corner {
     display: none;
-}
+} */
 
 /* ======== anymayion ======= */
 @keyframes pageApprrFromDown {

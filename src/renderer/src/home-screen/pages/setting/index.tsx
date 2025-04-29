@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { useDataContext } from '@/home-screen/assets/context/data'
 
 // import type
-import { editUserInfoInbutType } from '@/home-screen/types'
+import { editUserInfoInbutType, colorThemeType } from '@/home-screen/types'
 
 // import config
 import { app } from '@/config'
@@ -15,8 +15,9 @@ import { AiFillEdit, AiOutlineEdit } from 'react-icons/ai'
 import { CiUser } from 'react-icons/ci'
 import { LiaSaveSolid } from 'react-icons/lia'
 import { IoIosAdd } from 'react-icons/io'
-import { MdOutlineNewReleases } from 'react-icons/md'
 import { RxUpdate, RxDownload } from 'react-icons/rx'
+import { VscSymbolColor } from 'react-icons/vsc'
+import { TbChevronDown } from 'react-icons/tb'
 
 // import img
 import appIcom from '/icon.png'
@@ -24,10 +25,17 @@ import appIcom from '/icon.png'
 const Index = (): React.JSX.Element => {
   const { userInfo, setUserInfo } = useDataContext()
   const [editCard, setEditCard] = useState<number>(0)
+  const [colorThemeCard, setColorThemeCard] = useState<number>(0)
   const [editUserInfoInbut, setEditUserInfoInbut] = useState<editUserInfoInbutType>({
     fName: userInfo.fName,
     lName: userInfo.lName,
     userImg: userInfo.img
+  })
+
+  const [colorTheme, setColorTheme] = useState<colorThemeType>({
+    dark: false,
+    white: false,
+    blue: false
   })
 
   const handleSelect = async (): Promise<void> => {
@@ -40,10 +48,18 @@ const Index = (): React.JSX.Element => {
   }
 
   useEffect(() => {
-    if (editCard) {
-      document.documentElement.setAttribute('account-edit-sction', 'on')
+    if (colorThemeCard) {
+      document.documentElement.setAttribute('theme-color-section', 'on')
     } else {
-      document.documentElement.removeAttribute('account-edit-sction')
+      document.documentElement.removeAttribute('theme-color-section')
+    }
+  }, [colorThemeCard])
+
+  useEffect(() => {
+    if (editCard) {
+      document.documentElement.setAttribute('account-edit-section', 'on')
+    } else {
+      document.documentElement.removeAttribute('account-edit-section')
     }
   }, [editCard])
 
@@ -52,7 +68,7 @@ const Index = (): React.JSX.Element => {
       <div className="container">
         {/* account setion */}
         <div className="topic_section account">
-          <div className="topic_name mb-2">
+          <div className="topic_name mb-1">
             <span>Account</span>
           </div>
           <div className="row">
@@ -82,7 +98,7 @@ const Index = (): React.JSX.Element => {
               </div>
             </div>
           </div>
-          <div className="account_edit_sction">
+          <div className="account_edit_section">
             <div className="form_box">
               <div className="w-100 h-100  d-flex  justify-content-around align-items-center">
                 <div className="user_img_box">
@@ -144,9 +160,75 @@ const Index = (): React.JSX.Element => {
           </div>
         </div>
 
+        {/* color theme section */}
+        <div className="topic_section color_theme mt-4">
+          <div className="topic_name mb-1">
+            <span>general</span>
+          </div>
+          <div className="row">
+            <div className="col-9 p-0 d-flex align-items-center gap-3">
+              <div className="section_icon">
+                <VscSymbolColor />
+              </div>
+              <div className="section_data">
+                <span className="main_title">App theme</span>
+              </div>
+            </div>
+            <div className="col-3 p-0 d-flex align-items-center justify-content-end">
+              <div
+                className="drop_down_button"
+                onClick={() => setColorThemeCard(colorThemeCard === 0 ? 1 : 0)}
+              >
+                <span className="theme_name">Dark</span>
+                <TbChevronDown className={`down_icon ${colorThemeCard && 'rotate'}`} />
+              </div>
+            </div>
+          </div>
+          <div className="theme_color_section">
+            <div className="checkboxs_section">
+              <div className="theme_color_option">
+                <input
+                  type="checkbox"
+                  checked={colorTheme.dark}
+                  onChange={(e) =>
+                    setColorTheme({
+                      dark: e.target.checked
+                    })
+                  }
+                />
+                <span>Dark</span>
+              </div>
+              <div className="theme_color_option">
+                <input
+                  type="checkbox"
+                  checked={colorTheme.white}
+                  onChange={(e) =>
+                    setColorTheme({
+                      white: e.target.checked
+                    })
+                  }
+                />
+                <span>white</span>
+              </div>
+              <div className="theme_color_option">
+                <input
+                  type="checkbox"
+                  checked={colorTheme.blue}
+                  onChange={(e) =>
+                    setColorTheme({
+                      blue: e.target.checked
+                    })
+                  }
+                />
+                <span>Blue</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* about section */}
         <div className="topic_section about mt-4">
-          <div className="topic_name mb-2">
+          <div className="topic_name mb-1">
             <span>About</span>
           </div>
           <div className="row">
@@ -178,8 +260,8 @@ const Index = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-3 p-0 d-flex align-items-center justify-content-center">
-              <div className="version_section d-flex align-items-center justify-content-center gap-1">
-                <MdOutlineNewReleases className="version_icon" />
+              <div className="version_section d-flex align-items-center justify-content-center">
+                <span>v</span>
                 <span>{app.version}</span>
               </div>
             </div>

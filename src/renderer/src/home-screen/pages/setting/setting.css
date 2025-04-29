@@ -6,10 +6,11 @@
 }
 
 #Setting .topic_section .topic_name span {
-    font-size: .9rem;
+    font-size: .8rem;
     font-weight: 600;
     letter-spacing: 1px;
     color: var(--color-white-text);
+    text-transform: capitalize;
 }
 
 #Setting .topic_section .row {
@@ -81,33 +82,33 @@
     opacity: .8;
 }
 
-/*----> account_edit_sction*/
+/*----> account_edit_section*/
 :root {
-    --account-edit-sction-height: 0;
+    --account-edit-section-height: 0;
 
     /* form-box */
-    --account-edit-sction-form-box-transform: translateY(-100%);
-    --account-edit-sction-form-box-opacity: 0;
+    --account-edit-section-form-box-transform: translateY(-100%);
+    --account-edit-section-form-box-opacity: 0;
 }
 
-[account-edit-sction="on"] {
-    --account-edit-sction-height: 9rem;
+[account-edit-section="on"] {
+    --account-edit-section-height: 9rem;
 
     /* form-box */
-    --account-edit-sction-form-box-transform: translateY(0);
-    --account-edit-sction-form-box-opacity: 1;
+    --account-edit-section-form-box-transform: translateY(0);
+    --account-edit-section-form-box-opacity: 1;
 }
 
-#Setting .account .account_edit_sction {
-    height: var(--account-edit-sction-height);
+#Setting .account .account_edit_section {
+    height: var(--account-edit-section-height);
     overflow: hidden;
     transition: var(--transition_4);
 }
 
-#Setting .account .account_edit_sction .form_box {
+#Setting .account .account_edit_section .form_box {
     width: 100%;
     height: 100%;
-    transform: var(--account-edit-sction-form-box-transform);
+    transform: var(--account-edit-section-form-box-transform);
     background-color: var(--color-gray-transparent-thred);
     border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
     transition: var(--transition_4);
@@ -116,10 +117,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    opacity: var(--account-edit-sction-form-box-opacity);
+    opacity: var(--account-edit-section-form-box-opacity);
 }
 
-#Setting .account .account_edit_sction .form_box .user_img_box {
+#Setting .account .account_edit_section .form_box .user_img_box {
     width: 5.2rem;
     height: 5.2rem;
     position: relative;
@@ -133,7 +134,7 @@
     border: 1px solid var(--color-yellow-transparent);
 }
 
-#Setting .account .account_edit_sction .form_box .user_img_box .add_layer {
+#Setting .account .account_edit_section .form_box .user_img_box .add_layer {
     opacity: 0;
     width: 100%;
     height: 100%;
@@ -148,28 +149,28 @@
     align-items: center;
 }
 
-#Setting .account .account_edit_sction .form_box .user_img_box .add_layer .add_icon {
+#Setting .account .account_edit_section .form_box .user_img_box .add_layer .add_icon {
     font-size: 1.9rem;
     color: var(--color-white-text);
 }
 
-#Setting .account .account_edit_sction .form_box .user_img_box:hover .add_layer {
+#Setting .account .account_edit_section .form_box .user_img_box:hover .add_layer {
     opacity: 1;
 }
 
-#Setting .account .account_edit_sction .form_box .user_img_box .user_icon {
+#Setting .account .account_edit_section .form_box .user_img_box .user_icon {
     font-size: 2.2rem;
     color: var(--color-white-text);
     opacity: .3;
 }
 
 
-#Setting .account .account_edit_sction .form_box .user_name_box {
+#Setting .account .account_edit_section .form_box .user_name_box {
     width: 12rem;
     height: 2.3rem;
 }
 
-#Setting .account .account_edit_sction .form_box .user_name_box input {
+#Setting .account .account_edit_section .form_box .user_name_box input {
     all: unset;
     width: 100%;
     height: 100%;
@@ -183,12 +184,12 @@
     transition: var(--transition_2);
 }
 
-#Setting .account .account_edit_sction .form_box .user_name_box input::placeholder {
+#Setting .account .account_edit_section .form_box .user_name_box input::placeholder {
     opacity: .7;
     font-size: .8rem;
 }
 
-#Setting .account .account_edit_sction .form_box .submit_button {
+#Setting .account .account_edit_section .form_box .submit_button {
     width: 5rem;
     height: 2.2rem;
     margin: 0 auto;
@@ -201,40 +202,156 @@
     cursor: pointer;
 }
 
-#Setting .account .account_edit_sction .form_box .submit_button .save_icon {
+#Setting .account .account_edit_section .form_box .submit_button .save_icon {
     color: var(--color-white-text);
     font-size: 1.1;
 }
 
-#Setting .account .account_edit_sction .form_box .submit_button span {
+#Setting .account .account_edit_section .form_box .submit_button span {
     color: var(--color-white-text);
     font-size: .85rem;
     text-transform: capitalize;
 }
 
-#Setting .account .account_edit_sction .form_box .submit_button:hover {
+#Setting .account .account_edit_section .form_box .submit_button:hover {
     opacity: .8;
 }
 
+/* ======== gemeral section ======== */
+#Setting .color_theme .section_icon {
+    font-size: 1.2rem;
+    color: var(--color-white-text);
+}
+
+#Setting .color_theme .section_data span {
+    display: block;
+    color: var(--color-white-text);
+}
+
+#Setting .color_theme .section_data .main_title {
+    font-size: .8rem;
+    text-transform: capitalize;
+}
+
+#Setting .color_theme .drop_down_button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+#Setting .color_theme .drop_down_button .theme_name {
+    color: var(--color-white-text);
+    font-size: .8rem;
+    opacity: .9;
+}
+
+#Setting .color_theme .drop_down_button .down_icon {
+    color: var(--color-white-text);
+    transition: var(--transition_3);
+}
+
+#Setting .color_theme .drop_down_button .down_icon.rotate {
+    transform: rotate(180deg);
+}
+
+/*----> color_theme_section*/
+:root {
+    --theme_color_section-height: 0;
+
+    /* form-box */
+    --theme_color_section-checkboxs_section-transform: translateY(-100%);
+    --theme_color_section-checkboxs_section-opacity: 0;
+}
+
+[theme-color-section="on"] {
+    --theme_color_section-height: 6rem;
+
+    /* form-box */
+    --theme_color_section-checkboxs_section-transform: translateY(0);
+    --theme_color_section-checkboxs_section-opacity: 1;
+}
+
+#Setting .color_theme .theme_color_section {
+    height: var(--theme_color_section-height);
+    overflow: hidden;
+    transition: var(--transition_4);
+}
+
+#Setting .color_theme .theme_color_section .checkboxs_section {
+    width: 100%;
+    height: 100%;
+    transform: var(--theme_color_section-checkboxs_section-transform);
+    background-color: var(--color-gray-transparent-thred);
+    border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
+    transition: var(--transition_4);
+    transition-delay: .1s;
+    padding: .4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: var(--theme_color_section-checkboxs_section-opacity);
+}
+
+#Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"] {
+    all: unset;
+    width: 11px;
+    height: 11px;
+    border: 1px solid var(--color-white-text);
+    appearance: none;
+    border-radius: var(--border-radius_3);
+    position: relative;
+    cursor: pointer;
+    opacity: .8;
+    margin: .1rem 0 0 0;
+}
+
+#Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"]:checked {
+    background-color: var(--color-white-text);
+}
+
+#Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"]:checked::after {
+    content: '\2713';
+    color: var(--color-black);
+    font-size: 10px;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) translateY(-2.6%);
+    opacity: .8;
+}
+
+#Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option span {
+    color: var(--color-white-text);
+    opacity: .9;
+    font-size: .82rem;
+}
 
 /* ======== about section ======== */
 #Setting .about .section_icon {
-    font-weight: 1.1rem;
+    font-size: 1.2rem;
     color: var(--color-white-text);
 }
 
 #Setting .about .section_img {
-    width: 1.1rem;
+    width: 1.2rem;
 }
 
 #Setting .about .section_data span {
     display: block;
     color: var(--color-white-text);
-
 }
 
 #Setting .about .section_data .main_title {
     font-size: .8rem;
+    text-transform: capitalize;
 }
 
 #Setting .about .section_data .sub_link {
@@ -245,17 +362,14 @@
     font-size: .6rem;
 }
 
-#Setting .about .version_section {
+#Setting .about .version_section span {
     color: var(--color-white-text);
     opacity: .8;
     font-size: .85rem;
+    margin: 0 .05rem;
     /* background-color: var(--color-gray-transparent-frist);
     border-radius: var(--border-radius_5);
     padding: .2rem .6rem; */
-}
-
-#Setting .about .version_section .version_icon {
-    font-size: .8rem;
 }
 
 #Setting .about .update_button {

@@ -71,3 +71,9 @@ export type editUserInfoInbutType = {
   lName: string
   userImg: string
 }
+
+export type colorThemeType = Partial<{
+  dark: boolean
+  white: boolean
+  blue: boolean
+}>
