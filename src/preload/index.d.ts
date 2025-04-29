@@ -19,7 +19,10 @@ declare global {
       getAllProjectsInfo: () => Promise<object[]>
     }
     fromBackEnd: {
-      notActive: (callback: (event: Electron.IpcRendererEvent) => void) => void
+      ipcRenderer: {
+        on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) => void
+        removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) => void
+      }
     }
   }
 }

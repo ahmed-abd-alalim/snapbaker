@@ -49,9 +49,13 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
   }, [colorTheme])
 
   useEffect(() => {
-    window.fromBackEnd.notActive(() => {
+    const handler = (): void => {
       setActiveSessionName('')
-    })
+    }
+    window.fromBackEnd.ipcRenderer.on('session-not-active', handler)
+    return () => {
+      window.fromBackEnd.ipcRenderer.removeListener('session-not-active', handler)
+    }
   }, [])
 
   useEffect(() => {

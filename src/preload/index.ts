@@ -29,8 +29,11 @@ if (process.contextIsolated) {
     })
 
     contextBridge.exposeInMainWorld('fromBackEnd', {
-      notActive: (callback: (event: Electron.IpcRendererEvent) => void) => {
-        ipcRenderer.once('session-not-active', callback)
+      ipcRenderer: {
+        on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
+          ipcRenderer.on(channel, func),
+        removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
+          ipcRenderer.removeListener(channel, func)
       }
     })
   } catch (error) {
@@ -66,8 +69,11 @@ if (process.contextIsolated) {
 
   // @ts-ignore (define in dts)
   window.fromBackEnd = {
-    notActive: (callback: (event: Electron.IpcRendererEvent) => void) => {
-      ipcRenderer.once('session-not-active', callback)
+    ipcRenderer: {
+      on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
+        ipcRenderer.on(channel, func),
+      removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
+        ipcRenderer.removeListener(channel, func)
     }
   }
 }
