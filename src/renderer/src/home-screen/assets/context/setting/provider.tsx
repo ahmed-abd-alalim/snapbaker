@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { SettingContext } from './context'
+
+// import type
 import {
   appDirectionsType,
   projectFromVisibilityType,
@@ -8,7 +10,11 @@ import {
   colorThemeType
 } from '@/home-screen/types'
 
+// import data
 import setting from '@data/setting.json'
+
+// import config
+import { app } from '@/config'
 
 export const SettingProvider = ({ children }: props): React.JSX.Element => {
   const [appDirections, setAppDirections] = useState<appDirectionsType>({
@@ -30,14 +36,14 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
 
   const [colorTheme, setColorTheme] = useState<colorThemeType>({
     ...colorThemeRaw,
-    [setting.colorTheme]: true
+    [setting.colorTheme ? setting.colorTheme : app.theme.default]: true
   })
 
   const [activeSessionName, setActiveSessionName] = useState<activeSessionNameType>('')
 
   useEffect(() => {
     const getActiveTheme = Object.keys(colorTheme).filter((item) => colorTheme[item] === true)
-    if (setting.colorTheme !== getActiveTheme[0]) {
+    if ((setting.colorTheme ? setting.colorTheme : app.theme.default) !== getActiveTheme[0]) {
       window.systemFile.WriteFile({ colorTheme: getActiveTheme[0] }, 'setting.json')
     }
   }, [colorTheme])
