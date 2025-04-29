@@ -1,10 +1,11 @@
 {
   "name": "SnapBaker",
-  "version": "1.0.0",
+  "version": "1.0",
   "created": "Thursday, April 3, 2025, 3:24:34 AM",
   "description": "SnapBaker - Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.",
   "author": "Ahmed Abd Alalim",
   "gitHubAccount": "https://github.com/ahmed-abd-alalim",
+  "copyright": "2025 Ahmed Abd Alalim. All rights reserved.",
 
   "theme": {
     "default": "dark",

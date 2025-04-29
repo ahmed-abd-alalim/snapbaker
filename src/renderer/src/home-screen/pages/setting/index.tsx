@@ -7,11 +7,19 @@ import { useDataContext } from '@/home-screen/assets/context/data'
 // import type
 import { editUserInfoInbutType } from '@/home-screen/types'
 
+// import config
+import { app } from '@/config'
+
 // import icon
 import { AiFillEdit, AiOutlineEdit } from 'react-icons/ai'
 import { CiUser } from 'react-icons/ci'
 import { LiaSaveSolid } from 'react-icons/lia'
 import { IoIosAdd } from 'react-icons/io'
+import { MdOutlineNewReleases } from 'react-icons/md'
+import { RxUpdate, RxDownload } from 'react-icons/rx'
+
+// import img
+import appIcom from '/icon.png'
 
 const Index = (): React.JSX.Element => {
   const { userInfo, setUserInfo } = useDataContext()
@@ -42,6 +50,7 @@ const Index = (): React.JSX.Element => {
   return (
     <section id="Setting">
       <div className="container">
+        {/* account setion */}
         <div className="topic_section account">
           <div className="topic_name mb-2">
             <span>Account</span>
@@ -130,6 +139,48 @@ const Index = (): React.JSX.Element => {
                     <span>save</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* about section */}
+        <div className="topic_section about mt-4">
+          <div className="topic_name mb-2">
+            <span>About</span>
+          </div>
+          <div className="row">
+            <div className="col-9 p-0 d-flex align-items-center gap-3">
+              <div className="section_icon">
+                <RxUpdate />
+              </div>
+              <div className="section_data">
+                <span className="main_title">Check for Updates</span>
+              </div>
+            </div>
+            <div className="col-3 p-0 d-flex align-items-center justify-content-center">
+              <div className="update_button">
+                <RxDownload className="button_icon" />
+                <span>update</span>
+              </div>
+            </div>
+          </div>
+          <div className="row mt-2">
+            <div className="col-9 p-0 d-flex align-items-center gap-3">
+              <div className="section_img">
+                <img src={appIcom} alt="appIcom" width={'100%'} />
+              </div>
+              <div className="section_data">
+                <span className="main_title">{app.name}</span>
+                <a href={app.gitHubAccount} target="_blank" rel="noreferrer" className="sub_link">
+                  &copy; {app.copyright}
+                </a>
+              </div>
+            </div>
+            <div className="col-3 p-0 d-flex align-items-center justify-content-center">
+              <div className="version_section d-flex align-items-center justify-content-center gap-1">
+                <MdOutlineNewReleases className="version_icon" />
+                <span>{app.version}</span>
               </div>
             </div>
           </div>
