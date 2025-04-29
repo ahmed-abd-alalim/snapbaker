@@ -10,7 +10,7 @@
     height: calc(100vh - 40px);
     background-color: var(--color-gray-transparent-frist);
     overflow: auto;
-    padding: .5rem .6rem;
+    padding: .5rem .8rem;
 }
 
 
