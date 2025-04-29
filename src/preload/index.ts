@@ -30,7 +30,7 @@ if (process.contextIsolated) {
 
     contextBridge.exposeInMainWorld('fromBackEnd', {
       notActive: (callback: (event: Electron.IpcRendererEvent) => void) => {
-        ipcRenderer.on('session-not-active', callback)
+        ipcRenderer.once('session-not-active', callback)
       }
     })
   } catch (error) {
@@ -67,7 +67,7 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.fromBackEnd = {
     notActive: (callback: (event: Electron.IpcRendererEvent) => void) => {
-      ipcRenderer.on('session-not-active', callback)
+      ipcRenderer.once('session-not-active', callback)
     }
   }
 }

@@ -50,14 +50,12 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
 
   useEffect(() => {
     window.fromBackEnd.notActive(() => {
-      setActiveSessionName(activeSessionName !== '' ? '' : activeSessionName)
+      setActiveSessionName('')
     })
-  }, [activeSessionName])
+  }, [])
 
   useEffect(() => {
-    if (setting.activeSession !== activeSessionName) {
-      window.systemFile.WriteFile({ activeSession: activeSessionName }, 'setting.json')
-    }
+    window.systemFile.WriteFile({ activeSession: activeSessionName }, 'setting.json')
   }, [activeSessionName])
 
   return (
