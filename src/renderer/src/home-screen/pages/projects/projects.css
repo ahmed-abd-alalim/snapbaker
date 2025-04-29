@@ -123,8 +123,8 @@
 }
 
 #Projects .site_card .up_layer_for_work_project .anymation_circle {
-    width: 6.8rem;
-    height: 6.8rem;
+    width: 6rem;
+    height: 6rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -133,7 +133,7 @@
     border: .1rem dashed var(--color-yellow-transparent);
     border-radius: var(--border-radius_50);
     opacity: 0;
-    animation: AnymationCircle 15s ease forwards .1s infinite;
+    animation: AnymationCircle 10s ease forwards .1s infinite;
 }
 
 #Projects .site_card .up_layer_for_work_project .speed_shadow {
@@ -148,7 +148,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    animation: SpeedShadowAnymation 15s ease forwards .2s infinite;
+    animation: SpeedShadowAnymation 10s ease forwards .2s infinite;
 }
 
 #Projects .site_card .up_layer_for_work_project .speed_shadow .speed_shadow_line {
@@ -160,13 +160,13 @@
 }
 
 #Projects .site_card .up_layer_for_work_project .logo_section {
-    width: 1.9rem;
+    width: 1.85rem;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateX(-150%) translateY(150%) scale(0);
     z-index: 4;
-    animation: LogoSectionMoveMent 15s ease forwards .2s infinite;
+    animation: LogoSectionMoveMent 10s ease forwards .2s infinite;
     opacity: .95;
 }
 
@@ -180,7 +180,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: FilrSection 15s ease forwards .2s infinite;
+    animation: FilrSection 10s ease forwards .2s infinite;
 }
 
 
@@ -189,11 +189,11 @@
         opacity: 0;
     }
 
-    10% {
+    6% {
         opacity: .5;
     }
 
-    97% {
+    95% {
         opacity: .5;
     }
 
@@ -207,12 +207,12 @@
         width: 0rem;
     }
 
-    5% {
-        width: 6rem;
+    7% {
+        width: 4.8rem;
     }
 
-    94% {
-        width: 6rem;
+    93% {
+        width: 4.8rem;
     }
 
     100% {
@@ -225,11 +225,11 @@
         transform: translate(-50%, -50%) translateX(-150%) translateY(150%) scale(0);
     }
 
-    5% {
+    7% {
         transform: translate(-50%, -50%) translateX(0%) translateY(0%) scale(1);
     }
 
-    95% {
+    93% {
         transform: translate(-50%, -50%) translateX(0%) translateY(0%) scale(1);
     }
 
