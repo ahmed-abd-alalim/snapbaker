@@ -24,7 +24,7 @@ export default (): void => {
           console.error(`Invalid JSON in ${appJsonPath}`, error)
         }
       } else {
-        console.warn(`pop.json not found in ${folder}`)
+        console.warn(`app.json not found in ${folder}`)
       }
     })
 
