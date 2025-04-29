@@ -161,7 +161,7 @@ const Index = (): React.JSX.Element => {
         </div>
 
         {/* color theme section */}
-        <div className="topic_section color_theme mt-4">
+        <div className="topic_section color_theme mt-3">
           <div className="topic_name mb-1">
             <span>general</span>
           </div>
@@ -227,7 +227,7 @@ const Index = (): React.JSX.Element => {
         </div>
 
         {/* about section */}
-        <div className="topic_section about mt-4">
+        <div className="topic_section about mt-3">
           <div className="topic_name mb-1">
             <span>About</span>
           </div>
@@ -247,7 +247,7 @@ const Index = (): React.JSX.Element => {
               </div>
             </div>
           </div>
-          <div className="row mt-2">
+          <div className="row mt-1">
             <div className="col-9 p-0 d-flex align-items-center gap-3">
               <div className="section_img">
                 <img src={appIcom} alt="appIcom" width={'100%'} />
