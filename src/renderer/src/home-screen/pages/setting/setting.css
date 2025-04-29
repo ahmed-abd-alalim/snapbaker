@@ -8,7 +8,7 @@
 #Setting .topic_section .topic_name span {
     font-size: .8rem;
     font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: .5px;
     color: var(--color-white-text);
     text-transform: capitalize;
 }
