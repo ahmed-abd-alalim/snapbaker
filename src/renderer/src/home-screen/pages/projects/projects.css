@@ -115,7 +115,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--color-tertiary-part-two);
+    background-color: var(--color-tertiary-transparent);
     cursor: auto;
     display: flex;
     justify-content: center;
