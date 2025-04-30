@@ -342,8 +342,29 @@
     color: var(--text-color);
 }
 
-#Setting .about .section_img {
+#Setting .about .logo_section {
     width: 1.2rem;
+    opacity: .95;
+    position: relative;
+}
+
+#Setting .about .logo_section .resizable-path {
+    fill: var(--text-color);
+}
+
+#Setting .about .logo_section .fire_section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#Setting .about .logo_section .fire_section .resizable-fire {
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--brand-color);
+    fill-opacity: 1;
 }
 
 #Setting .about .section_data span {
