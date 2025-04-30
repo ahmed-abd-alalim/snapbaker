@@ -174,13 +174,20 @@
     fill: var(--text-color);
 }
 
-#Projects .site_card .up_layer_for_work_project .logo_section .filr_section {
+#Projects .site_card .up_layer_for_work_project .logo_section .fire_section {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     animation: FilrSection 10s ease forwards .2s infinite;
+}
+
+#Projects .site_card .up_layer_for_work_project .logo_section .fire_section .resizable-fire {
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--brand-color);
+    fill-opacity: 1;
 }
 
 

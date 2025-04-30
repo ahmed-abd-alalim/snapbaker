@@ -28,7 +28,7 @@
     animation: draw 1.5s ease forwards, fill 1s .8s forwards;
 }
 
-#Intro .logo_section .filr_section {
+#Intro .logo_section .fire_section {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -38,6 +38,12 @@
     animation: opacty 1s 1s ease forwards;
 }
 
+#Intro .logo_section .fire_section .resizable-fire {
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--brand-color);
+    fill-opacity: 1;
+}
 
 /* ====== name secton ======  */
 #Intro .name_section {
