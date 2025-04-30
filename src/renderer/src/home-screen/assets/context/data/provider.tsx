@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { DataContext } from './context'
-import { projectstDataArrayType, userInfoType, props } from '@/home-screen/types'
+import { projectstDataArrayType, userInfoType, props } from '@/type/home-screen'
 
 // import json data
 import accountInfo from '@data/account.json'

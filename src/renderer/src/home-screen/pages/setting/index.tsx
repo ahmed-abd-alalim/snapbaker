@@ -6,7 +6,7 @@ import { useDataContext } from '@/home-screen/assets/context/data'
 import { useSettingContext } from '@/home-screen/assets/context/setting'
 
 // import type
-import { editUserInfoInbutType } from '@/home-screen/types'
+import { editUserInfoInbutType } from '@/type/home-screen'
 
 // import config
 import { app } from '@/config'

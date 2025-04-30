@@ -8,7 +8,7 @@ import {
   activeSessionNameType,
   props,
   colorThemeType
-} from '@/home-screen/types'
+} from '@/type/home-screen'
 
 // import data
 import setting from '@data/setting.json'

@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import { dataType } from '@/home-screen/types'
+import { dataType } from '@/type/home-screen'
 
 export const DataContext = createContext<dataType | null>(null)
 

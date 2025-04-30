@@ -9,7 +9,7 @@ import { useDataContext } from '@/home-screen/assets/context/data'
 import { useSettingContext } from '@/home-screen/assets/context/setting'
 
 // import type
-import { projectFromOpjectType } from '@/home-screen/types'
+import { projectFromOpjectType } from '@/type/home-screen'
 
 // import icon
 import { PiTrash, PiCalendarDotsLight } from 'react-icons/pi'

@@ -6,7 +6,7 @@ import { useDataContext } from '@/home-screen/assets/context/data'
 import { useSettingContext } from '@/home-screen/assets/context/setting'
 
 // import types
-import { projectFromOpjectType, droPMenuVisibilityType } from '@/home-screen/types'
+import { projectFromOpjectType, droPMenuVisibilityType } from '@/type/home-screen'
 
 // import icon
 import { MdClose } from 'react-icons/md'

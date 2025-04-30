@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import { settingType } from '@/home-screen/types'
+import { settingType } from '@/type/home-screen'
 
 export const SettingContext = createContext<settingType | null>(null)
 
