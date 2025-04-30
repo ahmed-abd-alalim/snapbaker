@@ -9,7 +9,7 @@
 
   "theme": {
     "default": "dark",
-    "availableThemes": ["dark", "white", "blue"]
+    "availableThemes": ["white", "dark", "blue"]
   },
 
   "language": {

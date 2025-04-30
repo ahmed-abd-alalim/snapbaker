@@ -7,8 +7,8 @@ export type props = {
 
 //<<=== setting context types ===>>
 export type colorThemeType = Partial<{
-  dark: boolean
   white: boolean
+  dark: boolean
   blue: boolean
 }>
 

@@ -50,7 +50,20 @@
 
 [app-theme-color="white"] {
   /* color */
-  --color-background: #ececec;
+  --brand-color: #f1a218;
+  --color-background: #f1f1f1;
+  --color-background-transparent: #ffffff8e;
+  --color-primary: #e6e5e5;
+  --color-secondary: #D4D4D4;
+  --color-tertiary: #bbbbbb;
+  --color-tertiary-transparent: #bbbbbbd6;
+  --text-color: #2B2B2B;
+  --text-accent-color: #413c345e;
+
+
+  /* box shadow */
+  --dark-box-shadow: 3px 4px 7px #6d6c6c3f;
+
 }
 
 [app-theme-color="blue"] {
