@@ -1,7 +1,7 @@
 import './pages.css'
 
 // import setting context
-import { useSettingContext } from '@/home-screen/assets/context/setting'
+import { useSettingContext } from '@/context/home-screen/setting'
 
 // import Pages
 import Home from './home'

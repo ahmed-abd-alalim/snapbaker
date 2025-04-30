@@ -4,7 +4,7 @@ import './new.css'
 import { ProjectForm } from '@/home-screen/components'
 
 // import context
-import { useSettingContext } from '@/home-screen/assets/context/setting'
+import { useSettingContext } from '@/context/home-screen/setting'
 
 // import icon
 import { IoIosAdd } from 'react-icons/io'

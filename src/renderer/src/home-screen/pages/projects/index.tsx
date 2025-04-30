@@ -5,8 +5,8 @@ import { useState } from 'react'
 import { ProjectForm } from '@/home-screen/components/'
 
 // import context
-import { useDataContext } from '@/home-screen/assets/context/data'
-import { useSettingContext } from '@/home-screen/assets/context/setting'
+import { useDataContext } from '@/context/home-screen/data'
+import { useSettingContext } from '@/context/home-screen/setting'
 
 // import type
 import { projectFromOpjectType } from '@/type/home-screen'

@@ -2,8 +2,8 @@ import './setting.css'
 import { useEffect, useState } from 'react'
 
 // import context
-import { useDataContext } from '@/home-screen/assets/context/data'
-import { useSettingContext } from '@/home-screen/assets/context/setting'
+import { useDataContext } from '@/context/home-screen/data'
+import { useSettingContext } from '@/context/home-screen/setting'
 
 // import type
 import { editUserInfoInbutType } from '@/type/home-screen'

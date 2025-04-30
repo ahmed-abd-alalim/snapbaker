@@ -2,8 +2,8 @@ import './menubar.css'
 import { useState } from 'react'
 
 // import setting context
-import { useDataContext } from '@/home-screen/assets/context/data'
-import { useSettingContext } from '@/home-screen/assets/context/setting'
+import { useDataContext } from '@/context/home-screen/data'
+import { useSettingContext } from '@/context/home-screen/setting'
 
 // import icon
 import { FiMenu } from 'react-icons/fi'
