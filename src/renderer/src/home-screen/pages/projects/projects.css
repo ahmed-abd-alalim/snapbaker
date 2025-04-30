@@ -19,30 +19,68 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: .6;
+    opacity: .35;
 }
 
-#Projects .empty_layer img {
+#Projects .empty_layer .fSection,
+#Projects .empty_layer .sSection,
+#Projects .empty_layer .tSection {
+    width: 100%;
     position: absolute;
 }
 
 #Projects .empty_layer .fLayer {
+    width: 100%;
     opacity: .5;
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--text-color);
+    fill-opacity: 1;
     animation: circleVisibility .3s ease;
 }
 
 #Projects .empty_layer .sLayer {
+    width: 100%;
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--text-accent-color);
+    fill-opacity: 1;
     opacity: 0;
     transform: translateX(-8%) translateY(-8%);
     animation: cardLeft .8s ease forwards .2s;
 }
 
+#Projects .empty_layer .sLayer.secound {
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--color-secondary);
+    fill-opacity: 1;
+}
+
 #Projects .empty_layer .tLayer {
+    width: 100%;
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--text-accent-color);
+    fill-opacity: 1;
     opacity: 0;
     transform: translateX(8%) translateY(8%);
     animation: cardRight .8s ease forwards .2s;
 }
 
+#Projects .empty_layer .tLayer.frist {
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--color-secondary);
+    fill-opacity: 1;
+}
+
+#Projects .empty_layer .tLayer.secound {
+    stroke: none;
+    fill-rule: nonzero;
+    fill: var(--text-accent-color);
+    fill-opacity: 1;
+}
 
 @keyframes circleVisibility {
     from {
