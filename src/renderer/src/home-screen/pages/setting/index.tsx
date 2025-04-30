@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 // import context
 import { useDataContext } from '@/context/home-screen/data'
-import { useSettingContext } from '@/context/home-screen/setting'
+import { useGlopalSettingContext } from '@/context/glopal/setting'
 
 // import type
 import { editUserInfoInbutType } from '@/type/home-screen'
@@ -30,7 +30,7 @@ const Index = (): React.JSX.Element => {
     app.theme.availableThemes.map((themeName) => [themeName, false])
   )
 
-  const { colorTheme, setColorTheme } = useSettingContext()
+  const { colorTheme, setColorTheme } = useGlopalSettingContext()
   const [editCard, setEditCard] = useState<number>(0)
   const [colorThemeCard, setColorThemeCard] = useState<number>(0)
   const [editUserInfoInbut, setEditUserInfoInbut] = useState<editUserInfoInbutType>({
