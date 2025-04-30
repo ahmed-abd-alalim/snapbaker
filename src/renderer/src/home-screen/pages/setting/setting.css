@@ -9,12 +9,12 @@
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .5px;
-    color: var(--color-white-text);
+    color: var(--text-color);
     text-transform: capitalize;
 }
 
 #Setting .topic_section .row {
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
     border-radius: var(--border-radius_5);
 }
 
@@ -26,7 +26,7 @@
 #Setting .account .img_box {
     width: 4.8rem;
     height: 4.8rem;
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
     border-radius: var(--border-radius_50);
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@
 
 #Setting .account .img_box .user_img {
     font-size: 2.1rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
     opacity: .3;
 }
 
@@ -49,14 +49,14 @@
 
 #Setting .account .user_data_box .user_name {
     font-size: .9rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-weight: 500;
 }
 
 #Setting .account .edit_button {
     width: 6.8rem;
     height: 2.5rem;
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
     border-radius: var(--border-radius_5);
     display: flex;
     align-items: center;
@@ -67,13 +67,13 @@
 
 #Setting .account .edit_button .edit_icon {
     font-size: 1.05rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Setting .account .edit_button span {
     font-size: .85rem;
     letter-spacing: .5px;
-    color: var(--color-white-text);
+    color: var(--text-color);
     text-transform: capitalize;
 }
 
@@ -109,7 +109,7 @@
     width: 100%;
     height: 100%;
     transform: var(--account-edit-section-form-box-transform);
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
     border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
     transition: var(--transition_4);
     transition-delay: .1s;
@@ -125,14 +125,14 @@
     width: 5.2rem;
     height: 5.2rem;
     position: relative;
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
     border-radius: var(--border-radius_50);
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     cursor: pointer;
-    border: 1px solid var(--color-yellow-transparent);
+    border: 1px solid var(--text-accent-color);
 }
 
 #Setting .account .account_edit_section .form_box .user_img_box .add_layer {
@@ -152,7 +152,7 @@
 
 #Setting .account .account_edit_section .form_box .user_img_box .add_layer .add_icon {
     font-size: 1.9rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Setting .account .account_edit_section .form_box .user_img_box:hover .add_layer {
@@ -161,7 +161,7 @@
 
 #Setting .account .account_edit_section .form_box .user_img_box .user_icon {
     font-size: 2.2rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
     opacity: .3;
 }
 
@@ -175,9 +175,9 @@
     all: unset;
     width: 100%;
     height: 100%;
-    color: var(--color-white-text);
-    background-color: var(--color-gray-transparent-secound);
-    border: 1px solid var(--color-gray-transparent-secound);
+    color: var(--text-color);
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
     padding: 0 .5rem;
     box-sizing: border-box;
     font-size: .8rem;
@@ -195,7 +195,7 @@
     height: 2.2rem;
     margin: 0 auto;
     margin-right: 0;
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,12 +204,12 @@
 }
 
 #Setting .account .account_edit_section .form_box .submit_button .save_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: 1.1;
 }
 
 #Setting .account .account_edit_section .form_box .submit_button span {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: .85rem;
     text-transform: capitalize;
 }
@@ -221,12 +221,12 @@
 /* ======== gemeral section ======== */
 #Setting .color_theme .section_icon {
     font-size: 1.2rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Setting .color_theme .section_data span {
     display: block;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Setting .color_theme .section_data .main_title {
@@ -242,14 +242,14 @@
 }
 
 #Setting .color_theme .drop_down_button .theme_name {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: .8rem;
     opacity: .9;
     text-transform: capitalize;
 }
 
 #Setting .color_theme .drop_down_button .down_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
     transition: var(--transition_3);
 }
 
@@ -284,7 +284,7 @@
     width: 100%;
     height: 100%;
     transform: var(--theme_color_section-checkboxs_section-transform);
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
     border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
     transition: var(--transition_4);
     transition-delay: .1s;
@@ -306,7 +306,7 @@
     all: unset;
     width: 12px;
     height: 12px;
-    border: 1px solid var(--color-white-text);
+    border: 1px solid var(--text-color);
     appearance: none;
     border-radius: var(--border-radius_3);
     position: relative;
@@ -316,12 +316,12 @@
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"]:checked {
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"]:checked::after {
     content: '\2713';
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: 8px;
     font-weight: 600;
     position: absolute;
@@ -331,7 +331,7 @@
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option span {
-    color: var(--color-white-text);
+    color: var(--text-color);
     opacity: .9;
     font-size: .82rem;
 }
@@ -339,7 +339,7 @@
 /* ======== about section ======== */
 #Setting .about .section_icon {
     font-size: 1.2rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Setting .about .section_img {
@@ -348,7 +348,7 @@
 
 #Setting .about .section_data span {
     display: block;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Setting .about .section_data .main_title {
@@ -359,17 +359,17 @@
 #Setting .about .section_data .sub_link {
     all: unset;
     cursor: pointer;
-    color: var(--color-white-text);
+    color: var(--text-color);
     opacity: .8;
     font-size: .6rem;
 }
 
 #Setting .about .version_section span {
-    color: var(--color-white-text);
+    color: var(--text-color);
     opacity: .8;
     font-size: .85rem;
     margin: 0 .05rem;
-    /* background-color: var(--color-gray-transparent-frist);
+    /* background-color: var(--color-primary);
     border-radius: var(--border-radius_5);
     padding: .2rem .6rem; */
 }
@@ -377,7 +377,7 @@
 #Setting .about .update_button {
     width: 6.8rem;
     height: 2.2rem;
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
     border-radius: var(--border-radius_5);
     display: flex;
     align-items: center;
@@ -388,13 +388,13 @@
 
 #Setting .about .update_button .button_icon {
     font-size: 1rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Setting .about .update_button span {
     font-size: .8rem;
     letter-spacing: .5px;
-    color: var(--color-white-text);
+    color: var(--text-color);
     text-transform: capitalize;
 }
 

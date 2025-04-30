@@ -87,10 +87,10 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 1.2rem;
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
     border-radius: var(--border-radius_5);
     box-shadow: var(--dark-box-shadow);
-    border: 1px solid var(--color-gray-transparent-secound);
+    border: 1px solid var(--color-secondary);
     cursor: pointer;
     padding: 4px;
     animation: var(--page-start-anymation);
@@ -99,12 +99,12 @@
 }
 
 #Projects .site_card:hover {
-    border: 1px solid var(--color-gray-transparent-thred);
+    border: 1px solid var(--color-tertiary);
     opacity: .8;
 }
 
 #Projects .site_card.stop-hover:hover {
-    border: 1px solid var(--color-gray-transparent-secound);
+    border: 1px solid var(--color-secondary);
     opacity: 1;
 }
 
@@ -115,7 +115,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--color-gray-transparent-thred-part-two);
+    background-color: var(--color-tertiary-part-two);
     cursor: auto;
     display: flex;
     justify-content: center;
@@ -130,7 +130,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    border: .1rem dashed var(--color-yellow-transparent);
+    border: .1rem dashed var(--text-accent-color);
     border-radius: var(--border-radius_50);
     opacity: 0;
     animation: AnymationCircle 10s ease forwards .1s infinite;
@@ -154,7 +154,7 @@
 #Projects .site_card .up_layer_for_work_project .speed_shadow .speed_shadow_line {
     width: 75%;
     height: .1rem;
-    background-color: var(--color-yellow-transparent);
+    background-color: var(--text-accent-color);
     opacity: .4;
     border-radius: var(--border-radius_3);
 }
@@ -171,7 +171,7 @@
 }
 
 #Projects .site_card .up_layer_for_work_project .logo_section .resizable-path {
-    fill: var(--color-white-text);
+    fill: var(--text-color);
 }
 
 #Projects .site_card .up_layer_for_work_project .logo_section .filr_section {
@@ -344,7 +344,7 @@
 }
 
 #Projects .site_card .card_bar .date_setion .date {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: .8rem;
     letter-spacing: -.5px;
 }
@@ -363,17 +363,17 @@
 #Projects .site_card .card_bar .date_setion .card_icon,
 #Projects .site_card .card_bar .edit_section .card_icon,
 #Projects .site_card .card_bar .delet_section .card_icon {
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
     font-size: 1.2rem;
 }
 
 #Projects .site_card .card_bar .edit_section:hover,
 #Projects .site_card .card_bar .delet_section:hover {
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
 }
 
 #Projects .site_card .card_bar .edit_section:hover .card_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #Projects .site_card .card_bar .delet_section:hover .card_icon {
@@ -390,7 +390,7 @@
 }
 
 #Projects .site_card .site_name span {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: 1.3rem;
     font-weight: 700;
 }
@@ -406,8 +406,8 @@
 }
 
 #Projects .site_card .site_info::-webkit-scrollbar-thumb {
-    background-color: var(--color-gray-transparent-thred);
-    border: 5px solid var(--color-gray-transparent-secound);
+    background-color: var(--color-tertiary);
+    border: 5px solid var(--color-secondary);
     border-radius: var(--border-radius_10);
 }
 
@@ -426,8 +426,8 @@
 #Projects .site_card .site_info .site_featcher_box {
     width: 100%;
     height: 2.3rem;
-    background-color: var(--color-gray-transparent-frist);
-    border: 1px solid var(--color-gray-transparent-thred);
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-tertiary);
     border-radius: var(--border-radius_5);
     display: flex;
     align-items: center;
@@ -438,9 +438,9 @@
 #Projects .site_card .site_info span {
     font-size: 55%;
     text-transform: capitalize;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
 }
 
 #Projects .site_card .site_info .featcher_value {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }

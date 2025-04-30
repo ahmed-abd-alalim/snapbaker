@@ -4,7 +4,7 @@
 #navbar {
     width: var(--dashboard-navbar-width);
     height: var(--dashboard-navbar-hight);
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,7 +36,7 @@
     height: 33px;
     background-color: var(--color-background);
     border-radius: var(--border-radius_5);
-    border: 0.01rem solid var(--color-gray-transparent-secound);
+    border: 0.01rem solid var(--color-secondary);
     padding: .25rem .8rem;
     margin-left: 5.3rem;
     -webkit-app-region: no-drag;
@@ -54,18 +54,18 @@
 }
 
 #navbar .screen_size_bar .icon_section .device_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: .9rem;
 }
 
 #navbar .screen_size_bar .icon_section.active,
 #navbar .screen_size_bar .icon_section:hover {
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
 }
 
 #navbar .screen_size_bar .icon_section.active .device_icon,
 #navbar .screen_size_bar .icon_section:hover .device_icon {
-    color: var(--color-yellow);
+    color: var(--brand-color);
 }
 
 /* -----> controlaer buttons */
@@ -88,7 +88,7 @@
 }
 
 #navbar .controlaer_buttons .con_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: 1.2rem;
 }
 
@@ -110,11 +110,11 @@
 
 #navbar .controlaer_buttons .maximize:hover,
 #navbar .controlaer_buttons .minimize:hover {
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
 }
 
 #navbar .controlaer_buttons .close:hover .con_icon,
 #navbar .controlaer_buttons .maximize:hover .con_icon,
 #navbar .controlaer_buttons .minimize:hover .con_icon {
-    color: var(--color-yellow);
+    color: var(--brand-color);
 }

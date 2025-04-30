@@ -4,7 +4,7 @@
 #menubar {
     width: var(--dashboard-menubar-width);
     height: var(--dashboard-menubar-hight);
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -50,20 +50,20 @@
 #menubar .bar_border .curved_top:before {
     top: 0;
     left: 0;
-    box-shadow: -50px -50px 0 0 var(--color-gray-transparent-frist);
+    box-shadow: -50px -50px 0 0 var(--color-primary);
 }
 
 #menubar .bar_border .curved_botton:before {
     bottom: 0;
     left: 0;
-    box-shadow: -50px 50px 0 0 var(--color-gray-transparent-frist);
+    box-shadow: -50px 50px 0 0 var(--color-primary);
 }
 
 
 /* -----> menubar button */
 #menubar .menubar_button {
     font-size: 1.4rem;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
     cursor: pointer;
     transition: var(--transition_2);
     position: relative;
@@ -72,5 +72,5 @@
 
 #menubar .menubar_button:hover,
 #menubar .menubar_button.active {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }

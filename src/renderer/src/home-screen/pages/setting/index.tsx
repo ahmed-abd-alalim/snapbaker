@@ -25,11 +25,11 @@ import appIcom from '/icon.png'
 
 const Index = (): React.JSX.Element => {
   const { userInfo, setUserInfo } = useDataContext()
-  const colorThemeRaw = {
-    dark: false,
-    white: false,
-    blue: false
-  }
+
+  const availableThemes = Object.fromEntries(
+    app.theme.availableThemes.map((themeName) => [themeName, false])
+  )
+
   const { colorTheme, setColorTheme } = useSettingContext()
   const [editCard, setEditCard] = useState<number>(0)
   const [colorThemeCard, setColorThemeCard] = useState<number>(0)
@@ -195,7 +195,7 @@ const Index = (): React.JSX.Element => {
                   checked={colorTheme.dark}
                   onChange={() =>
                     setColorTheme({
-                      ...colorThemeRaw,
+                      ...availableThemes,
                       dark: true
                     })
                   }
@@ -208,7 +208,7 @@ const Index = (): React.JSX.Element => {
                   checked={colorTheme.white}
                   onChange={() =>
                     setColorTheme({
-                      ...colorThemeRaw,
+                      ...availableThemes,
                       white: true
                     })
                   }
@@ -221,7 +221,7 @@ const Index = (): React.JSX.Element => {
                   checked={colorTheme.blue}
                   onChange={() =>
                     setColorTheme({
-                      ...colorThemeRaw,
+                      ...availableThemes,
                       blue: true
                     })
                   }

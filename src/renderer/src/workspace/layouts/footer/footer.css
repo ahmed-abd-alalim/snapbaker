@@ -4,7 +4,7 @@
 #footer {
     width: var(--dashboard-footer-width);
     height: var(--dashboard-footer-hight);
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,11 +24,11 @@
 
 #footer .notfcation_icon .bell_icon {
     font-size: 1.05rem;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
     transition: var(--transition_2);
     cursor: pointer;
 }
 
 #footer .notfcation_icon .bell_icon:hover {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }

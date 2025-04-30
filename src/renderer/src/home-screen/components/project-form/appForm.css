@@ -17,9 +17,9 @@
 #AppForm form {
     width: 20rem;
     height: 22rem;
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     border-radius: var(--border-radius_10);
-    border: 1px solid var(--color-gray-transparent-secound);
+    border: 1px solid var(--color-secondary);
     animation: newCarduP .3s ease;
     padding: .3rem .4rem;
 }
@@ -47,13 +47,13 @@
 #AppForm .inbut_section .error_message {
     width: 12rem;
     height: 3rem;
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
     position: absolute;
     top: 0;
     margin-top: -.1rem;
     padding: 0 .9rem;
     border-radius: var(--border-radius_30) var(--border-radius_30) var(--border-radius_5) var(--border-radius_30);
-    border: 1px solid var(--color-gray-transparent-thred);
+    border: 1px solid var(--color-tertiary);
     text-align: center;
     display: none;
     justify-content: center;
@@ -69,7 +69,7 @@
     width: 0;
     height: 0;
     border-right: 4px solid transparent;
-    border-top: 6px solid var(--color-gray-transparent-thred);
+    border-top: 6px solid var(--color-tertiary);
     border-left: 4px solid transparent;
     position: absolute;
     bottom: 0;
@@ -80,7 +80,7 @@
 
 #AppForm .inbut_section .error_message span {
     font-size: .7rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 @keyframes onErrorMessake {
@@ -101,10 +101,10 @@
     all: unset;
     width: 100%;
     height: 100%;
-    border: 1px solid var(--color-gray-transparent-thred);
+    border: 1px solid var(--color-tertiary);
     border-radius: var(--border-radius_5);
-    background-color: var(--color-gray-transparent-secound);
-    color: var(--color-white-text);
+    background-color: var(--color-secondary);
+    color: var(--text-color);
     font-size: .87rem;
     padding: 0rem .5rem;
     box-sizing: border-box;
@@ -136,7 +136,7 @@
 
 #AppForm .inbut_section .inbut_box .drop_down_section .up_layer .down_icon {
     font-size: .8rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
     transition: var(--transition_2);
 }
 
@@ -150,12 +150,12 @@
     min-height: 2rem;
     max-height: 5rem;
     overflow: auto;
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
     position: absolute;
     margin-top: .3rem;
     z-index: 3;
     border-radius: var(--border-radius_5);
-    border: 1px solid var(--color-yellow-transparent);
+    border: 1px solid var(--text-accent-color);
     padding: 3px 4px 3px 10px;
 }
 
@@ -175,7 +175,7 @@
 
 #AppForm .inbut_section .inbut_box .drop_down_section .drop_down_menu .inbut_item .fram_icon {
     font-size: 1.1rem;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
 }
 
 #AppForm .inbut_section .inbut_box .drop_down_section .drop_down_menu .inbut_item .box_color {
@@ -186,7 +186,7 @@
 
 #AppForm .inbut_section .inbut_box .drop_down_section .drop_down_menu .inbut_item span {
     font-size: .85rem;
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #AppForm .inbut_section .inbut_box .drop_down_section .drop_down_menu::-webkit-scrollbar {
@@ -194,7 +194,7 @@
 }
 
 #AppForm .inbut_section .inbut_box .drop_down_section .drop_down_menu::-webkit-scrollbar-thumb {
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
     border-radius: var(--border-radius_10);
 }
 
@@ -209,9 +209,9 @@
 #AppForm .inbut_section .inbut_box .numper_section {
     width: 45%;
     height: 100%;
-    border: 1px solid var(--color-gray-transparent-thred);
+    border: 1px solid var(--color-tertiary);
     border-radius: var(--border-radius_5);
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -219,7 +219,7 @@
 }
 
 #AppForm .inbut_section .inbut_box .numper_section>span {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: .9rem;
 }
 
@@ -234,20 +234,20 @@
 }
 
 #AppForm .inbut_section .inbut_box .numper_section .spinner span {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: 1.1rem;
     margin-bottom: .2rem;
 }
 
 #AppForm .inbut_section .inbut_box .numper_section .spinner:hover {
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
 }
 
 #AppForm .inbut_section .inbut_box input:hover,
 #AppForm .inbut_section .inbut_box input:focus,
 #AppForm .inbut_section .inbut_box .drop_down_section .up_layer:hover,
 #AppForm .inbut_section .inbut_box .numper_section:hover {
-    border: 1px solid var(--color-yellow-transparent);
+    border: 1px solid var(--text-accent-color);
 }
 
 /* 
@@ -271,16 +271,16 @@
     gap: .4rem;
     border-radius: var(--border-radius_5);
     cursor: pointer;
-    border: 1px solid var(--color-gray-transparent-thred);
+    border: 1px solid var(--color-tertiary);
     transition: var(--transition_2);
 }
 
 #AppForm .buttons_section .submit_but {
-    background-color: var(--color-white-text);
+    background-color: var(--text-color);
 }
 
 #AppForm .buttons_section .cancel_but {
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
 }
 
 #AppForm .buttons_section .submit_but span,
@@ -291,11 +291,11 @@
 }
 
 #AppForm .buttons_section .submit_but span {
-    color: var(--color-gray-transparent-frist);
+    color: var(--color-primary);
 }
 
 #AppForm .buttons_section .cancel_but span {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #AppForm .buttons_section .submit_but .button_icon,
@@ -304,11 +304,11 @@
 }
 
 #AppForm .buttons_section .submit_but .button_icon {
-    color: var(--color-gray-transparent-frist);
+    color: var(--color-primary);
 }
 
 #AppForm .buttons_section .cancel_but .button_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #AppForm .buttons_section .submit_but:hover,

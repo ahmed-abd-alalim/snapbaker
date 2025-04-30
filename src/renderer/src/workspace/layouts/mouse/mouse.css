@@ -5,7 +5,7 @@
     bottom: 8%;
     left: 50%;
     transform: translate(-50%, -8%);
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     border-radius: var(--border-radius_5);
     border: var(--border_1);
     display: flex;
@@ -25,15 +25,15 @@
 
 #mouse .mouse_section .mouse_icon {
     font-size: 1.25rem;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
 }
 
 #mouse .mouse_section:hover,
 #mouse .mouse_section.active {
-    background-color: var(--color-gray-transparent-secound);
+    background-color: var(--color-secondary);
 }
 
 #mouse .mouse_section:hover .mouse_icon,
 #mouse .mouse_section.active .mouse_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }

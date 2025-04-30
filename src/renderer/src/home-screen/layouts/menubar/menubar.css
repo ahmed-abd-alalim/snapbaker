@@ -51,11 +51,11 @@
 
 #startMenubar .close_menubar .close_icon {
     font-size: 1.3rem;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
 }
 
 #startMenubar .close_menubar:hover .close_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 /* ======== up icons  ======== */
@@ -97,14 +97,14 @@
     display: var(--icon_box-span);
     font-size: .82rem;
     font-weight: 600;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
     text-transform: capitalize;
     opacity: .8;
 }
 
 #startMenubar .bar_icon {
     font-size: 1.4rem;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
     transition: var(--transition_2);
 }
 
@@ -113,11 +113,11 @@
     height: 1.6rem;
     border-radius: var(--border-radius_50);
     overflow: hidden;
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
     font-size: .9rem;
 }
 
@@ -125,18 +125,18 @@
 #startMenubar .icon_box:hover,
 #startMenubar .icon_box.active {
     border-radius: var(--border-radius_5);
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
 }
 
 #startMenubar .icon_box:hover span,
 #startMenubar .icon_box.active span {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #startMenubar .icon_box_menu:hover .bar_icon,
 #startMenubar .icon_box:hover .bar_icon,
 #startMenubar .icon_box.active .bar_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
 }
 
 #startMenubar .icon_box.ignore:hover {
@@ -145,7 +145,7 @@
 }
 
 #startMenubar .icon_box.ignore:hover span {
-    color: var(--color-yellow-transparent);
+    color: var(--text-accent-color);
 }
 
 /* ======== anymation  ======== */

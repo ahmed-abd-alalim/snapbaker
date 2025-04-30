@@ -28,14 +28,12 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
     new: 0
   })
 
-  const colorThemeRaw = {
-    dark: false,
-    white: false,
-    blue: false
-  }
+  const availableThemes = Object.fromEntries(
+    app.theme.availableThemes.map((themeName) => [themeName, false])
+  )
 
   const [colorTheme, setColorTheme] = useState<colorThemeType>({
-    ...colorThemeRaw,
+    ...availableThemes,
     [setting.colorTheme ? setting.colorTheme : app.theme.default]: true
   })
 
@@ -43,6 +41,8 @@ export const SettingProvider = ({ children }: props): React.JSX.Element => {
 
   useEffect(() => {
     const getActiveTheme = Object.keys(colorTheme).filter((item) => colorTheme[item] === true)
+    document.documentElement.setAttribute('app-theme-color', getActiveTheme[0])
+
     if ((setting.colorTheme ? setting.colorTheme : app.theme.default) !== getActiveTheme[0]) {
       window.systemFile.WriteFile({ colorTheme: getActiveTheme[0] }, 'setting.json')
     }

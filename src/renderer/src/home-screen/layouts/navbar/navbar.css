@@ -4,7 +4,7 @@
 #navebsrStart {
     width: 100%;
     height: 40px;
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     -webkit-app-region: drag;
 }
 
@@ -28,7 +28,7 @@
 }
 
 #navebsrStart .controlaer_buttons .con_icon {
-    color: var(--color-white-text);
+    color: var(--text-color);
     font-size: 1.2rem;
 }
 
@@ -45,5 +45,5 @@
 }
 
 #navebsrStart .controlaer_buttons .minimize:hover {
-    background-color: var(--color-gray-transparent-thred);
+    background-color: var(--color-tertiary);
 }

@@ -8,7 +8,7 @@
 #Window {
     width: 100%;
     height: calc(100vh - 40px);
-    background-color: var(--color-gray-transparent-frist);
+    background-color: var(--color-primary);
     overflow: auto;
     padding: .5rem .8rem;
 }
@@ -23,8 +23,8 @@
 }
 
 #Window::-webkit-scrollbar-thumb {
-    background-color: var(--color-gray-transparent-thred);
-    border: 3px solid var(--color-gray-transparent-frist);
+    background-color: var(--color-tertiary);
+    border: 3px solid var(--color-primary);
     border-radius: var(--border-radius_10);
 }
 
