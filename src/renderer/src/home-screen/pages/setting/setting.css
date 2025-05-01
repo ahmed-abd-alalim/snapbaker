@@ -262,7 +262,6 @@
 
 /*----> color_theme_section*/
 :root {
-    --theme_color_section-min-height: 0;
     --theme_color_section-max-height: 0;
 
     /* form-box */
@@ -271,7 +270,6 @@
 }
 
 [theme-color-section="on"] {
-    --theme_color_section-min-height: 6rem;
     --theme_color_section-max-height: 9rem;
 
     /* form-box */
@@ -280,7 +278,6 @@
 }
 
 #Setting .color_theme .theme_color_section {
-    min-height: var(--theme_color_section-height);
     max-height: var(--theme_color_section-max-height);
     overflow: hidden;
     transition: var(--transition_4);
@@ -293,7 +290,6 @@
     background-color: var(--color-tertiary);
     border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
     transition: var(--transition_4);
-    transition-delay: .1s;
     padding: .3rem 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -308,7 +304,7 @@
     align-items: center;
     justify-content: start;
     gap: 8px;
-    margin: .4rem 0;
+    margin: .5rem 0;
     padding-left: 10%;
 }
 
