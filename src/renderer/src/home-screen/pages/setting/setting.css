@@ -290,6 +290,7 @@
     background-color: var(--color-tertiary);
     border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
     transition: var(--transition_4);
+    animation-delay: 0.1s;
     padding: .3rem 1rem;
     display: flex;
     flex-wrap: wrap;
