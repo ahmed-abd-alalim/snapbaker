@@ -202,21 +202,23 @@
     align-items: center;
     border-radius: var(--border-radius_5);
     cursor: pointer;
+    transition: var(--transition_2);
+    opacity: .9;
 }
 
 #Setting .account .account_edit_section .form_box .submit_button .save_icon {
     color: var(--text-color);
-    font-size: 1.1;
+    font-size: .8;
 }
 
 #Setting .account .account_edit_section .form_box .submit_button span {
     color: var(--text-color);
-    font-size: .85rem;
+    font-size: .8rem;
     text-transform: capitalize;
 }
 
 #Setting .account .account_edit_section .form_box .submit_button:hover {
-    opacity: .8;
+    opacity: .7;
 }
 
 /* ======== gemeral section ======== */
