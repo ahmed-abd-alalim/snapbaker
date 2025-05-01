@@ -51,14 +51,14 @@
 [app-theme-color="white"] {
   /* color */
   --brand-color: #f1a218;
-  --color-background: #f1f1f1;
-  --color-background-transparent: #ffffff8e;
-  --color-primary: #e6e5e5;
-  --color-secondary: #D4D4D4;
-  --color-tertiary: #bbbbbb;
-  --color-tertiary-transparent: #bbbbbbd6;
+  --color-background: #f6f6f6;
+  --color-background-transparent: #f6f6f68d;
+  --color-primary: #d0d0d0;
+  --color-secondary: #e1e1e1;
+  --color-tertiary: #ececec;
+  --color-tertiary-transparent: #ecececd7;
   --text-color: #2B2B2B;
-  --text-accent-color: #37332c5e;
+  --text-accent-color: #37332c7e;
 
 
   /* box shadow */
