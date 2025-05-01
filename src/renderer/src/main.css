@@ -48,6 +48,7 @@
   --transition_4: .4s ease all;
 }
 
+/* color theme */
 [app-theme-color="white"] {
   /* color */
   --brand-color: #f1a218;
@@ -101,7 +102,6 @@
   --dark-box-shadow: 3px 4px 7px #96969166;
 
 }
-
 
 [app-theme-color="navy"] {
   /* color */
