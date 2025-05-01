@@ -186,45 +186,21 @@ const Index = (): React.JSX.Element => {
           </div>
           <div className="theme_color_section">
             <div className="checkboxs_section">
-              <div className="theme_color_option">
-                <input
-                  type="checkbox"
-                  checked={colorTheme.dark}
-                  onChange={() =>
-                    setColorTheme({
-                      ...availableThemes,
-                      dark: true
-                    })
-                  }
-                />
-                <span>Dark</span>
-              </div>
-              <div className="theme_color_option">
-                <input
-                  type="checkbox"
-                  checked={colorTheme.white}
-                  onChange={() =>
-                    setColorTheme({
-                      ...availableThemes,
-                      white: true
-                    })
-                  }
-                />
-                <span>white</span>
-              </div>
-              <div className="theme_color_option">
-                <input
-                  type="checkbox"
-                  checked={colorTheme.blue}
-                  onChange={() =>
-                    setColorTheme({
-                      ...availableThemes,
-                      blue: true
-                    })
-                  }
-                />
-                <span>Blue</span>
-              </div>
+              {app.theme.availableThemes.map((themeColor, index: number) => (
+                <div className="theme_color_option" key={index}>
+                  <input
+                    type="checkbox"
+                    checked={colorTheme[themeColor]}
+                    onChange={() =>
+                      setColorTheme({
+                        ...availableThemes,
+                        [themeColor]: true
+                      })
+                    }
+                  />
+                  <span>{themeColor}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>

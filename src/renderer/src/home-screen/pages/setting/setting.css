@@ -259,7 +259,8 @@
 
 /*----> color_theme_section*/
 :root {
-    --theme_color_section-height: 0;
+    --theme_color_section-min-height: 0;
+    --theme_color_section-max-height: 0;
 
     /* form-box */
     --theme_color_section-checkboxs_section-transform: translateY(-100%);
@@ -267,7 +268,8 @@
 }
 
 [theme-color-section="on"] {
-    --theme_color_section-height: 6rem;
+    --theme_color_section-min-height: 6rem;
+    --theme_color_section-max-height: 9rem;
 
     /* form-box */
     --theme_color_section-checkboxs_section-transform: translateY(0);
@@ -275,7 +277,8 @@
 }
 
 #Setting .color_theme .theme_color_section {
-    height: var(--theme_color_section-height);
+    min-height: var(--theme_color_section-height);
+    max-height: var(--theme_color_section-max-height);
     overflow: hidden;
     transition: var(--transition_4);
 }
@@ -290,22 +293,24 @@
     transition-delay: .1s;
     padding: .4rem 1rem;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap;
     opacity: var(--theme_color_section-checkboxs_section-opacity);
     overflow: hidden;
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option {
+    width: 30%;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
+    margin: .4rem 0;
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"] {
     all: unset;
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
     border: 1px solid var(--text-color);
     appearance: none;
     border-radius: var(--border-radius_3);
@@ -333,7 +338,7 @@
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option span {
     color: var(--text-color);
     opacity: .9;
-    font-size: .82rem;
+    font-size: .85rem;
 }
 
 /* ======== about section ======== */
