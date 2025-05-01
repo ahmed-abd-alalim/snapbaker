@@ -68,7 +68,7 @@
 
 [app-theme-color="blue"] {
   /* color */
-  --brand-color: #1984ef;
+  --brand-color: #1380ed;
   --color-background: #1D1F21;
   --color-background-transparent: #1d1f218b;
   --color-primary: #202428;
@@ -81,6 +81,61 @@
 
   /* box shadow */
   --dark-box-shadow: 3px 4px 7px #1d1f21de;
+
+}
+
+[app-theme-color="teal"] {
+  /* color */
+  --brand-color: #16dede;
+  --color-background: #F8F6F4;
+  --color-background-transparent: #f8f6f487;
+  --color-primary: #C4DFDF;
+  --color-secondary: #D2E9E9;
+  --color-tertiary: #E3F4F4;
+  --color-tertiary-transparent: #e3f4f4df;
+  --text-color: #3d4242;
+  --text-accent-color: #788787a8;
+
+
+  /* box shadow */
+  --dark-box-shadow: 3px 4px 7px #96969166;
+
+}
+
+
+[app-theme-color="navy"] {
+  /* color */
+  --brand-color: #091f47;
+  --color-background: #0A2647;
+  --color-background-transparent: #0a26477c;
+  --color-primary: #144272;
+  --color-secondary: #205295;
+  --color-tertiary: #2C74B3;
+  --color-tertiary-transparent: #2c74b3db;
+  --text-color: #f6f9fce4;
+  --text-accent-color: #a4abb5a4;
+
+
+  /* box shadow */
+  --dark-box-shadow: 3px 4px 7px #78808348;
+
+}
+
+[app-theme-color="retro"] {
+  /* color */
+  --brand-color: #ec426f;
+  --color-background: #8D8DAA;
+  --color-background-transparent: #8d8daa7e;
+  --color-primary: #DFDFDE;
+  --color-secondary: #F7F5F2;
+  --color-tertiary: #F56D91;
+  --color-tertiary-transparent: #f56d91dd;
+  --text-color: #353637;
+  --text-accent-color: #666678d0;
+
+
+  /* box shadow */
+  --dark-box-shadow: 3px 4px 7px #63676951;
 
 }
 

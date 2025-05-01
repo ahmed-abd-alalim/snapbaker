@@ -52,10 +52,11 @@
 #startMenubar .close_menubar .close_icon {
     font-size: 1.3rem;
     color: var(--text-accent-color);
+    transition: var(--transition_2);
 }
 
 #startMenubar .close_menubar:hover .close_icon {
-    color: var(--text-color);
+    color: var(--color-secondary);
 }
 
 /* ======== up icons  ======== */

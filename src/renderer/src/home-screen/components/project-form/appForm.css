@@ -114,6 +114,7 @@
 #AppForm .inbut_section .inbut_box input::placeholder {
     font-size: .85rem;
     opacity: .6;
+    color: var(--text-accent-color);
 }
 
 #AppForm .inbut_section .inbut_box .drop_down_section {

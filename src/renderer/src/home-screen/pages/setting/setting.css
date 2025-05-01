@@ -188,6 +188,7 @@
 #Setting .account .account_edit_section .form_box .user_name_box input::placeholder {
     opacity: .7;
     font-size: .8rem;
+    color: var(--text-accent-color);
 }
 
 #Setting .account .account_edit_section .form_box .submit_button {
@@ -291,9 +292,10 @@
     border-radius: 0 0 var(--border-radius_8) var(--border-radius_8);
     transition: var(--transition_4);
     transition-delay: .1s;
-    padding: .4rem 1rem;
+    padding: .3rem 1rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     opacity: var(--theme_color_section-checkboxs_section-opacity);
     overflow: hidden;
 }
@@ -302,9 +304,10 @@
     width: 30%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
+    justify-content: start;
+    gap: 5px;
     margin: .4rem 0;
+    padding-left: 10%;
 }
 
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option input[type="checkbox"] {
@@ -338,7 +341,8 @@
 #Setting .color_theme .theme_color_section .checkboxs_section .theme_color_option span {
     color: var(--text-color);
     opacity: .9;
-    font-size: .85rem;
+    font-size: .81rem;
+    text-transform: capitalize;
 }
 
 /* ======== about section ======== */
