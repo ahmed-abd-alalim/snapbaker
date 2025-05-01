@@ -1,3 +1,6 @@
+// import config
+import { app } from '@/config'
+
 // ################
 // --> context
 // ################
@@ -6,10 +9,13 @@ export type props = {
 }
 
 //<<=== setting context types ===>>
+
+// Create a type from the array
+type Keys = (typeof app.theme.availableThemes)[number]
+
+// Create the object type
 export type colorThemeType = Partial<{
-  white: boolean
-  dark: boolean
-  blue: boolean
+  [K in Keys]: boolean
 }>
 
 export type settingType = {
