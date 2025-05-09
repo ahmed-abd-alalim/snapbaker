@@ -1,5 +1,3 @@
 export { default as Navbar } from './navbar'
 export { default as MenuBar } from './menubar'
-export { default as Mouse } from './mouse'
-export { default as PropertiesPanel } from './properties-panel'
 export { default as Footer } from './footer'

@@ -8,7 +8,12 @@ import { IoSettingsOutline } from 'react-icons/io5'
 import { BiLayer } from 'react-icons/bi'
 import { RiRouteLine } from 'react-icons/ri'
 
+// import context
+import { useSettingContext } from '@/context/workspace/setting'
+
 const Index = (): React.JSX.Element => {
+  const { appDirections, setAppDirections } = useSettingContext()
+
   return (
     <div id="menubar">
       <div className="bar_border">
@@ -17,10 +22,16 @@ const Index = (): React.JSX.Element => {
       </div>
       <div className="d-flex flex-column align-items-center gap-4">
         <>
-          <BiLayer className="menubar_button active" />
+          <BiLayer
+            className={`menubar_button ${appDirections.designPanel && 'active'}`}
+            onClick={() => setAppDirections({ designPanel: 'active' })}
+          />
           <PagesBar />
         </>
-        <RiRouteLine className="menubar_button" />
+        <RiRouteLine
+          className={`menubar_button ${appDirections.routingPanel && 'active'}`}
+          onClick={() => setAppDirections({ routingPanel: 'active' })}
+        />
       </div>
       <div>
         <IoSettingsOutline className="menubar_button" />

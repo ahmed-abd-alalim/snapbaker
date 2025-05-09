@@ -1,4 +1,5 @@
 import './navbar.css'
+import { useState, useEffect } from 'react'
 
 // import icon
 import { IoClose, IoPhonePortraitOutline } from 'react-icons/io5'
@@ -11,6 +12,8 @@ import { RxLaptop } from 'react-icons/rx'
 import appIcon from '/icon.png'
 
 const Index = (): React.JSX.Element => {
+  const [isOnline, setIsOnline] = useState(navigator.onLine)
+
   const handleClose: () => void = () => {
     window.controlar.closeWindow()
   }
@@ -23,10 +26,34 @@ const Index = (): React.JSX.Element => {
     window.controlar.toggleMaximizeWindow()
   }
 
+  useEffect(() => {
+    // Define event handlers
+    const handleOnline = (): void => {
+      setIsOnline(true)
+    }
+    const handleOffline = (): void => {
+      setIsOnline(false)
+    }
+
+    // Attach listeners
+    window.addEventListener('online', handleOnline)
+    window.addEventListener('offline', handleOffline)
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('online', handleOnline)
+      window.removeEventListener('offline', handleOffline)
+    }
+  }, [])
+
   return (
     <nav id="navbar">
       <div className="app_icon">
         <img src={appIcon} alt="app icon" width={'100%'} />
+      </div>
+      <div className="internet_index">
+        <div className={`circle ${isOnline && 'active '}`} />
+        <span>: internet</span>
       </div>
       <div className="screen_size_bar d-flex justify-content-between align-items-center gap-2">
         <div className="icon_section active">
@@ -38,6 +65,10 @@ const Index = (): React.JSX.Element => {
         <div className="icon_section">
           <IoPhonePortraitOutline className="device_icon" />
         </div>
+      </div>
+      <div className="page_name">
+        <span>Page name:</span>
+        <span className="name">home</span>
       </div>
       <div className="controlaer_buttons">
         <div onClick={handleMinimize} className="icon_style minimize">

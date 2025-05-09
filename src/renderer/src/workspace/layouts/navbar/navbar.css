@@ -30,6 +30,37 @@
 }
 
 
+/* -----> nternet index */
+#navbar .internet_index {
+    background-color: var(--color-background);
+    padding: .35rem .8rem;
+    border-radius: var(--border-radius_5);
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#navbar .internet_index .circle {
+    width: 7px;
+    height: 7px;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius_50);
+}
+
+#navbar .internet_index .circle.active {
+    background-color: var(--text-color);
+}
+
+#navbar .internet_index span {
+    color: var(--text-accent-color);
+    text-transform: capitalize;
+    font-size: .8rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
 /* -----> screen size bar */
 #navbar .screen_size_bar {
     width: 140px;
@@ -54,7 +85,7 @@
 }
 
 #navbar .screen_size_bar .icon_section .device_icon {
-    color: var(--text-color);
+    color: var(--text-accent-color);
     font-size: .9rem;
 }
 
@@ -65,7 +96,35 @@
 
 #navbar .screen_size_bar .icon_section.active .device_icon,
 #navbar .screen_size_bar .icon_section:hover .device_icon {
-    color: var(--brand-color);
+    color: var(--text-color);
+}
+
+/* -----> page_name */
+#navbar .page_name {
+    min-width: auto;
+    max-width: 15rem;
+    background-color: var(--color-background);
+    padding: .32rem .8rem;
+    border-radius: var(--border-radius_5);
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+}
+
+#navbar .page_name span {
+    font-size: .8rem;
+    font-weight: 500;
+
+    color: var(--text-accent-color);
+}
+
+#navbar .page_name .name {
+    background-color: var(--color-primary);
+    padding: .1rem .4rem;
+    border-radius: var(--border-radius_5);
 }
 
 /* -----> controlaer buttons */
@@ -116,5 +175,5 @@
 #navbar .controlaer_buttons .close:hover .con_icon,
 #navbar .controlaer_buttons .maximize:hover .con_icon,
 #navbar .controlaer_buttons .minimize:hover .con_icon {
-    color: var(--brand-color);
+    color: var(--text-color);
 }

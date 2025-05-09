@@ -1,25 +1,24 @@
 // import layouts
-import { Navbar, MenuBar, Mouse, PropertiesPanel, Footer } from './layouts'
+import { Navbar, MenuBar, Footer } from './layouts'
 
 // import pages
-import { DesignPanel } from './pages'
+import Pages from './pages'
+
+// import context
+import { SettingProvider } from '@/context/workspace/setting'
 
 const Index = (): React.JSX.Element => {
   return (
-    <>
+    <SettingProvider>
       <Navbar />
       <div>
         <div className="d-flex justify-content-start">
           <MenuBar />
-          <>
-            <DesignPanel />
-            <Mouse />
-            <PropertiesPanel />
-          </>
+          <Pages />
         </div>
       </div>
       <Footer />
-    </>
+    </SettingProvider>
   )
 }
 
