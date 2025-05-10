@@ -18,12 +18,13 @@ const Index = (): React.JSX.Element => {
     }
   }
 
-  const HandlePagesBar = (actionName: string): void => {
+  const HandlePagesBar = (e: React.MouseEvent, actionName: string): void => {
     if (actionName === 'off') {
       document.documentElement.setAttribute('pages-bar', actionName)
       setIsOpen(false)
     } else {
       if (!isOpen) {
+        e.stopPropagation()
         document.documentElement.setAttribute('pages-bar', actionName)
         setIsOpen(true)
         showItems()
@@ -38,9 +39,14 @@ const Index = (): React.JSX.Element => {
   return (
     <section id="pagesBar">
       <div className="bar_content">
-        <div className={`navbar_card ${!isOpen && 'active'}`}>
-          <BiLayer className="layer_icon" onClick={() => HandlePagesBar('on')} />
-          {isOpen ? <IoClose className="close_icon" onClick={() => HandlePagesBar('off')} /> : null}
+        <div
+          className={`navbar_card ${!isOpen && 'active'}`}
+          onClick={(e) => HandlePagesBar(e, 'on')}
+        >
+          <BiLayer className="layer_icon" />
+          {isOpen ? (
+            <IoClose className="close_icon" onClick={(e) => HandlePagesBar(e, 'off')} />
+          ) : null}
         </div>
         <div className="page_layers">
           {isOpen && items.map((_, i) => <div className="page_card" key={i}></div>)}

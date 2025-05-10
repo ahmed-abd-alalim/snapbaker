@@ -28,7 +28,7 @@
     position: fixed;
     z-index: 6;
     margin-left: 1.6rem;
-    margin-top: 3rem;
+    margin-top: 2.5rem;
 }
 
 
@@ -85,7 +85,7 @@
 /* ---->  page layers*/
 #pagesBar .bar_content .page_layers {
     width: 100%;
-    max-height: clamp(20rem, 71.8vh, 41rem);
+    max-height: calc(var(--dashboard-menubar-hight) - 7.15rem);
     overflow: auto;
     padding: 0px 3px;
 }

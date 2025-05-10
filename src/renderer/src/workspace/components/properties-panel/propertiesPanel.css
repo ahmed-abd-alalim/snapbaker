@@ -2,7 +2,7 @@
 --> propertiesPanel
 ################# */
 #propertiesPanel {
-    width: 14rem;
+    width: 15rem;
     height: 100%;
     position: absolute;
     top: 0;
@@ -12,7 +12,6 @@
     align-items: center;
     justify-content: center;
     padding-right: 1.5rem;
-    padding-top: 1rem;
 }
 
 .panel_card {
