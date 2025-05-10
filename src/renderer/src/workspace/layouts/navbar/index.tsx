@@ -8,8 +8,8 @@ import { MdOutlineMaximize } from 'react-icons/md'
 import { SlScreenTablet } from 'react-icons/sl'
 import { RxLaptop } from 'react-icons/rx'
 
-// import img
-import appIcon from '/icon.png'
+// import logo
+import Logo from '@/logo'
 
 const Index = (): React.JSX.Element => {
   const [isOnline, setIsOnline] = useState(navigator.onLine)
@@ -48,8 +48,8 @@ const Index = (): React.JSX.Element => {
 
   return (
     <nav id="navbar">
-      <div className="app_icon">
-        <img src={appIcon} alt="app icon" width={'100%'} />
+      <div className="logo_section">
+        <Logo />
       </div>
       <div className="internet_index">
         <div className={`circle ${isOnline && 'active '}`} />
