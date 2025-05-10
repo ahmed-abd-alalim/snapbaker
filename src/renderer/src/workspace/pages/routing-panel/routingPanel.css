@@ -1,0 +1,19 @@
+/* #############
+--> routingPanel
+################ */
+#routingPanel {
+    width: var(--dashboard-pages-width);
+    position: relative;
+    overflow: hidden;
+}
+
+/* -----> bg mask */
+#routingPanel .bg_mask {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: var(--color-primary);
+    mask-image: url("/images/patterns/texture.svg");
+    mask-repeat: repeat;
+    mask-position: center;
+}
