@@ -48,38 +48,50 @@ const Index = (): React.JSX.Element => {
 
   return (
     <nav id="navbar">
-      <div className="logo_section">
-        <Logo />
-      </div>
-      <div className="internet_index">
-        <div className={`circle ${isOnline && 'active '}`} />
-        <span>: internet</span>
-      </div>
-      <div className="screen_size_bar d-flex justify-content-between align-items-center gap-2">
-        <div className="icon_section active">
-          <RxLaptop className="device_icon" />
-        </div>
-        <div className="icon_section">
-          <SlScreenTablet className="device_icon" />
-        </div>
-        <div className="icon_section">
-          <IoPhonePortraitOutline className="device_icon" />
+      <div className="navbar_gred justify-content-start">
+        <div className="logo_section">
+          <Logo />
         </div>
       </div>
-      <div className="page_name">
-        <span>Page name:</span>
-        <span className="name">home</span>
+      <div className="navbar_gred justify-content-center">
+        <div className="internet_index">
+          <div className={`circle ${isOnline && 'active '}`} />
+          <span>: internet</span>
+        </div>
       </div>
-      <div className="controlaer_buttons">
-        <div onClick={handleMinimize} className="icon_style minimize">
-          <MdOutlineMaximize className="con_icon" />
+      <div className="navbar_gred justify-content-center">
+        <div className="screen_size_bar d-flex justify-content-between align-items-center gap-2">
+          <div className="icon_section active">
+            <RxLaptop className="device_icon" />
+          </div>
+          <div className="icon_section">
+            <SlScreenTablet className="device_icon" />
+          </div>
+          <div className="icon_section">
+            <IoPhonePortraitOutline className="device_icon" />
+          </div>
         </div>
-        <div onClick={handleMaximize} className="icon_style maximize">
-          <HiOutlineSquare2Stack className="con_icon" />
+      </div>
+      <div className="navbar_gred justify-content-center">
+        <div className="page_name">
+          <span>Page name :</span>
+          <div className="name">
+            <span>home</span>
+          </div>
         </div>
+      </div>
+      <div className="navbar_gred justify-content-end">
+        <div className="controlaer_buttons">
+          <div onClick={handleMinimize} className="icon_style minimize">
+            <MdOutlineMaximize className="con_icon" />
+          </div>
+          <div onClick={handleMaximize} className="icon_style maximize">
+            <HiOutlineSquare2Stack className="con_icon" />
+          </div>
 
-        <div onClick={handleClose} className="icon_style close">
-          <IoClose className="con_icon" />
+          <div onClick={handleClose} className="icon_style close">
+            <IoClose className="con_icon" />
+          </div>
         </div>
       </div>
     </nav>

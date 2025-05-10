@@ -6,14 +6,16 @@
     height: var(--dashboard-navbar-hight);
     background-color: var(--color-primary);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 0 0 .5rem;
     -webkit-app-region: drag;
     position: relative;
     z-index: 2;
 }
 
+#navbar .navbar_gred {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
 
 /* -----> app icon */
 #navbar .logo_section {
@@ -21,6 +23,7 @@
     height: 32px;
     background-color: var(--color-background);
     padding: 11.5px;
+    margin-left: .5rem;
     position: relative;
     display: flex;
     justify-content: center;
@@ -123,7 +126,7 @@
 /* -----> page_name */
 #navbar .page_name {
     min-width: auto;
-    max-width: 15rem;
+    max-width: 19rem;
     background-color: var(--color-background);
     padding: .32rem .8rem;
     border-radius: var(--border-radius_5);
@@ -132,7 +135,6 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    overflow: hidden;
 }
 
 #navbar .page_name span {
@@ -142,12 +144,20 @@
 }
 
 #navbar .page_name .name {
-    color: var(--text-color);
-    font-weight: 400;
+    max-width: calc((100vw - 80vw) - 7rem);
     background-color: var(--color-primary);
-    padding: .1rem .5rem;
+    padding: 0rem .4rem .2rem .4rem;
     border-radius: var(--border-radius_5);
+    white-space: nowrap;
+    overflow: hidden;
 }
+
+#navbar .page_name .name span {
+    font-size: .72rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
 
 /* -----> controlaer buttons */
 #navbar .controlaer_buttons {
