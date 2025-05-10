@@ -11,7 +11,11 @@ export type appDirectionsType = Partial<{
   routingPanel: string
 }>
 
+export type designPanelCursorType = string
+
 export type settingType = {
   appDirections: appDirectionsType
   setAppDirections: React.Dispatch<React.SetStateAction<appDirectionsType>>
+  designPanelCursor: designPanelCursorType
+  setdesignPanelCursor: React.Dispatch<React.SetStateAction<designPanelCursorType>>
 }
