@@ -1,6 +1,19 @@
+/* #############
+--> designPanel
+################ */
 #designPanel {
     width: var(--dashboard-pages-width);
-    background-image: url("/images/patterns/boxes.svg");
-    background-position: center;
-    background-repeat: repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+/* -----> bg mask */
+#designPanel .bg_mask {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: var(--color-primary);
+    mask-image: url("/images/patterns/boxes.svg");
+    mask-repeat: repeat;
+    mask-position: center;
 }

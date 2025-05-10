@@ -3,7 +3,7 @@
 ################# */
 #propertiesPanel {
     width: 14rem;
-    height: 100vh;
+    height: 100%;
     position: absolute;
     top: 0;
     right: 0;

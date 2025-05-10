@@ -6,6 +6,7 @@ import { Mouse, PropertiesPanel, PagesBar } from '../../components'
 const Index = (): React.JSX.Element => {
   return (
     <section id="designPanel">
+      <div className="bg_mask" />
       <Mouse />
       <PropertiesPanel />
       <PagesBar />
