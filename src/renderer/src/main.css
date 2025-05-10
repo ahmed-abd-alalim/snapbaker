@@ -28,7 +28,7 @@
   --color-red-transparent: rgba(251, 74, 74, 0.686);
 
   /* border */
-  --border_1: .1rem solid var(--color-secondary);
+  --border_1: .09rem solid var(--color-secondary);
 
   /* border-radius */
   --border-radius_3: 3px;

@@ -1,11 +1,8 @@
 import './menubar.css'
 
-// import sub window
-import { PagesBar } from '@/workspace/components'
-
 // import icon
 import { IoSettingsOutline } from 'react-icons/io5'
-import { BiLayer } from 'react-icons/bi'
+import { VscExtensions } from 'react-icons/vsc'
 import { RiRouteLine } from 'react-icons/ri'
 
 // import context
@@ -22,11 +19,10 @@ const Index = (): React.JSX.Element => {
       </div>
       <div className="d-flex flex-column align-items-center gap-4">
         <>
-          <BiLayer
+          <VscExtensions
             className={`menubar_button ${appDirections.designPanel && 'active'}`}
             onClick={() => setAppDirections({ designPanel: 'active' })}
           />
-          <PagesBar />
         </>
         <RiRouteLine
           className={`menubar_button ${appDirections.routingPanel && 'active'}`}

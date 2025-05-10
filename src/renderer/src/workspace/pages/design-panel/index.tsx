@@ -1,11 +1,14 @@
 import './designPanel.css'
-import { Mouse, PropertiesPanel } from '../../components'
+
+// import components
+import { Mouse, PropertiesPanel, PagesBar } from '../../components'
 
 const Index = (): React.JSX.Element => {
   return (
     <section id="designPanel">
       <Mouse />
       <PropertiesPanel />
+      <PagesBar />
     </section>
   )
 }
