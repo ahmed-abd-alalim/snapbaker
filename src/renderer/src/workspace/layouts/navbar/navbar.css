@@ -116,13 +116,14 @@
 #navbar .page_name span {
     font-size: .8rem;
     font-weight: 500;
-
     color: var(--text-accent-color);
 }
 
 #navbar .page_name .name {
+    color: var(--text-color);
+    font-weight: 400;
     background-color: var(--color-primary);
-    padding: .1rem .4rem;
+    padding: .1rem .5rem;
     border-radius: var(--border-radius_5);
 }
 
