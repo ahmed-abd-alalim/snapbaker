@@ -91,6 +91,7 @@
     padding: 0px 3px;
 }
 
+#pagesBar .bar_content .page_layers .add_card,
 #pagesBar .bar_content .page_layers .page_card {
     cursor: pointer;
     width: 92%;
@@ -98,10 +99,34 @@
     margin: 0 auto;
     margin-top: .5rem;
     margin-bottom: .5rem;
-    background-color: var(--color-secondary);
     border-radius: var(--border-radius_5);
     animation: pagesBarBarContentPagelayersPageCard .2s ease-in forwards;
     transition: var(--transition_2);
+}
+
+#pagesBar .bar_content .page_layers .add_card {
+    border: 2px dashed var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagesBar .bar_content .page_layers .add_card .add_icon {
+    font-size: 1.6rem;
+    color: var(--color-secondary);
+}
+
+#pagesBar .bar_content .page_layers .add_card:hover {
+    border-color: var(--color-tertiary);
+}
+
+#pagesBar .bar_content .page_layers .add_card:hover .add_icon {
+    color: var(--color-tertiary);
+}
+
+
+#pagesBar .bar_content .page_layers .page_card {
+    background-color: var(--color-secondary);
 }
 
 #pagesBar .bar_content .page_layers .page_card:hover {
@@ -139,13 +164,13 @@
     }
 
     to {
-        width: 15rem;
+        width: 14rem;
     }
 }
 
 @keyframes pagesBarBarContentReverse {
     from {
-        width: 15rem;
+        width: 14rem;
     }
 
     to {
