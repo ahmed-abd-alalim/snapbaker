@@ -1,0 +1,246 @@
+/* #############
+--> components Bar
+################# */
+:root {
+    --componentsBar-bar_content-animation: none;
+    --componentsBar-bar_content-navbar-car-close-icon-animation: none;
+    --componentsBar-bar_content-navbar_card-layer_icon-font-size: 1.2rem;
+    --componentsBar-bar_content-navbar_card-border: none;
+}
+
+[components-bar="on"] {
+    --componentsBar-bar_content-animation: componentsBarBarContent .3s ease forwards;
+    --componentsBar-bar_content-navbar-car-close-icon-animation: componentsBarBarContentNavbarCardCloseIcon .3s ease forwards;
+    --componentsBar-bar_content-navbar_card-layer_icon-font-size: 1rem;
+    --componentsBar-bar_content-navbar_card-border: 1px solid var(--color-secondary);
+
+}
+
+[components-bar="off"] {
+    --componentsBar-bar_content-animation: componentsBarBarContentReverse .3s ease forwards;
+    --componentsBar-bar_content-navbar-car-close-icon-animation: componentsBarBarContentNavbarCardCloseIconReverse .3s ease forwards;
+    --componentsBar-bar_content-navbar_card-layer_icon-font-size: 1.2rem;
+    --componentsBar-bar_content-navbar_card-border: none;
+
+}
+
+#componentsBar {
+    position: fixed;
+    z-index: 6;
+    margin-left: 1.6rem;
+    margin-top: 6rem;
+    cursor: default;
+}
+
+
+/* ------> bar content */
+#componentsBar .bar_content {
+    width: 2.3rem;
+    height: 100%;
+    padding: 2px 0;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius_8);
+    border: var(--border_1);
+    animation: var(--componentsBar-bar_content-animation);
+    transition: var(--transition_4);
+}
+
+
+/* ---->  navbar card*/
+#componentsBar .bar_content .navbar_card {
+    height: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .4rem;
+    border-bottom: var(--componentsBar-bar_content-navbar_card-border);
+}
+
+#componentsBar .bar_content .navbar_card .layer_icon {
+    color: var(--text-accent-color);
+    font-size: var(--componentsBar-bar_content-navbar_card-layer_icon-font-size);
+    transition: var(--transition_2);
+    margin-left: .1rem;
+}
+
+#componentsBar .bar_content .navbar_card .bar-name {
+    color: var(--text-accent-color);
+    font-weight: 500;
+    font-size: .75rem;
+    text-transform: capitalize;
+    animation: componentsBarBarContentNavbarCardBarName .3s ease forwards;
+}
+
+#componentsBar .bar_content .navbar_card .close_icon {
+    cursor: pointer;
+    color: var(--text-accent-color);
+    font-size: 1.2rem;
+    animation: var(--componentsBar-bar_content-navbar-car-close-icon-animation);
+    transition: var(--transition_2);
+}
+
+#componentsBar .bar_content .navbar_card .close_icon:hover {
+    color: var(--text-color);
+}
+
+#componentsBar .bar_content .navbar_card.active {
+    cursor: pointer;
+}
+
+#componentsBar .bar_content .navbar_card.active:hover .layer_icon {
+    color: var(--text-color);
+}
+
+
+/* ---->  page layers*/
+#componentsBar .bar_content .page_layers {
+    width: 100%;
+    max-height: calc(var(--dashboard-menubar-hight) - 10.6rem);
+    overflow: auto;
+    padding: 0px 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#componentsBar .bar_content .page_layers .add_card,
+#componentsBar .bar_content .page_layers .page_card {
+    cursor: pointer;
+    width: 46%;
+    height: 7rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    border-radius: var(--border-radius_5);
+    animation: componentsBarBarContentPagelayersPageCard .2s ease-in forwards;
+    transition: var(--transition_2);
+}
+
+#componentsBar .bar_content .page_layers .add_card.full_width {
+    width: 96%;
+}
+
+#componentsBar .bar_content .page_layers .add_card {
+    position: relative;
+    border: 2px dashed var(--color-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#componentsBar .bar_content .page_layers .add_card .add_icon {
+    font-size: 1.2rem;
+    color: var(--color-secondary);
+    transition: var(--transition_2);
+}
+
+#componentsBar .bar_content .page_layers .add_card .plus_icon {
+    font-size: .7rem;
+    color: var(--color-secondary);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(.65rem) translateY(-.7rem);
+}
+
+#componentsBar .bar_content .page_layers .add_card:hover {
+    border-color: var(--color-tertiary);
+}
+
+#componentsBar .bar_content .page_layers .add_card:hover .add_icon,
+#componentsBar .bar_content .page_layers .add_card:hover .plus_icon {
+    color: var(--color-tertiary);
+}
+
+
+#componentsBar .bar_content .page_layers .page_card {
+    background-color: var(--color-secondary);
+}
+
+#componentsBar .bar_content .page_layers .page_card:hover {
+    transform: scale(1.01);
+}
+
+#componentsBar .bar_content .page_layers::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* #componentsBar .bar_content .page_layers::-webkit-scrollbar {
+    width: 6px;
+}
+
+#componentsBar .bar_content .page_layers::-webkit-scrollbar-thumb {
+    background-color: var(--color-tertiary);
+    border: 1px solid var(--color-primary);
+    border-radius: var(--border-radius_10);
+}
+
+#componentsBar .bar_content .page_layers::-webkit-scrollbar-button:single-button {
+    background-color: transparent;
+}
+
+#componentsBar .bar_content .page_layers::-webkit-scrollbar-corner {
+    display: none;
+} */
+
+/* #############
+--> Animation
+################# */
+@keyframes componentsBarBarContent {
+    from {
+        width: 2.3rem;
+    }
+
+    to {
+        width: 14rem;
+    }
+}
+
+@keyframes componentsBarBarContentReverse {
+    from {
+        width: 14rem;
+    }
+
+    to {
+        width: 2.3rem;
+    }
+}
+
+@keyframes componentsBarBarContentNavbarCardBarName {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes componentsBarBarContentNavbarCardCloseIcon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes componentsBarBarContentNavbarCardCloseIconReverse {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes componentsBarBarContentPagelayersPageCard {
+    from {
+        opacity: .5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,7 +1,7 @@
 import './designPanel.css'
 
 // import components
-import { Mouse, PropertiesPanel, PagesBar } from '../../components'
+import { Mouse, PropertiesPanel, PagesBar, ComponentsBar } from '../../components'
 
 // import context
 import { useSettingContext } from '@/context/workspace/setting'
@@ -20,6 +20,7 @@ const Index = (): React.JSX.Element => {
       <Mouse />
       <PropertiesPanel />
       <PagesBar />
+      <ComponentsBar />
     </section>
   )
 }
