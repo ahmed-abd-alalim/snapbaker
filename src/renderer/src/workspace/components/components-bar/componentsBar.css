@@ -104,7 +104,7 @@
 }
 
 #componentsBar .bar_content .component_layers.mt-spec {
-    margin-top: .13rem;
+    margin-top: .14rem;
 }
 
 #componentsBar .bar_content .component_layers .add_card,
@@ -200,7 +200,7 @@
     justify-content: center;
     align-items: center;
     color: var(--text-accent-color);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     transition: var(--transition_3);
 }
 

@@ -9,12 +9,12 @@ import { TbEdit } from 'react-icons/tb'
 import { HiArrowTopRightOnSquare } from 'react-icons/hi2'
 
 const Index = (): React.JSX.Element => {
-  const [pageData, setPageData] = useState<{ name: string }[]>([
-    { name: 'home' },
-    { name: 'about us' },
-    { name: 'contact' }
+  const [pageData, setPageData] = useState<{ id: number; name: string }[]>([
+    { id: 0, name: 'home' },
+    { id: 1, name: 'about us' },
+    { id: 2, name: 'contact' }
   ])
-  const [items, setItems] = useState<{ name: string }[]>([])
+  const [items, setItems] = useState<{ id: number; name: string }[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const showItems = (): void => {
@@ -60,8 +60,8 @@ const Index = (): React.JSX.Element => {
         <div className="page_layers">
           {isOpen && (
             <>
-              {items.map((page, i) => (
-                <div className="page_card" key={i}>
+              {items.map((page) => (
+                <div className="page_card" key={page.id}>
                   <div className="up_layer">
                     <div className="edit_icon">
                       <TbEdit />
