@@ -5,17 +5,23 @@ import { useState, useEffect } from 'react'
 import { BsBoxSeam } from 'react-icons/bs'
 import { IoClose } from 'react-icons/io5'
 import { MdOutlineAdd } from 'react-icons/md'
+import { PiHandTapThin, PiTrash } from 'react-icons/pi'
+import { TbEdit } from 'react-icons/tb'
 
 const Index = (): React.JSX.Element => {
-  const dataNum = 4
-  const [items, setItems] = useState<string[]>([])
+  const [componentData, setComponentData] = useState<{ id: number }[]>([
+    { id: 0 },
+    { id: 1 },
+    { id: 2 }
+  ])
+  const [items, setItems] = useState<{ id: number }[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const showItems = (): void => {
     setItems([])
-    for (let i = 1; i <= dataNum; i++) {
+    for (let i = 1; i <= componentData.length; i++) {
       setTimeout(() => {
-        setItems((prev) => [...prev, `ETH #${i}`])
+        setItems((prev) => [...prev, componentData[i - 1]])
       }, 100 * i)
     }
   }
@@ -32,6 +38,16 @@ const Index = (): React.JSX.Element => {
         showItems()
       }
     }
+  }
+
+  const HandleAddButtom = (): void => {
+    setComponentData([...componentData, { id: componentData.length }])
+    setItems([...items, { id: items.length }])
+  }
+
+  const HandleDeletButtom = (componentId: number): void => {
+    setComponentData(componentData.filter((_) => _.id !== componentId))
+    setItems(items.filter((_) => _.id !== componentId))
   }
 
   useEffect(() => {
@@ -51,13 +67,28 @@ const Index = (): React.JSX.Element => {
             <IoClose className="close_icon" onClick={(e) => HandlePagesBar(e, 'off')} />
           ) : null}
         </div>
-        <div className="page_layers">
+        <div className="component_layers">
           {isOpen && (
             <>
-              {items.map((_, i) => (
-                <div className="page_card" key={i}></div>
+              {items.map((component) => (
+                <div className="component_card" key={component.id}>
+                  <div className="up_layer">
+                    <div className="edit_icon">
+                      <TbEdit />
+                    </div>
+                    <div className="delet_icon" onClick={() => HandleDeletButtom(component.id)}>
+                      <PiTrash />
+                    </div>
+                    <div className="circle_layer">
+                      <PiHandTapThin />
+                    </div>
+                  </div>
+                </div>
               ))}
-              <div className={`add_card ${dataNum % 2 === 0 && 'full_width'}`}>
+              <div
+                className={`add_card ${componentData.length % 2 === 0 && 'full_width'}`}
+                onClick={HandleAddButtom}
+              >
                 <BsBoxSeam className="add_icon" />
                 <MdOutlineAdd className="plus_icon" />
               </div>

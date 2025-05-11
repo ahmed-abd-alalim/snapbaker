@@ -93,7 +93,7 @@
 
 
 /* ---->  page layers*/
-#componentsBar .bar_content .page_layers {
+#componentsBar .bar_content .component_layers {
     width: 100%;
     max-height: calc(var(--dashboard-menubar-hight) - 10.6rem);
     overflow: auto;
@@ -103,9 +103,8 @@
     justify-content: space-around;
 }
 
-#componentsBar .bar_content .page_layers .add_card,
-#componentsBar .bar_content .page_layers .page_card {
-    cursor: pointer;
+#componentsBar .bar_content .component_layers .add_card,
+#componentsBar .bar_content .component_layers .component_card {
     width: 46%;
     height: 7rem;
     margin-top: .5rem;
@@ -115,11 +114,9 @@
     transition: var(--transition_2);
 }
 
-#componentsBar .bar_content .page_layers .add_card.full_width {
-    width: 96%;
-}
-
-#componentsBar .bar_content .page_layers .add_card {
+/* -----> add card */
+#componentsBar .bar_content .component_layers .add_card {
+    cursor: pointer;
     position: relative;
     border: 2px dashed var(--color-secondary);
     display: flex;
@@ -127,13 +124,17 @@
     align-items: center;
 }
 
-#componentsBar .bar_content .page_layers .add_card .add_icon {
+#componentsBar .bar_content .component_layers .add_card.full_width {
+    width: 96%;
+}
+
+#componentsBar .bar_content .component_layers .add_card .add_icon {
     font-size: 1.2rem;
     color: var(--color-secondary);
     transition: var(--transition_2);
 }
 
-#componentsBar .bar_content .page_layers .add_card .plus_icon {
+#componentsBar .bar_content .component_layers .add_card .plus_icon {
     font-size: .7rem;
     color: var(--color-secondary);
     position: absolute;
@@ -142,45 +143,105 @@
     transform: translate(-50%, -50%) translateX(.65rem) translateY(-.7rem);
 }
 
-#componentsBar .bar_content .page_layers .add_card:hover {
+#componentsBar .bar_content .component_layers .add_card:hover {
     border-color: var(--color-tertiary);
 }
 
-#componentsBar .bar_content .page_layers .add_card:hover .add_icon,
-#componentsBar .bar_content .page_layers .add_card:hover .plus_icon {
+#componentsBar .bar_content .component_layers .add_card:hover .add_icon,
+#componentsBar .bar_content .component_layers .add_card:hover .plus_icon {
     color: var(--color-tertiary);
 }
 
 
-#componentsBar .bar_content .page_layers .page_card {
-    background-color: var(--color-secondary);
-}
-
-#componentsBar .bar_content .page_layers .page_card:hover {
-    transform: scale(1.01);
-}
-
-#componentsBar .bar_content .page_layers::-webkit-scrollbar {
+/* -----> component card */
+#componentsBar .bar_content .component_layers::-webkit-scrollbar {
     width: 0px;
 }
 
-/* #componentsBar .bar_content .page_layers::-webkit-scrollbar {
-    width: 6px;
+#componentsBar .bar_content .component_layers .component_card {
+    position: relative;
+    background-color: var(--color-secondary);
+    overflow: hidden;
 }
 
-#componentsBar .bar_content .page_layers::-webkit-scrollbar-thumb {
+#componentsBar .bar_content .component_layers .component_card:hover {
+    transform: scale(1.01);
+}
+
+#componentsBar .bar_content .component_layers .component_card .up_layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
     background-color: var(--color-tertiary);
-    border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius_10);
+    transition: var(--transition_3);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: .5rem;
 }
 
-#componentsBar .bar_content .page_layers::-webkit-scrollbar-button:single-button {
-    background-color: transparent;
+#componentsBar .bar_content .component_layers .component_card:hover .up_layer {
+    opacity: .7;
 }
 
-#componentsBar .bar_content .page_layers::-webkit-scrollbar-corner {
-    display: none;
-} */
+#componentsBar .bar_content .component_layers .component_card .up_layer .circle_layer {
+    cursor: pointer;
+    width: 80%;
+    height: 4.2rem;
+    position: relative;
+    z-index: 2;
+    border: 1px dashed var(--text-accent-color);
+    border-radius: var(--border-radius_5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-accent-color);
+    font-size: 1.8rem;
+    transition: var(--transition_3);
+}
+
+#componentsBar .bar_content .component_layers .component_card .up_layer .circle_layer:hover {
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+#componentsBar .bar_content .component_layers .component_card .up_layer .edit_icon,
+#componentsBar .bar_content .component_layers .component_card .up_layer .delet_icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition_3);
+    color: var(--text-accent-color);
+    font-size: 1rem;
+}
+
+#componentsBar .bar_content .component_layers .component_card .up_layer .edit_icon {
+    top: 0%;
+    left: 0%;
+}
+
+#componentsBar .bar_content .component_layers .component_card .up_layer .delet_icon {
+    top: 0%;
+    right: 0%;
+}
+
+#componentsBar .bar_content .component_layers .component_card .up_layer .edit_icon:hover {
+    color: var(--text-color);
+    background-color: var(--text-accent-color);
+    border-radius: 0 0 var(--border-radius_5) 0;
+}
+
+#componentsBar .bar_content .component_layers .component_card .up_layer .delet_icon:hover {
+    color: var(--text-color);
+    background-color: var(--color-red-transparent);
+    border-radius: 0 0 0 var(--border-radius_5);
+}
 
 /* #############
 --> Animation
