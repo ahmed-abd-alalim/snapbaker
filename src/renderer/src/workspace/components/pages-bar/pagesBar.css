@@ -101,15 +101,13 @@
 
 #pagesBar .bar_content .page_layers .add_card,
 #pagesBar .bar_content .page_layers .page_card {
-    cursor: pointer;
-    width: 96%;
+    width: 98%;
     height: 7rem;
     margin: 0 auto;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
+    margin-top: .3rem;
+    margin-bottom: .15rem;
     border-radius: var(--border-radius_5);
     animation: pagesBarBarContentPagelayersPageCard .2s ease-in forwards;
-    transition: var(--transition_2);
 }
 
 #pagesBar .bar_content .page_layers .add_card {
@@ -132,36 +130,106 @@
     color: var(--color-tertiary);
 }
 
+#pagesBar .bar_content .page_layers::-webkit-scrollbar {
+    width: 0px;
+}
 
+/* -----> component card */
 #pagesBar .bar_content .page_layers .page_card {
+    position: relative;
     background-color: var(--color-secondary);
+    overflow: hidden;
+    transition: var(--transition_2);
 }
 
 #pagesBar .bar_content .page_layers .page_card:hover {
     transform: scale(1.01);
 }
 
-#pagesBar .bar_content .page_layers::-webkit-scrollbar {
-    width: 0px;
-}
 
-/* #pagesBar .bar_content .page_layers::-webkit-scrollbar {
-    width: 6px;
-}
-
-#pagesBar .bar_content .page_layers::-webkit-scrollbar-thumb {
+#pagesBar .bar_content .page_layers .page_card .up_layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
     background-color: var(--color-tertiary);
-    border: 1px solid var(--color-primary);
-    border-radius: var(--border-radius_10);
+    transition: var(--transition_3);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: .5rem;
 }
 
-#pagesBar .bar_content .page_layers::-webkit-scrollbar-button:single-button {
-    background-color: transparent;
+#pagesBar .bar_content .page_layers .page_card:hover .up_layer {
+    opacity: .7;
 }
 
-#pagesBar .bar_content .page_layers::-webkit-scrollbar-corner {
-    display: none;
-} */
+#pagesBar .bar_content .page_layers .page_card .up_layer span {
+    color: var(--text-accent-color);
+    font-weight: 500;
+    font-size: .9rem;
+    margin-bottom: .8rem;
+}
+
+#pagesBar .bar_content .page_layers .page_card .up_layer .square_layer {
+    cursor: pointer;
+    width: 90%;
+    height: 2.5rem;
+    position: relative;
+    z-index: 2;
+    border: 1px dashed var(--text-accent-color);
+    border-radius: var(--border-radius_5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-accent-color);
+    font-size: 1.2rem;
+    transition: var(--transition_3);
+}
+
+#pagesBar .bar_content .page_layers .page_card .up_layer .square_layer:hover {
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+#pagesBar .bar_content .page_layers .page_card .up_layer .edit_icon,
+#pagesBar .bar_content .page_layers .page_card .up_layer .delet_icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition_3);
+    color: var(--text-accent-color);
+    font-size: 1.1rem;
+}
+
+#pagesBar .bar_content .page_layers .page_card .up_layer .edit_icon {
+    top: 0%;
+    left: 0%;
+}
+
+#pagesBar .bar_content .page_layers .page_card .up_layer .delet_icon {
+    top: 0%;
+    right: 0%;
+}
+
+#pagesBar .bar_content .page_layers .page_card .up_layer .edit_icon:hover {
+    color: var(--text-color);
+    background-color: var(--text-accent-color);
+    border-radius: 0 0 var(--border-radius_5) 0;
+}
+
+#pagesBar .bar_content .page_layers .page_card .up_layer .delet_icon:hover {
+    color: var(--text-color);
+    background-color: var(--color-red-transparent);
+    border-radius: 0 0 0 var(--border-radius_5);
+}
+
 
 /* #############
 --> Animation

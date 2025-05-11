@@ -97,21 +97,24 @@
     width: 100%;
     max-height: calc(var(--dashboard-menubar-hight) - 10.6rem);
     overflow: auto;
-    padding: 0px 3px;
+    padding: 0rem 3px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
+#componentsBar .bar_content .component_layers.mt-spec {
+    margin-top: .13rem;
+}
+
 #componentsBar .bar_content .component_layers .add_card,
 #componentsBar .bar_content .component_layers .component_card {
-    width: 46%;
+    width: 47.75%;
     height: 7rem;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
+    margin-top: .15rem;
+    margin-bottom: .15rem;
     border-radius: var(--border-radius_5);
     animation: componentsBarBarContentPagelayersPageCard .2s ease-in forwards;
-    transition: var(--transition_2);
 }
 
 /* -----> add card */
@@ -152,16 +155,16 @@
     color: var(--color-tertiary);
 }
 
-
-/* -----> component card */
 #componentsBar .bar_content .component_layers::-webkit-scrollbar {
     width: 0px;
 }
 
+/* -----> component card */
 #componentsBar .bar_content .component_layers .component_card {
     position: relative;
     background-color: var(--color-secondary);
     overflow: hidden;
+    transition: var(--transition_2);
 }
 
 #componentsBar .bar_content .component_layers .component_card:hover {
@@ -208,8 +211,8 @@
 
 #componentsBar .bar_content .component_layers .component_card .up_layer .edit_icon,
 #componentsBar .bar_content .component_layers .component_card .up_layer .delet_icon {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.8rem;
+    height: 1.8rem;
     cursor: pointer;
     position: absolute;
     z-index: 1;

@@ -4,17 +4,25 @@ import { useState, useEffect } from 'react'
 // import icon
 import { BiLayer, BiLayerPlus } from 'react-icons/bi'
 import { IoClose } from 'react-icons/io5'
+import { PiTrash } from 'react-icons/pi'
+import { TbEdit } from 'react-icons/tb'
+import { HiArrowTopRightOnSquare } from 'react-icons/hi2'
 
 const Index = (): React.JSX.Element => {
-  const [items, setItems] = useState<string[]>([])
+  const [pageData, setPageData] = useState<{ name: string }[]>([
+    { name: 'home' },
+    { name: 'about us' },
+    { name: 'contact' }
+  ])
+  const [items, setItems] = useState<{ name: string }[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const showItems = (): void => {
     setItems([])
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= pageData.length; i++) {
       setTimeout(() => {
-        setItems((prev) => [...prev, `ETH #${i}`])
-      }, 100 * i)
+        setItems((prev) => [...prev, pageData[i - 1]])
+      }, 40 * i)
     }
   }
 
@@ -52,8 +60,19 @@ const Index = (): React.JSX.Element => {
         <div className="page_layers">
           {isOpen && (
             <>
-              {items.map((_, i) => (
-                <div className="page_card" key={i}></div>
+              {items.map((page, i) => (
+                <div className="page_card" key={i}>
+                  <div className="up_layer">
+                    <div className="edit_icon">
+                      <TbEdit />
+                    </div>
+                    <div className="delet_icon">
+                      <PiTrash />
+                    </div>
+                    <span>{page.name}</span>
+                    <div className="square_layer">{<HiArrowTopRightOnSquare />}</div>
+                  </div>
+                </div>
               ))}
               <div className="add_card">
                 <BiLayerPlus className="add_icon" />

@@ -22,7 +22,7 @@ const Index = (): React.JSX.Element => {
     for (let i = 1; i <= componentData.length; i++) {
       setTimeout(() => {
         setItems((prev) => [...prev, componentData[i - 1]])
-      }, 100 * i)
+      }, 40 * i)
     }
   }
 
@@ -51,7 +51,7 @@ const Index = (): React.JSX.Element => {
   }
 
   useEffect(() => {
-    document.documentElement.removeAttribute('pages-bar')
+    document.documentElement.removeAttribute('components-bar')
   }, [])
 
   return (
@@ -67,7 +67,7 @@ const Index = (): React.JSX.Element => {
             <IoClose className="close_icon" onClick={(e) => HandlePagesBar(e, 'off')} />
           ) : null}
         </div>
-        <div className="component_layers">
+        <div className={`component_layers ${isOpen && 'mt-spec'}`}>
           {isOpen && (
             <>
               {items.map((component) => (
