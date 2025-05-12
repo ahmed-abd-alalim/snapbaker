@@ -8,13 +8,16 @@ import { MdOutlineAdd } from 'react-icons/md'
 import { PiHandTapThin, PiTrash } from 'react-icons/pi'
 import { TbEdit } from 'react-icons/tb'
 
+type componentDataType = { id: number }
+
 const Index = (): React.JSX.Element => {
-  const [componentData, setComponentData] = useState<{ id: number }[]>([
+  const [componentData, setComponentData] = useState<componentDataType[]>([
     { id: 0 },
     { id: 1 },
     { id: 2 }
   ])
-  const [items, setItems] = useState<{ id: number }[]>([])
+
+  const [items, setItems] = useState<componentDataType[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const showItems = (): void => {
