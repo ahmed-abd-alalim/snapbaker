@@ -30,8 +30,8 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
     siteName: '',
     cssFram: '',
     jsFram: '',
-    themeColor: '',
-    pagesNum: 0
+    themeColor: 'white',
+    pagesNum: 1
   }
 
   const [inbutDtata, setInbutData] = useState<projectFromOpjectType>(newFormTemplet)
@@ -76,17 +76,19 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
   }
 
   const HandleCreatButton: () => void = () => {
-    const uniqueName = projectsData.filter((item) => item.siteName === inbutDtata.siteName)
-    if (!uniqueName.length) {
-      setProjectsData((prevData) => [...prevData, inbutDtata])
-      HandleCardClose()
-      if (!activeSessionName) {
-        setActiveSessionName(inbutDtata.siteName!)
-        window.newWindow.openNewWindow()
-        window.systemFile.newApp(inbutDtata)
+    if (inbutDtata.siteName) {
+      const uniqueName = projectsData.filter((item) => item.siteName === inbutDtata.siteName)
+      if (!uniqueName.length) {
+        setProjectsData((prevData) => [...prevData, inbutDtata])
+        HandleCardClose()
+        if (!activeSessionName) {
+          setActiveSessionName(inbutDtata.siteName!)
+          window.newWindow.openNewWindow()
+          window.systemFile.newApp(inbutDtata)
+        }
+      } else {
+        setErrorMessage('This name is already used change it.')
       }
-    } else {
-      setErrorMessage('This name is already used change it.')
     }
   }
 
@@ -300,7 +302,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
                   setInbutData((prevData) => ({
                     ...prevData,
                     pagesNum:
-                      inbutDtata.pagesNum !== 0 ? inbutDtata.pagesNum!-- : inbutDtata.pagesNum
+                      inbutDtata.pagesNum !== 1 ? inbutDtata.pagesNum!-- : inbutDtata.pagesNum
                   }))
                 }
               >
