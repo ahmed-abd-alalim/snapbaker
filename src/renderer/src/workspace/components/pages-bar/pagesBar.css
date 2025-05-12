@@ -111,10 +111,13 @@
 }
 
 #pagesBar .bar_content .page_layers .add_card {
+    position: relative;
     border: 2px dashed var(--color-secondary);
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 #pagesBar .bar_content .page_layers .add_card .add_icon {
@@ -142,11 +145,7 @@
     transition: var(--transition_2);
 }
 
-#pagesBar .bar_content .page_layers .page_card:hover {
-    transform: scale(1.01);
-}
-
-
+/* ---> up layer */
 #pagesBar .bar_content .page_layers .page_card .up_layer {
     width: 100%;
     height: 100%;
@@ -230,6 +229,84 @@
     border-radius: 0 0 0 var(--border-radius_5);
 }
 
+
+/* ---> inbut layer */
+#pagesBar .bar_content .page_layers .inbut_layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background-color: var(--color-tertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer .error_message {
+    width: 100%;
+    font-size: .7rem;
+    color: var(--color-red-transparent);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer input {
+    all: unset;
+    width: 100%;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius_5);
+    box-sizing: border-box;
+    padding: .3rem .4rem;
+    color: var(--text-color);
+    font-size: .9rem;
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer input::placeholder {
+    color: var(--text-accent-color);
+    font-size: .8rem;
+    opacity: .5;
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer .button_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: .7rem;
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer .button_box button {
+    all: unset;
+    width: 45%;
+    height: 1.9rem;
+    border-radius: var(--border-radius_3);
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer .button_box .cre_button {
+    background-color: var(--text-color);
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer .button_box .can_button {
+    background-color: var(--color-secondary);
+    color: var(--text-color);
+}
+
+#pagesBar .bar_content .page_layers .inbut_layer .button_box button:hover {
+    opacity: .8;
+}
 
 /* #############
 --> Animation

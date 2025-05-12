@@ -19,7 +19,7 @@ const Index = (): React.JSX.Element => {
 
   const showItems = (): void => {
     setItems([])
-    for (let i = 1; i <= componentData.length; i++) {
+    for (let i = 1; i <= items.length; i++) {
       setTimeout(() => {
         setItems((prev) => [...prev, componentData[i - 1]])
       }, 40 * i)
@@ -41,13 +41,13 @@ const Index = (): React.JSX.Element => {
   }
 
   const HandleAddButtom = (): void => {
-    setComponentData([...componentData, { id: componentData.length }])
     setItems([...items, { id: items.length }])
+    setComponentData(items)
   }
 
   const HandleDeletButtom = (componentId: number): void => {
-    setComponentData(componentData.filter((_) => _.id !== componentId))
     setItems(items.filter((_) => _.id !== componentId))
+    setComponentData(items)
   }
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const Index = (): React.JSX.Element => {
                 </div>
               ))}
               <div
-                className={`add_card ${componentData.length % 2 === 0 && 'full_width'}`}
+                className={`add_card ${items.length % 2 === 0 && 'full_width'}`}
                 onClick={HandleAddButtom}
               >
                 <BsBoxSeam className="add_icon" />

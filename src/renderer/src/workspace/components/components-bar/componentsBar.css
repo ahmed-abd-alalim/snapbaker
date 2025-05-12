@@ -167,10 +167,6 @@
     transition: var(--transition_2);
 }
 
-#componentsBar .bar_content .component_layers .component_card:hover {
-    transform: scale(1.01);
-}
-
 #componentsBar .bar_content .component_layers .component_card .up_layer {
     width: 100%;
     height: 100%;
