@@ -1,6 +1,12 @@
 import './pagesBar.css'
 import { useState, useEffect } from 'react'
 
+// import context
+import { useDataContext } from '@/context/workspace/data'
+
+// import type
+import { pageDataType, addCardInputType } from '@/type/workspace'
+
 // import icon
 import { BiLayer, BiLayerPlus } from 'react-icons/bi'
 import { IoClose, IoSaveOutline } from 'react-icons/io5'
@@ -10,24 +16,8 @@ import { HiArrowTopRightOnSquare } from 'react-icons/hi2'
 import { MdClose } from 'react-icons/md'
 import { RxRocket } from 'react-icons/rx'
 
-type pageDataType = {
-  id: number
-  name: string
-  pageNameInbut: { isOpen: number; inbut: string; error: string }
-}
-
-type addCardInputType = {
-  inbut: string
-  error: string
-}
-
 const Index = (): React.JSX.Element => {
-  const [pageData, setPageData] = useState<pageDataType[]>([
-    { id: 0, name: 'home', pageNameInbut: { isOpen: 0, inbut: '', error: '' } },
-    { id: 1, name: 'about us', pageNameInbut: { isOpen: 0, inbut: '', error: '' } },
-    { id: 2, name: 'contact', pageNameInbut: { isOpen: 0, inbut: '', error: '' } }
-  ])
-
+  const { pageData, setPageData } = useDataContext()
   const [items, setItems] = useState<pageDataType[]>([])
   const [poageBarIsOpen, setPoageBarIsOpen] = useState<boolean>(false)
   const [addCardIsOpen, setAddCardIsOpen] = useState<boolean>(false)
@@ -78,8 +68,9 @@ const Index = (): React.JSX.Element => {
 
     if (addCardInput.inbut) {
       if (!allPageName.includes(addCardInput.inbut)) {
-        setItems([...items, pageTemplet])
-        setPageData(items)
+        const newPageData = [...items, pageTemplet]
+        setItems(newPageData)
+        setPageData(newPageData)
         setAddCardIsOpen(false)
         setAddCardInput({
           inbut: '',
@@ -140,8 +131,9 @@ const Index = (): React.JSX.Element => {
   }
 
   const HandleDeletPage = (pageId: number): void => {
-    setItems(items.filter((page) => page.id !== pageId))
-    setPageData(items)
+    const newPageData = items.filter((page) => page.id !== pageId)
+    setItems(newPageData)
+    setPageData(newPageData)
   }
 
   useEffect(() => {

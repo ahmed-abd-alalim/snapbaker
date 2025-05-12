@@ -1,6 +1,12 @@
 import './componentsBar.css'
 import { useState, useEffect } from 'react'
 
+// import context
+import { useDataContext } from '@/context/workspace/data'
+
+// import type
+import { componentDataType } from '@/type/workspace'
+
 // import icon
 import { BsBoxSeam } from 'react-icons/bs'
 import { IoClose } from 'react-icons/io5'
@@ -8,21 +14,14 @@ import { MdOutlineAdd } from 'react-icons/md'
 import { PiHandTapThin, PiTrash } from 'react-icons/pi'
 import { TbEdit } from 'react-icons/tb'
 
-type componentDataType = { id: number }
-
 const Index = (): React.JSX.Element => {
-  const [componentData, setComponentData] = useState<componentDataType[]>([
-    { id: 0 },
-    { id: 1 },
-    { id: 2 }
-  ])
-
+  const { componentData, setComponentData } = useDataContext()
   const [items, setItems] = useState<componentDataType[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   const showItems = (): void => {
     setItems([])
-    for (let i = 1; i <= items.length; i++) {
+    for (let i = 1; i <= componentData.length; i++) {
       setTimeout(() => {
         setItems((prev) => [...prev, componentData[i - 1]])
       }, 40 * i)
@@ -44,13 +43,15 @@ const Index = (): React.JSX.Element => {
   }
 
   const HandleAddButtom = (): void => {
-    setItems([...items, { id: items.length }])
-    setComponentData(items)
+    const newComponentData = [...items, { id: items.length }]
+    setItems(newComponentData)
+    setComponentData(newComponentData)
   }
 
   const HandleDeletButtom = (componentId: number): void => {
-    setItems(items.filter((_) => _.id !== componentId))
-    setComponentData(items)
+    const newComponentData = items.filter((_) => _.id !== componentId)
+    setItems(newComponentData)
+    setComponentData(newComponentData)
   }
 
   useEffect(() => {

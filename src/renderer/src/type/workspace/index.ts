@@ -19,3 +19,25 @@ export type settingType = {
   designPanelCursor: designPanelCursorType
   setdesignPanelCursor: React.Dispatch<React.SetStateAction<designPanelCursorType>>
 }
+
+// /<<=== data context types ===>>
+
+export type pageDataType = {
+  id: number
+  name: string
+  pageNameInbut: { isOpen: number; inbut: string; error: string }
+}
+
+export type addCardInputType = {
+  inbut: string
+  error: string
+}
+
+export type componentDataType = { id: number }
+
+export type dataType = {
+  pageData: pageDataType[]
+  setPageData: React.Dispatch<React.SetStateAction<pageDataType[]>>
+  componentData: componentDataType[]
+  setComponentData: React.Dispatch<React.SetStateAction<componentDataType[]>>
+}
