@@ -3,7 +3,7 @@ import fs from 'fs'
 
 export default (): void => {
   ipcMain.handle('get-all-projects-info', async () => {
-    const projectsFolderPath = 'src/data/projects'
+    const projectsFolderPath = 'src/storage/projects'
     const allProjectsInfo: object[] = []
 
     // Read all subfolders

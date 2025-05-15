@@ -14,8 +14,8 @@
       "@/*": [
         "src/renderer/src/*"
       ],
-      "@data/*": [
-        "src/data/*"
+      "@storage/*": [
+        "src/storage/*"
       ]
     }
   }

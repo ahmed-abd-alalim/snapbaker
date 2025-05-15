@@ -3,7 +3,7 @@ import { DataContext } from './context'
 import { projectstDataArrayType, userInfoType, props } from '@/type/home-screen'
 
 // import json data
-import accountInfo from '@data/account.json'
+import accountInfo from '@storage/account.json'
 
 export const DataProvider = ({ children }: props): React.JSX.Element => {
   const [projectsData, setProjectsData] = useState<projectstDataArrayType>([])

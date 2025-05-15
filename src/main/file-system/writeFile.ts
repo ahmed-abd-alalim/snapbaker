@@ -4,14 +4,14 @@ import fs from 'fs'
 export default (): void => {
   ipcMain.on('save-file', async (_event, data: object, path: string): Promise<void> => {
     const modules = {
-      'setting.json': () => import('../../data/setting.json'),
-      'account.json': () => import('../../data/account.json')
+      'setting.json': () => import('../../storage/setting.json'),
+      'account.json': () => import('../../storage/account.json')
       // Add more as needed
     }
 
     const jsondata = await modules[path]()
 
-    const jsonFilePath = `src/data/${path}`
+    const jsonFilePath = `src/storage/${path}`
 
     Object.keys(data).forEach((key) => {
       if (data[key] !== jsondata.default[key]) {

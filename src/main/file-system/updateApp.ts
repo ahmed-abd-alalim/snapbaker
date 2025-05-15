@@ -12,8 +12,8 @@ type DataType = {
 
 export default (): void => {
   ipcMain.on('update-app', (_event, newData: DataType, oldData: DataType) => {
-    const oldProjectsPath = `src/data/projects/${oldData.siteName}`
-    const newProjectsPath = `src/data/projects/${newData.siteName}`
+    const oldProjectsPath = `src/storage/projects/${oldData.siteName}`
+    const newProjectsPath = `src/storage/projects/${newData.siteName}`
 
     if (oldData.siteName !== newData.siteName) {
       fs.renameSync(oldProjectsPath, newProjectsPath)

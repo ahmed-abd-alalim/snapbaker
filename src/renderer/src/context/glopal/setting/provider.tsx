@@ -5,7 +5,7 @@ import { GlopalSettingContext } from './context'
 import { props, colorThemeType } from '@/type/glopal'
 
 // import data
-import setting from '@data/setting.json'
+import setting from '@storage/setting.json'
 
 // import config
 import { app } from '@/config'

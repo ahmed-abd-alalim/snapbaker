@@ -12,7 +12,7 @@ type DataType = {
 
 export default (): void => {
   ipcMain.on('new-app', (_event, data: DataType) => {
-    const newProjectsPath = `src/data/projects/${data.siteName}`
+    const newProjectsPath = `src/storage/projects/${data.siteName}`
 
     if (!fs.existsSync(newProjectsPath)) {
       fs.mkdirSync(newProjectsPath)

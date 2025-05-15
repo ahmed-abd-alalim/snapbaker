@@ -3,14 +3,14 @@ import { DataContext } from './context'
 import { props, pageDataType } from '@/type/workspace'
 
 // import json seting
-import accountInfo from '@data/setting.json'
+import accountInfo from '@storage/setting.json'
 
 export const DataProvider = ({ children }: props): React.JSX.Element => {
   const [pageData, setPageData] = useState<pageDataType[]>([])
   const [componentData, setComponentData] = useState([{ id: 0 }, { id: 1 }, { id: 2 }])
 
   // const allpageData = async (): Promise<pageDataType[]> => {
-  //   const module = await import(`@data/projects/${accountInfo.activeSession}/pages.json`)
+  //   const module = await import(`@storage/projects/${accountInfo.activeSession}/pages.json`)
   //   return module.default
   // }
 

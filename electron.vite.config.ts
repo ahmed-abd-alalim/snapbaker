@@ -13,7 +13,7 @@ export default defineConfig({
     resolve: {
       alias: {
         '@': resolve('src/renderer/src'),
-        '@data': resolve('src/data')
+        '@storage': resolve('src/storage')
       }
     },
     plugins: [react()]
