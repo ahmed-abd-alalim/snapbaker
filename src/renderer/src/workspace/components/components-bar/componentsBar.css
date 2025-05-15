@@ -108,7 +108,8 @@
 }
 
 #componentsBar .bar_content .component_layers .add_card,
-#componentsBar .bar_content .component_layers .component_card {
+#componentsBar .bar_content .component_layers .component_card,
+#componentsBar .bar_content .component_layers .component_card_button {
     width: 47.75%;
     height: 7rem;
     margin-top: .15rem;
@@ -158,6 +159,37 @@
 #componentsBar .bar_content .component_layers::-webkit-scrollbar {
     width: 0px;
 }
+
+
+/* -----> component card button */
+#componentsBar .bar_content .component_layers .component_card_button {
+    cursor: pointer;
+    background-color: var(--color-tertiary);
+    transition: var(--transition_2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    opacity: .9 !important;
+}
+
+#componentsBar .bar_content .component_layers .component_card_button .button_icon {
+    color: var(--text-accent-color);
+    font-size: 1.2rem;
+}
+
+#componentsBar .bar_content .component_layers .component_card_button span {
+    color: var(--text-accent-color);
+    font-size: .7rem;
+    font-weight: 400;
+    letter-spacing: .5px;
+}
+
+#componentsBar .bar_content .component_layers .component_card_button:hover {
+    opacity: .7 !important;
+}
+
 
 /* -----> component card */
 #componentsBar .bar_content .component_layers .component_card {

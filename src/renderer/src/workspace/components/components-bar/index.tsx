@@ -13,17 +13,19 @@ import { IoClose } from 'react-icons/io5'
 import { MdOutlineAdd } from 'react-icons/md'
 import { PiHandTapThin, PiTrash } from 'react-icons/pi'
 import { TbEdit } from 'react-icons/tb'
+import { GoArchive, GoBeaker } from 'react-icons/go'
 
 const Index = (): React.JSX.Element => {
   const { componentData, setComponentData } = useDataContext()
+  const [cardPath, setCardPath] = useState<string | null>(null)
   const [items, setItems] = useState<componentDataType[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
-  const showItems = (): void => {
+  const showItems = (cardPathData: componentDataType[]): void => {
     setItems([])
-    for (let i = 1; i <= componentData.length; i++) {
+    for (let i = 1; i <= cardPathData.length; i++) {
       setTimeout(() => {
-        setItems((prev) => [...prev, componentData[i - 1]])
+        setItems((prev) => [...prev, cardPathData[i - 1]])
       }, 40 * i)
     }
   }
@@ -32,12 +34,12 @@ const Index = (): React.JSX.Element => {
     if (actionName === 'off') {
       document.documentElement.setAttribute('components-bar', actionName)
       setIsOpen(false)
+      setCardPath(null)
     } else {
       if (!isOpen) {
         e.stopPropagation()
         document.documentElement.setAttribute('components-bar', actionName)
         setIsOpen(true)
-        showItems()
       }
     }
   }
@@ -53,6 +55,16 @@ const Index = (): React.JSX.Element => {
     setItems(newComponentData)
     setComponentData(newComponentData)
   }
+
+  useEffect(() => {
+    if (cardPath !== null) {
+      if (cardPath === 'archive') {
+        showItems(componentData)
+      } else if (cardPath === 'current') {
+        showItems(componentData)
+      }
+    }
+  }, [cardPath])
 
   useEffect(() => {
     document.documentElement.removeAttribute('components-bar')
@@ -72,7 +84,20 @@ const Index = (): React.JSX.Element => {
           ) : null}
         </div>
         <div className={`component_layers ${isOpen && 'mt-spec'}`}>
-          {isOpen && (
+          {isOpen && !cardPath && (
+            <>
+              <div className="component_card_button" onClick={() => setCardPath('archive')}>
+                <GoArchive className="button_icon" />
+                <span>Archive</span>
+              </div>
+              <div className="component_card_button" onClick={() => setCardPath('current')}>
+                <GoBeaker className="button_icon" />
+                <span>Current</span>
+              </div>
+            </>
+          )}
+
+          {isOpen && cardPath && (
             <>
               {items.map((component) => (
                 <div className="component_card" key={component.id}>
