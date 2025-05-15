@@ -23,7 +23,6 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
     setActiveSessionName,
     activeSessionName
   } = useSettingContext()
-  // const navigate = useNavigate()
   const today = new Date()
   const newFormTemplet: projectFromOpjectType = {
     projectDate: `${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}`,
@@ -258,7 +257,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
             </div>
           </div>
           <div className="inbut_box">
-            <div className="drop_down_section">
+            <div className="drop_down_section w-100">
               <div className="up_layer" onClick={() => HandledropMenuVisibility('themeColor')}>
                 {droPMenuVisibility.themeColor ? (
                   <FaSortDown className="down_icon reverse mt-2" />
@@ -293,33 +292,6 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
                     <span>{item.name}</span>
                   </div>
                 ))}
-              </div>
-            </div>
-            <div className="numper_section">
-              <div
-                className="spinner"
-                onClick={() =>
-                  setInbutData((prevData) => ({
-                    ...prevData,
-                    pagesNum:
-                      inbutDtata.pagesNum !== 1 ? inbutDtata.pagesNum!-- : inbutDtata.pagesNum
-                  }))
-                }
-              >
-                <span>-</span>
-              </div>
-              <span>{inbutDtata.pagesNum}</span>
-              <div
-                className="spinner"
-                onClick={() =>
-                  setInbutData((prevData) => ({
-                    ...prevData,
-                    pagesNum:
-                      inbutDtata.pagesNum !== 10 ? inbutDtata.pagesNum!++ : inbutDtata.pagesNum
-                  }))
-                }
-              >
-                <span>+</span>
               </div>
             </div>
           </div>

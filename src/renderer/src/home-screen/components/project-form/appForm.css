@@ -207,47 +207,9 @@
     display: none;
 }
 
-#AppForm .inbut_section .inbut_box .numper_section {
-    width: 45%;
-    height: 100%;
-    border: 1px solid var(--color-tertiary);
-    border-radius: var(--border-radius_5);
-    background-color: var(--color-secondary);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    transition: var(--transition_2);
-}
-
-#AppForm .inbut_section .inbut_box .numper_section>span {
-    color: var(--text-color);
-    font-size: .9rem;
-}
-
-#AppForm .inbut_section .inbut_box .numper_section .spinner {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    border-radius: var(--border-radius_5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#AppForm .inbut_section .inbut_box .numper_section .spinner span {
-    color: var(--text-color);
-    font-size: 1.1rem;
-    margin-bottom: .2rem;
-}
-
-#AppForm .inbut_section .inbut_box .numper_section .spinner:hover {
-    background-color: var(--color-tertiary);
-}
-
 #AppForm .inbut_section .inbut_box input:hover,
 #AppForm .inbut_section .inbut_box input:focus,
-#AppForm .inbut_section .inbut_box .drop_down_section .up_layer:hover,
-#AppForm .inbut_section .inbut_box .numper_section:hover {
+#AppForm .inbut_section .inbut_box .drop_down_section .up_layer:hover {
     border: 1px solid var(--text-accent-color);
 }
 
