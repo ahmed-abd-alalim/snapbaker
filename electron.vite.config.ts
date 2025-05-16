@@ -10,6 +10,11 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()]
   },
   renderer: {
+    server: {
+      watch: {
+        ignored: ['**/src/storage/*']
+      }
+    },
     resolve: {
       alias: {
         '@': resolve('src/renderer/src'),

@@ -28,7 +28,7 @@ const colorTheemActive = Object.entries(setting.colorTheme).filter((color) => co
 
 // setting state
 const initialState: SettingState = {
-  activeSessionName: setting.activeSessionName,
+  activeSessionName: '',
   colorTheme: {
     ...availableThemes,
     [colorTheemActive.length !== 0 ? colorTheemActive[0][0] : app.theme.default]: true

@@ -13,7 +13,7 @@ listenerMiddleware.startListening({
   matcher: isAnyOf(activeSessionName, colorTheme),
   effect: async (_, listenerApi) => {
     const state = await listenerApi.getState()
-    const { account, projectsData, ...newState } = state.setting
+    const { account, projectsData, activeSessionName, ...newState } = state.setting
     if (JSON.stringify(setting) !== JSON.stringify(newState)) {
       window.systemFile.WriteFile(newState, 'setting.json')
     }
