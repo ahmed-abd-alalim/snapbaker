@@ -4,8 +4,8 @@ import fs from 'fs'
 export default (): void => {
   ipcMain.on('save-file', async (_event, data: object, path: string): Promise<void> => {
     const modules = {
-      'setting.json': () => import('../../storage/setting.json'),
-      'account.json': () => import('../../storage/account.json')
+      'setting.json': () => import('../../storage/setting.json')
+      // 'account.json': () => import('../../storage/account.json')
       // Add more as needed
     }
 

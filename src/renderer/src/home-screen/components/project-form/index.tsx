@@ -1,12 +1,14 @@
 import './appForm.css'
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import context
-import { useDataContext } from '@/context/home-screen/data'
-import { useSettingContext } from '@/context/home-screen/setting'
+// import state
+import { RootState } from '@/state'
+import { projectsData, activeSessionName } from '@/state/slice/settingSlice'
+import { projectFromVisibility } from '@/state/slice/homeScreenSlice'
 
 // import types
-import { projectFromOpjectType, droPMenuVisibilityType } from '@/type/home-screen'
+import { projectFromOpjectType, droPMenuVisibilityType } from '@/type'
 
 // import icon
 import { MdClose } from 'react-icons/md'
@@ -16,13 +18,11 @@ import { FaBootstrap } from 'react-icons/fa6'
 import { RxRocket } from 'react-icons/rx'
 
 const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element => {
-  const { projectsData, setProjectsData } = useDataContext()
-  const {
-    projectFromVisibility,
-    setProjectFromVisibility,
-    setActiveSessionName,
-    activeSessionName
-  } = useSettingContext()
+  const dispatch = useDispatch()
+  const projectsinfo = useSelector((state: RootState) => state.setting.projectsData)
+  const activeSession = useSelector((state: RootState) => state.setting.activeSessionName)
+  const projectFrom = useSelector((state: RootState) => state.homeScreen.projectFromVisibility)
+
   const today = new Date()
   const newFormTemplet: projectFromOpjectType = {
     projectDate: `${today.getDate()} / ${today.getMonth()} / ${today.getFullYear()}`,
@@ -68,20 +68,22 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
 
   const HandleCardClose: () => void = () => {
     setInbutData(newFormTemplet)
-    setProjectFromVisibility({
-      projects: 0,
-      new: 0
-    })
+    dispatch(
+      projectFromVisibility({
+        projects: 0,
+        new: 0
+      })
+    )
   }
 
   const HandleCreatButton: () => void = () => {
     if (inbutDtata.siteName) {
-      const uniqueName = projectsData.filter((item) => item.siteName === inbutDtata.siteName)
+      const uniqueName = projectsinfo.filter((item) => item.siteName === inbutDtata.siteName)
       if (!uniqueName.length) {
-        setProjectsData((prevData) => [...prevData, inbutDtata])
+        dispatch(projectsData([...projectsinfo, inbutDtata]))
         HandleCardClose()
-        if (!activeSessionName) {
-          setActiveSessionName(inbutDtata.siteName!)
+        if (!activeSession) {
+          dispatch(activeSessionName(inbutDtata.siteName!))
           window.newWindow.openNewWindow()
           window.systemFile.newApp(inbutDtata)
         }
@@ -92,10 +94,10 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
   }
 
   const HandelSaveButton: () => void = () => {
-    const updateData = projectsData.filter((item) => item.siteName !== data!.siteName)
+    const updateData = projectsinfo.filter((item) => item.siteName !== data!.siteName)
     const uniqueName = updateData.filter((item) => item.siteName === inbutDtata.siteName)
     if (!uniqueName.length) {
-      setProjectsData([inbutDtata, ...updateData])
+      dispatch(projectsData([...updateData, inbutDtata]))
       window.systemFile.updateApp(inbutDtata, data!)
       HandleCardClose()
     } else {
@@ -297,7 +299,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
           </div>
         </div>
         <div className="buttons_section h-25">
-          {projectFromVisibility.new ? (
+          {projectFrom.new ? (
             <div className="submit_but" onClick={HandleCreatButton}>
               <RxRocket className="button_icon" />
               <span>create</span>
