@@ -25,5 +25,18 @@ export default (): void => {
         return
       }
     })
+
+    const pageTemplet = {
+      id: 0,
+      name: '',
+      pageNameInbut: { isOpen: 0, inbut: '', error: '' }
+    }
+
+    fs.writeFile(`${newProjectsPath}/pages.json`, JSON.stringify([pageTemplet]), (err) => {
+      if (err) {
+        console.error('Error writing file:', err)
+        return
+      }
+    })
   })
 }

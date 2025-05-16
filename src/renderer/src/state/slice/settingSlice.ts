@@ -22,13 +22,14 @@ export interface SettingState {
 const availableThemes = Object.fromEntries(
   app.theme.availableThemes.map((themeName) => [themeName, false])
 )
+const colorTheemActive = Object.entries(setting.colorTheme).filter((color) => color[1] === true)
 
 // setting state
 const initialState: SettingState = {
   activeSessionName: setting.activeSessionName,
   colorTheme: {
     ...availableThemes,
-    [setting.colorTheme ? setting.colorTheme : app.theme.default]: true
+    [colorTheemActive.length !== 0 ? colorTheemActive[0][0] : app.theme.default]: true
   },
   projectsData: setting.projectsData,
   account: {
