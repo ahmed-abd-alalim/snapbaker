@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 // pages
 import Intro from '@/intro'
@@ -8,6 +8,7 @@ import HomeScreen from '@/home-screen'
 import Workspace from '@/workspace'
 
 // import state
+import type { RootState } from './state'
 import { projectsData, activeSessionName } from './state/slice/settingSlice'
 
 // import config
@@ -24,6 +25,13 @@ function App(): React.JSX.Element {
     }
     fetchData()
   }, [])
+
+  // app color theme
+  const colorTheme = useSelector((state: RootState) => state.setting.colorTheme)
+  useEffect(() => {
+    const getActiveTheme = Object.keys(colorTheme).filter((item) => colorTheme[item] === true)
+    document.documentElement.setAttribute('app-theme-color', getActiveTheme[0])
+  }, [colorTheme])
 
   // acctive sesstion
   useEffect(() => {
