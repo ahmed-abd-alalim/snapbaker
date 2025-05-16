@@ -1,1 +1,11 @@
-{"activeSessionName":"","colorTheme":{"white":false,"dark":true,"blue":false,"teal":false,"navy":false,"retro":false},"projectsData":[],"account":{"fName":"","lName":"","img":""}}
+{
+  "activeSessionName": "",
+  "colorTheme": {
+    "white": false,
+    "dark": true,
+    "blue": false,
+    "teal": false,
+    "navy": false,
+    "retro": false
+  }
+}

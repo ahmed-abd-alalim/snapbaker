@@ -3,6 +3,8 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 // import json data
 import setting from '@storage/setting.json'
+import accountInfo from '@storage/account.json'
+import projects from '@storage/projects.json'
 
 // import config
 import { app } from '@/config'
@@ -31,11 +33,11 @@ const initialState: SettingState = {
     ...availableThemes,
     [colorTheemActive.length !== 0 ? colorTheemActive[0][0] : app.theme.default]: true
   },
-  projectsData: setting.projectsData,
+  projectsData: projects,
   account: {
-    fName: setting.account.fName,
-    lName: setting.account.lName,
-    img: setting.account.img
+    fName: accountInfo.fName,
+    lName: accountInfo.lName,
+    img: accountInfo.img
   }
 }
 
