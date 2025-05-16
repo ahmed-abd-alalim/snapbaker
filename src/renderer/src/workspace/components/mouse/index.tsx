@@ -1,7 +1,9 @@
 import './mouse.css'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import context
-import { useSettingContext } from '@/context/workspace/setting'
+// import state
+import { RootState } from '@/state'
+import { designPanelCursor } from '@/state/slice/workspaceSlice'
 
 // import icon
 import { LuMousePointer2 } from 'react-icons/lu'
@@ -9,7 +11,8 @@ import { LiaHandPaper } from 'react-icons/lia'
 import { RiZoomInLine, RiZoomOutLine } from 'react-icons/ri'
 
 const Index = (): React.JSX.Element => {
-  const { designPanelCursor, setdesignPanelCursor } = useSettingContext()
+  const dispatch = useDispatch()
+  const PanelCursor = useSelector((state: RootState) => state.workspace.designPanelCursor)
 
   return (
     <section id="mouse">
@@ -17,14 +20,14 @@ const Index = (): React.JSX.Element => {
         <RiZoomInLine className="mouse_icon" />
       </div>
       <div
-        className={`mouse_section ${designPanelCursor === 'default' && 'active'}`}
-        onClick={() => setdesignPanelCursor('default')}
+        className={`mouse_section ${PanelCursor === 'default' && 'active'}`}
+        onClick={() => dispatch(designPanelCursor('default'))}
       >
         <LuMousePointer2 className="mouse_icon" />
       </div>
       <div
-        className={`mouse_section ${designPanelCursor === 'grab' && 'active'}`}
-        onClick={() => setdesignPanelCursor('grab')}
+        className={`mouse_section ${PanelCursor === 'grab' && 'active'}`}
+        onClick={() => dispatch(designPanelCursor('grab'))}
       >
         <LiaHandPaper className="mouse_icon" />
       </div>

@@ -1,5 +1,6 @@
 import './projects.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
 // import components
 import { ProjectForm } from '@/home-screen/components/'
@@ -7,31 +8,29 @@ import { ProjectForm } from '@/home-screen/components/'
 // import logo
 import Logo from '@/logo'
 
-// import context
-import { useDataContext } from '@/context/home-screen/data'
-import { useSettingContext } from '@/context/home-screen/setting'
+// import state
+import { projectsData, activeSessionName } from '@/state/slice/settingSlice'
+import { projectFromVisibility } from '@/state/slice/homeScreenSlice'
+import { RootState } from '@/state'
 
 // import type
-import { projectFromOpjectType } from '@/type/home-screen'
+import { projectFromOpjectType } from '@/type'
 
 // import icon
 import { PiTrash, PiCalendarDotsLight } from 'react-icons/pi'
 import { TbEdit } from 'react-icons/tb'
 
 const Index = (): React.JSX.Element => {
-  const { projectsData, setProjectsData } = useDataContext()
-  const {
-    projectFromVisibility,
-    setProjectFromVisibility,
-    setActiveSessionName,
-    activeSessionName
-  } = useSettingContext()
+  const dispatch = useDispatch()
+  const allProjectsData = useSelector((state: RootState) => state.setting.projectsData)
+  const activeSession = useSelector((state: RootState) => state.setting.activeSessionName)
+  const projectFrom = useSelector((state: RootState) => state.homeScreen.projectFromVisibility)
 
   const [formData, setFormData] = useState<projectFromOpjectType>()
 
   const HandleOpenProject: (projectName: string) => void = (projectName) => {
-    if (!activeSessionName) {
-      setActiveSessionName(projectName)
+    if (!activeSession) {
+      dispatch(activeSessionName(projectName))
       window.newWindow.openNewWindow()
     }
   }
@@ -41,11 +40,13 @@ const Index = (): React.JSX.Element => {
     cardData: projectFromOpjectType
   ) => void = (event, cardData) => {
     event.stopPropagation()
-    if (cardData.siteName !== activeSessionName) {
+    if (cardData.siteName !== activeSession) {
       setFormData(cardData)
-      setProjectFromVisibility({
-        projects: 1
-      })
+      dispatch(
+        projectFromVisibility({
+          projects: 1
+        })
+      )
     }
   }
 
@@ -54,9 +55,9 @@ const Index = (): React.JSX.Element => {
     cardData: projectFromOpjectType
   ) => void = (event, cardData) => {
     event.stopPropagation()
-    if (cardData.siteName !== activeSessionName) {
-      const newData = projectsData.filter((item) => item.siteName !== cardData.siteName)
-      setProjectsData([...newData])
+    if (cardData.siteName !== activeSession) {
+      const newData = allProjectsData.filter((item) => item.siteName !== cardData.siteName)
+      dispatch(projectsData([...newData]))
       window.systemFile.deleteApp(cardData.siteName!)
     }
   }
@@ -64,7 +65,7 @@ const Index = (): React.JSX.Element => {
   return (
     <>
       <section id="Projects">
-        {projectsData.length === 0 ? (
+        {allProjectsData.length === 0 ? (
           <div className="empty_layer">
             <div className="fSection">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 188 188" version="1.1">
@@ -238,13 +239,13 @@ const Index = (): React.JSX.Element => {
         ) : (
           <div className="container">
             <div className="row">
-              {projectsData.map((item, i) => (
+              {allProjectsData.map((item, i) => (
                 <div key={i} className="col-12 col-md-6 col-lg-4 p-1 card_transition">
                   <div
-                    className={` ${activeSessionName === item.siteName && 'stop-hover'} site_card`}
+                    className={` ${activeSession === item.siteName && 'stop-hover'} site_card`}
                     onClick={() => HandleOpenProject(item.siteName!)}
                   >
-                    {activeSessionName === item.siteName && (
+                    {activeSession === item.siteName && (
                       <div className="up_layer_for_work_project">
                         <div className="anymation_circle"> </div>
                         <div className="speed_shadow">
@@ -315,7 +316,7 @@ const Index = (): React.JSX.Element => {
           </div>
         )}
       </section>
-      {projectFromVisibility.projects ? <ProjectForm data={formData} /> : ''}
+      {projectFrom.projects ? <ProjectForm data={formData} /> : ''}
     </>
   )
 }

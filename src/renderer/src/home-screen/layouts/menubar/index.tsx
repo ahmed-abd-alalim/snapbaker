@@ -1,9 +1,10 @@
 import './menubar.css'
 import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import setting context
-import { useDataContext } from '@/context/home-screen/data'
-import { useSettingContext } from '@/context/home-screen/setting'
+// import state
+import { RootState } from '@/state'
+import { directions } from '@/state/slice/homeScreenSlice'
 
 // import icon
 import { FiMenu } from 'react-icons/fi'
@@ -13,9 +14,10 @@ import { LuChevronsLeft } from 'react-icons/lu'
 import { CiUser } from 'react-icons/ci'
 
 const Index = (): React.JSX.Element => {
+  const dispatch = useDispatch()
   const [isOpen, setIsOpen] = useState<boolean>(true)
-  const { userInfo } = useDataContext()
-  const { appDirections, setAppDirections } = useSettingContext()
+  const userInfo = useSelector((state: RootState) => state.setting.account)
+  const appDirections = useSelector((state: RootState) => state.homeScreen.directions)
 
   const HandelMenuCloseIcon: (orderName: string) => void = (orderName) => {
     if (orderName === 'open') {
@@ -40,7 +42,7 @@ const Index = (): React.JSX.Element => {
         </div>
         <div
           className={`icon_box ${appDirections.home}`}
-          onClick={() => setAppDirections({ home: 'active' })}
+          onClick={() => dispatch(directions({ home: 'active' }))}
         >
           {appDirections.home ? (
             <IoHome className="bar_icon" />
@@ -51,7 +53,7 @@ const Index = (): React.JSX.Element => {
         </div>
         <div
           className={`icon_box ${appDirections.projects}`}
-          onClick={() => setAppDirections({ projects: 'active' })}
+          onClick={() => dispatch(directions({ projects: 'active' }))}
         >
           {appDirections.projects ? (
             <HiWindow className="bar_icon" />
@@ -79,7 +81,7 @@ const Index = (): React.JSX.Element => {
         )}
         <div
           className={`icon_box ${appDirections.setting}`}
-          onClick={() => setAppDirections({ setting: 'active' })}
+          onClick={() => dispatch(directions({ setting: 'active' }))}
         >
           {appDirections.setting ? (
             <IoSettingsSharp className="bar_icon" />

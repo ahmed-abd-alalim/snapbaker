@@ -1,12 +1,14 @@
+import { useSelector } from 'react-redux'
+
 // import page
 import DesignPanel from './design-panel'
 import RoutingPanel from './routing-panel'
 
-// import context
-import { useSettingContext } from '@/context/workspace/setting'
+// import state
+import { RootState } from '@/state'
 
 const Index = (): React.JSX.Element => {
-  const { appDirections } = useSettingContext()
+  const appDirections = useSelector((state: RootState) => state.workspace.directions)
 
   return (
     <>

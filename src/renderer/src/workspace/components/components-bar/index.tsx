@@ -1,11 +1,13 @@
 import './componentsBar.css'
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import context
-import { useDataContext } from '@/context/workspace/data'
+// import  state
+import { RootState } from '@/state'
+import { componentData } from '@/state/slice/projectSlice'
 
 // import type
-import { componentDataType } from '@/type/workspace'
+import { componentDataType } from '@/type'
 
 // import icon
 import { BsBoxSeam } from 'react-icons/bs'
@@ -16,7 +18,8 @@ import { TbEdit } from 'react-icons/tb'
 import { GoArchive, GoBeaker } from 'react-icons/go'
 
 const Index = (): React.JSX.Element => {
-  const { componentData, setComponentData } = useDataContext()
+  const dispatch = useDispatch()
+  const allComponentData = useSelector((state: RootState) => state.project.componentData)
   const [cardPath, setCardPath] = useState<string | null>(null)
   const [items, setItems] = useState<componentDataType[]>([])
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -47,21 +50,21 @@ const Index = (): React.JSX.Element => {
   const HandleAddButtom = (): void => {
     const newComponentData = [...items, { id: items.length }]
     setItems(newComponentData)
-    setComponentData(newComponentData)
+    dispatch(componentData(newComponentData))
   }
 
   const HandleDeletButtom = (componentId: number): void => {
     const newComponentData = items.filter((_) => _.id !== componentId)
     setItems(newComponentData)
-    setComponentData(newComponentData)
+    dispatch(componentData(newComponentData))
   }
 
   useEffect(() => {
     if (cardPath !== null) {
       if (cardPath === 'archive') {
-        showItems(componentData)
+        showItems(allComponentData)
       } else if (cardPath === 'current') {
-        showItems(componentData)
+        showItems(allComponentData)
       }
     }
   }, [cardPath])

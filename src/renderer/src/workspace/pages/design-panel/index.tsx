@@ -1,14 +1,14 @@
 import './designPanel.css'
+import { useSelector } from 'react-redux'
 
 // import components
 import { Mouse, PropertiesPanel, PagesBar, ComponentsBar } from '../../components'
 
-// import context
-import { useSettingContext } from '@/context/workspace/setting'
+// import state
+import { RootState } from '@/state'
 
 const Index = (): React.JSX.Element => {
-  const { designPanelCursor } = useSettingContext()
-
+  const designPanelCursor = useSelector((state: RootState) => state.workspace.designPanelCursor)
   return (
     <section
       id="designPanel"

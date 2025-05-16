@@ -1,11 +1,13 @@
 import './pagesBar.css'
 import { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import context
-import { useDataContext } from '@/context/workspace/data'
+// import state
+import { RootState } from '@/state'
+import { pageData } from '@/state/slice/projectSlice'
 
 // import type
-import { pageDataType, addCardInputType } from '@/type/workspace'
+import { pageDataType, addCardInputType } from '@/type'
 
 // import icon
 import { BiLayer, BiLayerPlus } from 'react-icons/bi'
@@ -17,7 +19,8 @@ import { MdClose } from 'react-icons/md'
 import { RxRocket } from 'react-icons/rx'
 
 const Index = (): React.JSX.Element => {
-  const { pageData, setPageData } = useDataContext()
+  const dispatch = useDispatch()
+  const allpageData = useSelector((state: RootState) => state.project.pageData)
   const [items, setItems] = useState<pageDataType[]>([])
   const [poageBarIsOpen, setPoageBarIsOpen] = useState<boolean>(false)
   const [addCardIsOpen, setAddCardIsOpen] = useState<boolean>(false)
@@ -28,9 +31,9 @@ const Index = (): React.JSX.Element => {
 
   const showItems = (): void => {
     setItems([])
-    for (let i = 1; i <= pageData.length; i++) {
+    for (let i = 1; i <= allpageData.length; i++) {
       setTimeout(() => {
-        setItems((prev) => [...prev, pageData[i - 1]])
+        setItems((prev) => [...prev, allpageData[i - 1]])
       }, 40 * i)
     }
   }
@@ -70,7 +73,7 @@ const Index = (): React.JSX.Element => {
       if (!allPageName.includes(addCardInput.inbut)) {
         const newPageData = [...items, pageTemplet]
         setItems(newPageData)
-        setPageData(newPageData)
+        dispatch(pageData(newPageData))
         setAddCardIsOpen(false)
         setAddCardInput({
           inbut: '',
@@ -121,7 +124,7 @@ const Index = (): React.JSX.Element => {
               : item
           )
         )
-        setPageData(items)
+        dispatch(pageData(items))
       } else {
         ErrorMessage('this name was used before')
       }
@@ -133,7 +136,7 @@ const Index = (): React.JSX.Element => {
   const HandleDeletPage = (pageId: number): void => {
     const newPageData = items.filter((page) => page.id !== pageId)
     setItems(newPageData)
-    setPageData(newPageData)
+    dispatch(pageData(newPageData))
   }
 
   useEffect(() => {

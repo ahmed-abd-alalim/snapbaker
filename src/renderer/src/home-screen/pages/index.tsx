@@ -1,7 +1,8 @@
 import './pages.css'
+import { useSelector } from 'react-redux'
 
-// import setting context
-import { useSettingContext } from '@/context/home-screen/setting'
+// import state
+import { RootState } from '@/state'
 
 // import Pages
 import Home from './home'
@@ -9,7 +10,7 @@ import Projects from './projects'
 import Setting from './setting'
 
 const Index = (): React.JSX.Element => {
-  const { appDirections } = useSettingContext()
+  const appDirections = useSelector((state: RootState) => state.homeScreen.directions)
 
   return (
     <section id="Window">

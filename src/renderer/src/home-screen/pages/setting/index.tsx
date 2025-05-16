@@ -1,15 +1,16 @@
 import './setting.css'
 import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 
-// import context
-import { useDataContext } from '@/context/home-screen/data'
-import { useGlopalSettingContext } from '@/context/glopal/setting'
+// import state
+import { colorTheme, account } from '@/state/slice/settingSlice'
+import type { RootState } from '@/state'
 
 // import logo
 import Logo from '@/logo'
 
 // import type
-import { editUserInfoInbutType } from '@/type/home-screen'
+import { userInfoType } from '@/type'
 
 // import config
 import { app } from '@/config'
@@ -24,19 +25,16 @@ import { VscSymbolColor } from 'react-icons/vsc'
 import { TbChevronDown } from 'react-icons/tb'
 
 const Index = (): React.JSX.Element => {
-  const { userInfo, setUserInfo } = useDataContext()
+  const userInfo = useSelector((state: RootState) => state.setting.account)
 
-  const availableThemes = Object.fromEntries(
-    app.theme.availableThemes.map((themeName) => [themeName, false])
-  )
-
-  const { colorTheme, setColorTheme } = useGlopalSettingContext()
+  const dispatch = useDispatch()
+  const allColorTheme = useSelector((state: RootState) => state.setting.colorTheme)
   const [editCard, setEditCard] = useState<number>(0)
   const [colorThemeCard, setColorThemeCard] = useState<number>(0)
-  const [editUserInfoInbut, setEditUserInfoInbut] = useState<editUserInfoInbutType>({
+  const [editUserInfoInbut, setEditUserInfoInbut] = useState<userInfoType>({
     fName: userInfo.fName,
     lName: userInfo.lName,
-    userImg: userInfo.img
+    img: userInfo.img
   })
 
   const handleSelect = async (): Promise<void> => {
@@ -44,7 +42,7 @@ const Index = (): React.JSX.Element => {
     if (base64)
       setEditUserInfoInbut((prevData) => ({
         ...prevData,
-        userImg: base64
+        img: base64
       }))
   }
 
@@ -106,8 +104,8 @@ const Index = (): React.JSX.Element => {
                   <div className="add_layer" onClick={handleSelect}>
                     <IoIosAdd className="add_icon" />
                   </div>
-                  {editUserInfoInbut.userImg ? (
-                    <img src={editUserInfoInbut.userImg} alt={userInfo.fName} width={'100%'} />
+                  {editUserInfoInbut.img ? (
+                    <img src={editUserInfoInbut.img} alt={userInfo.fName} width={'100%'} />
                   ) : (
                     <CiUser className="user_icon" />
                   )}
@@ -144,11 +142,13 @@ const Index = (): React.JSX.Element => {
                   <div
                     className="submit_button d-flex gap-1 mt-2"
                     onClick={() => {
-                      setUserInfo(() => ({
-                        fName: editUserInfoInbut.fName,
-                        lName: editUserInfoInbut.lName,
-                        img: editUserInfoInbut.userImg
-                      }))
+                      dispatch(
+                        account({
+                          fName: editUserInfoInbut.fName,
+                          lName: editUserInfoInbut.lName,
+                          img: editUserInfoInbut.img
+                        })
+                      )
                       setEditCard(editCard === 0 ? 1 : 0)
                     }}
                   >
@@ -181,7 +181,7 @@ const Index = (): React.JSX.Element => {
                 onClick={() => setColorThemeCard(colorThemeCard === 0 ? 1 : 0)}
               >
                 <span className="theme_name">
-                  {Object.keys(colorTheme).filter((item) => colorTheme[item] === true)}
+                  {Object.keys(allColorTheme).filter((item) => allColorTheme[item] === true)}
                 </span>
                 <TbChevronDown className={`down_icon ${colorThemeCard && 'rotate'}`} />
               </div>
@@ -193,13 +193,8 @@ const Index = (): React.JSX.Element => {
                 <div className="theme_color_option" key={index}>
                   <input
                     type="checkbox"
-                    checked={colorTheme[themeColor]}
-                    onChange={() =>
-                      setColorTheme({
-                        ...availableThemes,
-                        [themeColor]: true
-                      })
-                    }
+                    checked={allColorTheme[themeColor]}
+                    onChange={() => dispatch(colorTheme(themeColor))}
                   />
                   <span>{themeColor}</span>
                 </div>
