@@ -15,11 +15,16 @@ export default (): void => {
     // Go through each subfolder
     subfolders.forEach((folder) => {
       const appJsonPath = `${projectsFolderPath}/${folder}/app.json`
+      const pagesJsonPath = `${projectsFolderPath}/${folder}/pages.json`
       if (fs.existsSync(appJsonPath)) {
         const fileContent = fs.readFileSync(appJsonPath, 'utf-8')
+        const pagesfileContent = fs.readFileSync(pagesJsonPath, 'utf-8')
+        const newFileContent = {
+          ...JSON.parse(fileContent),
+          pagesNum: JSON.parse(pagesfileContent).length
+        }
         try {
-          const jsonData = JSON.parse(fileContent)
-          allProjectsInfo.push(jsonData)
+          allProjectsInfo.push(newFileContent)
         } catch (error) {
           console.error(`Invalid JSON in ${appJsonPath}`, error)
         }
