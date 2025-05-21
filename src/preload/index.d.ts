@@ -18,12 +18,6 @@ declare global {
       updateApp: (newData: object, oldData: object) => void
       getAllProjectsInfo: () => Promise<object[]>
     }
-    fromBackEnd: {
-      ipcRenderer: {
-        on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) => void
-        removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) => void
-      }
-    }
   }
 }
 

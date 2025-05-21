@@ -1,5 +1,9 @@
 import './navbar.css'
 import { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+
+// import state
+import { activeSessionName } from '@/state/slice/settingSlice'
 
 // import icon
 import { IoClose, IoPhonePortraitOutline } from 'react-icons/io5'
@@ -12,9 +16,11 @@ import { RxLaptop } from 'react-icons/rx'
 import Logo from '@/logo'
 
 const Index = (): React.JSX.Element => {
+  const dispatch = useDispatch()
   const [isOnline, setIsOnline] = useState(navigator.onLine)
 
   const handleClose: () => void = () => {
+    dispatch(activeSessionName(''))
     window.controlar.closeWindow()
   }
 

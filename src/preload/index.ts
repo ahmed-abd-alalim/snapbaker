@@ -28,14 +28,14 @@ if (process.contextIsolated) {
       getAllProjectsInfo: () => ipcRenderer.invoke('get-all-projects-info')
     })
 
-    contextBridge.exposeInMainWorld('fromBackEnd', {
-      ipcRenderer: {
-        on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
-          ipcRenderer.on(channel, func),
-        removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
-          ipcRenderer.removeListener(channel, func)
-      }
-    })
+    // contextBridge.exposeInMainWorld('fromBackEnd', {
+    //   ipcRenderer: {
+    //     on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
+    //       ipcRenderer.on(channel, func),
+    //     removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
+    //       ipcRenderer.removeListener(channel, func)
+    //   }
+    // })
   } catch (error) {
     console.error(error)
   }
@@ -65,15 +65,5 @@ if (process.contextIsolated) {
     updateApp: (newData: object, oldData: object) =>
       ipcRenderer.send('update-app', newData, oldData),
     getAllProjectsInfo: () => ipcRenderer.invoke('get-all-projects-info')
-  }
-
-  // @ts-ignore (define in dts)
-  window.fromBackEnd = {
-    ipcRenderer: {
-      on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
-        ipcRenderer.on(channel, func),
-      removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
-        ipcRenderer.removeListener(channel, func)
-    }
   }
 }

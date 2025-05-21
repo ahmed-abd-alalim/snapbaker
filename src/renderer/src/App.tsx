@@ -9,7 +9,7 @@ import Workspace from '@/workspace'
 
 // import state
 import type { RootState } from './state'
-import { projectsData, activeSessionName } from './state/slice/settingSlice'
+import { projectsData } from './state/slice/settingSlice'
 
 // import config
 import { routes } from '@/config'
@@ -32,17 +32,6 @@ function App(): React.JSX.Element {
     const getActiveTheme = Object.keys(colorTheme).filter((item) => colorTheme[item] === true)
     document.documentElement.setAttribute('app-theme-color', getActiveTheme[0])
   }, [colorTheme])
-
-  // acctive sesstion
-  useEffect(() => {
-    const handler = (): void => {
-      dispatch(activeSessionName(''))
-    }
-    window.fromBackEnd.ipcRenderer.on('session-not-active', handler)
-    return () => {
-      window.fromBackEnd.ipcRenderer.removeListener('session-not-active', handler)
-    }
-  }, [])
 
   return (
     <div className="app-container">
