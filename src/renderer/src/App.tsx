@@ -29,8 +29,7 @@ function App(): React.JSX.Element {
   // app color theme
   const colorTheme = useSelector((state: RootState) => state.setting.colorTheme)
   useEffect(() => {
-    const getActiveTheme = Object.keys(colorTheme).filter((item) => colorTheme[item] === true)
-    document.documentElement.setAttribute('app-theme-color', getActiveTheme[0])
+    document.documentElement.setAttribute('app-theme-color', colorTheme)
   }, [colorTheme])
 
   return (

@@ -10,29 +10,20 @@ import projects from '@storage/projects.json'
 import { app } from '@/config'
 
 // import type
-import { projectstDataArrayType, colorThemeType, userInfoType, activeSessionNameType } from '@/type'
+import { projectstDataArrayType, userInfoType, activeSessionNameType } from '@/type'
 
 // setting state type
 export interface SettingState {
   activeSessionName: activeSessionNameType
-  colorTheme: colorThemeType
+  colorTheme: string
   projectsData: projectstDataArrayType
   account: userInfoType
 }
 
-// get all color available Themes
-const availableThemes = Object.fromEntries(
-  app.theme.availableThemes.map((themeName) => [themeName, false])
-)
-const colorTheemActive = Object.entries(setting.colorTheme).filter((color) => color[1] === true)
-
 // setting state
 const initialState: SettingState = {
   activeSessionName: '',
-  colorTheme: {
-    ...availableThemes,
-    [colorTheemActive.length !== 0 ? colorTheemActive[0][0] : app.theme.default]: true
-  },
+  colorTheme: setting.colorTheme.length !== 0 ? setting.colorTheme : app.theme.default,
   projectsData: projects,
   account: {
     fName: accountInfo.fName,
@@ -46,7 +37,7 @@ export const settingSlice = createSlice({
   initialState,
   reducers: {
     colorTheme: (state, action: PayloadAction<string>): void => {
-      state.colorTheme = { ...availableThemes, [action.payload]: true }
+      state.colorTheme = action.payload
     },
     account: (state, action: PayloadAction<userInfoType>): void => {
       state.account = action.payload

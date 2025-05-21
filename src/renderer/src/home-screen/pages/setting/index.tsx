@@ -10,7 +10,7 @@ import type { RootState } from '@/state'
 import Logo from '@/logo'
 
 // import type
-import { userInfoType } from '@/type'
+import { userInfoType, colorThemeType } from '@/type'
 
 // import config
 import { app } from '@/config'
@@ -25,12 +25,19 @@ import { VscSymbolColor } from 'react-icons/vsc'
 import { TbChevronDown } from 'react-icons/tb'
 
 const Index = (): React.JSX.Element => {
-  const userInfo = useSelector((state: RootState) => state.setting.account)
-
   const dispatch = useDispatch()
-  const allColorTheme = useSelector((state: RootState) => state.setting.colorTheme)
+  const userInfo = useSelector((state: RootState) => state.setting.account)
+  const colorThemeName = useSelector((state: RootState) => state.setting.colorTheme)
+
+  const [allColorTheme, setAllColorTheme] = useState<colorThemeType>(
+    app.theme.availableThemes.map((themeName) =>
+      themeName === colorThemeName ? [themeName, true] : [themeName, false]
+    )
+  )
+
   const [editCard, setEditCard] = useState<number>(0)
   const [colorThemeCard, setColorThemeCard] = useState<number>(0)
+
   const [editUserInfoInbut, setEditUserInfoInbut] = useState<userInfoType>({
     fName: userInfo.fName,
     lName: userInfo.lName,
@@ -45,6 +52,14 @@ const Index = (): React.JSX.Element => {
         img: base64
       }))
   }
+
+  useEffect(() => {
+    setAllColorTheme(
+      app.theme.availableThemes.map((themeName) =>
+        themeName === colorThemeName ? [themeName, true] : [themeName, false]
+      )
+    )
+  }, [colorThemeName])
 
   useEffect(() => {
     if (colorThemeCard) {
@@ -180,23 +195,21 @@ const Index = (): React.JSX.Element => {
                 className="drop_down_button"
                 onClick={() => setColorThemeCard(colorThemeCard === 0 ? 1 : 0)}
               >
-                <span className="theme_name">
-                  {Object.keys(allColorTheme).filter((item) => allColorTheme[item] === true)}
-                </span>
+                <span className="theme_name">{colorThemeName}</span>
                 <TbChevronDown className={`down_icon ${colorThemeCard && 'rotate'}`} />
               </div>
             </div>
           </div>
           <div className="theme_color_section">
             <div className="checkboxs_section">
-              {app.theme.availableThemes.map((themeColor, index: number) => (
+              {allColorTheme.map((colorSetion, index: number) => (
                 <div className="theme_color_option" key={index}>
                   <input
                     type="checkbox"
-                    checked={allColorTheme[themeColor]}
-                    onChange={() => dispatch(colorTheme(themeColor))}
+                    checked={colorSetion[1]}
+                    onChange={() => dispatch(colorTheme(colorSetion[0]))}
                   />
-                  <span>{themeColor}</span>
+                  <span>{colorSetion[0]}</span>
                 </div>
               ))}
             </div>

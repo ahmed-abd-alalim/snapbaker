@@ -1,15 +1,7 @@
-// import config
-import { app } from '@/config'
-
 //<<======= home screen types =======>>
 
-// Create a type from the array
-type Keys = (typeof app.theme.availableThemes)[number]
-
-// Create the object type
-export type colorThemeType = Partial<{
-  [K in Keys]: boolean
-}>
+// color Theme Type
+export type colorThemeType = [string, boolean][]
 
 // account type
 export type userInfoType = {
