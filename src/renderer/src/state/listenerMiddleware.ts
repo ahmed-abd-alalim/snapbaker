@@ -1,10 +1,11 @@
 import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit'
 
 import { account, projectsData, colorTheme } from '@/state/slice/settingSlice'
+
 // import json data
 import settingInfo from '@storage/setting.json'
 import accountInfo from '@storage/account.json'
-import projects from '@storage/projects.json'
+import projectsInfo from '@storage/projects.json'
 
 const listenerMiddleware = createListenerMiddleware()
 
@@ -43,7 +44,7 @@ listenerMiddleware.startListening({
     const { setting } = await listenerApi.getState()
 
     // save account data in account file
-    if (JSON.stringify(projects) !== JSON.stringify(setting.projectsData)) {
+    if (JSON.stringify(projectsInfo) !== JSON.stringify(setting.projectsData)) {
       window.systemFile.WriteFile(setting.projectsData, 'projects.json')
     }
   }
