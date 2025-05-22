@@ -1,8 +1,7 @@
 :root {
   /* view port size */
-  /* 
-    ---> dashboard
-  */
+
+  /*  ---> dashboard*/
   --dashboard-navbar-width: 100%;
   --dashboard-navbar-hight: 40px;
 
@@ -14,21 +13,13 @@
   --dashboard-footer-width: 100%;
   --dashboard-footer-hight: 25px;
 
-
   /* color */
-  --brand-color: #f1a218;
-  --color-background: #171717;
-  --color-background-transparent: #17171791;
-  --color-primary: #212121;
-  --color-secondary: #303030;
-  --color-tertiary: rgb(64, 64, 64);
-  --color-tertiary-transparent: rgba(64, 64, 64, 0.91);
-  --text-color: rgba(255, 255, 245, 0.86);
-  --text-accent-color: #f6e7ce5e;
   --color-red-transparent: rgba(251, 74, 74, 0.686);
+
 
   /* border */
   --border_1: .09rem solid var(--color-secondary);
+
 
   /* border-radius */
   --border-radius_3: 3px;
@@ -39,8 +30,6 @@
   --border-radius_30: 30px;
   --border-radius_50: 50%;
 
-  /* box shadow */
-  --dark-box-shadow: 3px 4px 7px #171717be;
 
   /* transition */
   --transition_2: .2s ease all;
@@ -49,6 +38,22 @@
 }
 
 /* color theme */
+[app-theme-color="dark"] {
+  /* color */
+  --brand-color: #f1a218;
+  --color-background: #171717;
+  --color-background-transparent: #17171791;
+  --color-primary: #212121;
+  --color-secondary: #303030;
+  --color-tertiary: rgb(64, 64, 64);
+  --color-tertiary-transparent: rgba(64, 64, 64, 0.91);
+  --text-color: rgba(255, 255, 245, 0.86);
+  --text-accent-color: #f6e7ce5e;
+
+  /* box shadow */
+  --dark-box-shadow: 3px 4px 7px #171717be;
+}
+
 [app-theme-color="white"] {
   /* color */
   --brand-color: #f1a218;
