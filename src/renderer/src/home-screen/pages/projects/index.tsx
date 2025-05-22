@@ -58,7 +58,7 @@ const Index = (): React.JSX.Element => {
     if (cardData.siteName !== activeSession) {
       const newData = allProjectsData.filter((item) => item.siteName !== cardData.siteName)
       dispatch(projectsData([...newData]))
-      window.systemFile.deleteApp(cardData.siteName!)
+      window.homeScreen.deleteApp(cardData.siteName!)
     }
   }
 

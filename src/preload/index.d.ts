@@ -11,7 +11,7 @@ declare global {
     userImg: {
       getPath: () => Promise<string | null>
     }
-    systemFile: {
+    homeScreen: {
       WriteFile: (data: object, path: string) => void
       newApp: (data: object) => void
       deleteApp: (appName: string) => void

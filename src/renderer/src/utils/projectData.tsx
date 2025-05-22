@@ -11,7 +11,7 @@ const ProjectData = (): null => {
   useEffect(() => {
     const fetchData = async (): Promise<void> => {
       // Send IPC message to Electron backend
-      dispatch(projectsData(await window.systemFile.getAllProjectsInfo()))
+      dispatch(projectsData(await window.homeScreen.getAllProjectsInfo()))
     }
     fetchData()
   }, [])

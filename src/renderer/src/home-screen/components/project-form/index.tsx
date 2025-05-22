@@ -85,7 +85,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
         if (!activeSession) {
           dispatch(activeSessionName(inbutDtata.siteName!))
           window.newWindow.openNewWindow()
-          window.systemFile.newApp(inbutDtata)
+          window.homeScreen.newApp(inbutDtata)
         }
       } else {
         setErrorMessage('This name is already used change it.')
@@ -98,7 +98,7 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
     const uniqueName = updateData.filter((item) => item.siteName === inbutDtata.siteName)
     if (!uniqueName.length) {
       dispatch(projectsData([...updateData, inbutDtata]))
-      window.systemFile.updateApp(inbutDtata, data!)
+      window.homeScreen.updateApp(inbutDtata, data!)
       HandleCardClose()
     } else {
       setErrorMessage('This name is already used change it.')

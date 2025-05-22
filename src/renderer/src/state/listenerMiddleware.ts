@@ -17,7 +17,7 @@ listenerMiddleware.startListening({
 
     // save setting data in setting file
     if (JSON.stringify(settingInfo) !== JSON.stringify(setting.colorTheme)) {
-      window.systemFile.WriteFile({ colorTheme: setting.colorTheme }, 'setting.json')
+      window.homeScreen.WriteFile({ colorTheme: setting.colorTheme }, 'setting.json')
     }
   }
 })
@@ -30,7 +30,7 @@ listenerMiddleware.startListening({
 
     // save account data in account file
     if (JSON.stringify(accountInfo) !== JSON.stringify(setting.account)) {
-      window.systemFile.WriteFile(setting.account, 'account.json')
+      window.homeScreen.WriteFile(setting.account, 'account.json')
     }
   }
 })

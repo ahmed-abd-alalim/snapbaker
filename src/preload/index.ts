@@ -19,7 +19,7 @@ if (process.contextIsolated) {
       getPath: () => ipcRenderer.invoke('get-user-image-path')
     })
 
-    contextBridge.exposeInMainWorld('systemFile', {
+    contextBridge.exposeInMainWorld('homeScreen', {
       WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
       newApp: (data: object) => ipcRenderer.send('new-app', data),
       deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
@@ -27,15 +27,6 @@ if (process.contextIsolated) {
         ipcRenderer.send('update-app', newData, oldData),
       getAllProjectsInfo: () => ipcRenderer.invoke('get-all-projects-info')
     })
-
-    // contextBridge.exposeInMainWorld('fromBackEnd', {
-    //   ipcRenderer: {
-    //     on: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
-    //       ipcRenderer.on(channel, func),
-    //     removeListener: (channel: string, func: (event: Electron.IpcRendererEvent) => void) =>
-    //       ipcRenderer.removeListener(channel, func)
-    //   }
-    // })
   } catch (error) {
     console.error(error)
   }
@@ -58,7 +49,7 @@ if (process.contextIsolated) {
   }
 
   // @ts-ignore (define in dts)
-  window.systemFile = {
+  window.homeScreen = {
     WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
     newApp: (data: object) => ipcRenderer.send('new-app', data),
     deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),

@@ -5,11 +5,15 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 // window controls
 import { Close, Minimize, Maximize } from './window-controls'
 
-// file system funcs
-import { WriteFile, NewApp, DeleteApp, updateApp, getAllProjectsInfo } from './file-system'
-
 // home-screen funcs
-import { GetUserImagePath } from './home-screen'
+import {
+  GetUserImagePath,
+  WriteFile,
+  NewApp,
+  DeleteApp,
+  updateApp,
+  getAllProjectsInfo
+} from './home-screen'
 
 // app icon
 import icon from '../../resources/icon.png?asset'
