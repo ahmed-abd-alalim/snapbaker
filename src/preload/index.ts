@@ -14,12 +14,8 @@ if (process.contextIsolated) {
       minimizeWindow: () => ipcRenderer.send('minimize-window'),
       toggleMaximizeWindow: () => ipcRenderer.send('toggle-maximize-window')
     })
-
-    contextBridge.exposeInMainWorld('userImg', {
-      getPath: () => ipcRenderer.invoke('get-user-image-path')
-    })
-
     contextBridge.exposeInMainWorld('homeScreen', {
+      getPath: () => ipcRenderer.invoke('get-user-image-path'),
       WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
       newApp: (data: object) => ipcRenderer.send('new-app', data),
       deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
@@ -44,12 +40,8 @@ if (process.contextIsolated) {
   }
 
   // @ts-ignore (define in dts)
-  window.userImg = {
-    getPath: () => ipcRenderer.invoke('get-user-image-path')
-  }
-
-  // @ts-ignore (define in dts)
   window.homeScreen = {
+    getPath: () => ipcRenderer.invoke('get-user-image-path'),
     WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
     newApp: (data: object) => ipcRenderer.send('new-app', data),
     deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),

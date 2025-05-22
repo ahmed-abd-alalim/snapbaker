@@ -45,7 +45,7 @@ const Index = (): React.JSX.Element => {
   })
 
   const handleSelect = async (): Promise<void> => {
-    const base64 = await window.userImg.getPath()
+    const base64 = await window.homeScreen.getPath()
     if (base64)
       setEditUserInfoInbut((prevData) => ({
         ...prevData,

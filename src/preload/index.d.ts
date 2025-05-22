@@ -8,10 +8,8 @@ declare global {
       minimizeWindow: () => void
       toggleMaximizeWindow: () => void
     }
-    userImg: {
-      getPath: () => Promise<string | null>
-    }
     homeScreen: {
+      getPath: () => Promise<string | null>
       WriteFile: (data: object, path: string) => void
       newApp: (data: object) => void
       deleteApp: (appName: string) => void
