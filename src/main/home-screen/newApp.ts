@@ -35,7 +35,7 @@ export default (): void => {
 
     const pageTemplet = {
       id: 0,
-      name: '',
+      name: 'home',
       pageNameInbut: { isOpen: 0, inbut: '', error: '' }
     }
 

@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 // import stat
-import { pageData, componentData } from '@/state/slice/projectSlice'
+import { appInfo, pageData, componentData } from '@/state/slice/projectSlice'
 import { RootState } from '@/state/index'
 
 const GetActiveSessionData = (): null => {
@@ -16,6 +16,7 @@ const GetActiveSessionData = (): null => {
         GetData()
       } else {
         setTimeout(() => {
+          dispatch(appInfo(activeSessionData.app))
           dispatch(pageData(activeSessionData.pages))
           dispatch(componentData(activeSessionData.components))
         }, 500)
