@@ -26,6 +26,13 @@ export default (): void => {
       }
     })
 
+    fs.writeFile(`${newProjectsPath}/components.json`, JSON.stringify({}), (err) => {
+      if (err) {
+        console.error('Error writing file:', err)
+        return
+      }
+    })
+
     const pageTemplet = {
       id: 0,
       name: '',

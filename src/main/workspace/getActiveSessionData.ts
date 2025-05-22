@@ -7,7 +7,7 @@ export default (): void => {
     let allActiveSessionData = {}
 
     // Read all subfolders
-    const subfiles = ['app', 'pages']
+    const subfiles = ['app', 'pages', 'components']
 
     // Go through each subfolder
     subfiles.forEach((name) => {
@@ -17,7 +17,10 @@ export default (): void => {
         const fileContent = fs.readFileSync(JsonFilePath, 'utf-8')
 
         try {
-          allActiveSessionData = { ...allActiveSessionData, [name]: fileContent }
+          allActiveSessionData = {
+            ...allActiveSessionData,
+            [name]: fileContent !== '' ? JSON.parse(fileContent) : fileContent
+          }
         } catch (error) {
           console.error(`Invalid JSON in ${JsonFilePath}`, error)
         }
