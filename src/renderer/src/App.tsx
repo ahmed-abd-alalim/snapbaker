@@ -6,7 +6,7 @@ import HomeScreen from '@/home-screen'
 import Workspace from '@/workspace'
 
 // import utils
-import { ProjectData, ColorTheme } from '@/utils'
+import { ProjectData, ColorTheme, GetActiveSessionData } from '@/utils'
 
 // import config
 import { routes } from '@/config'
@@ -16,6 +16,7 @@ function App(): React.JSX.Element {
     <div className="app-container">
       <ProjectData />
       <ColorTheme />
+      <GetActiveSessionData />
       <Router>
         <Routes>
           {/* --------Intro Route */}

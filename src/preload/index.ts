@@ -15,13 +15,17 @@ if (process.contextIsolated) {
       toggleMaximizeWindow: () => ipcRenderer.send('toggle-maximize-window')
     })
     contextBridge.exposeInMainWorld('homeScreen', {
-      getPath: () => ipcRenderer.invoke('get-user-image-path'),
+      getUserImg: () => ipcRenderer.invoke('get-user-image-path'),
       WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
       newApp: (data: object) => ipcRenderer.send('new-app', data),
       deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
       updateApp: (newData: object, oldData: object) =>
         ipcRenderer.send('update-app', newData, oldData),
       getAllProjectsInfo: () => ipcRenderer.invoke('get-all-projects-info')
+    })
+    contextBridge.exposeInMainWorld('workSpace', {
+      getActiveSessionData: (fileName: string) =>
+        ipcRenderer.invoke('get-active-session-data', fileName)
     })
   } catch (error) {
     console.error(error)
@@ -41,12 +45,18 @@ if (process.contextIsolated) {
 
   // @ts-ignore (define in dts)
   window.homeScreen = {
-    getPath: () => ipcRenderer.invoke('get-user-image-path'),
+    getUserImg: () => ipcRenderer.invoke('get-user-image-path'),
     WriteFile: (data: object, path: string) => ipcRenderer.send('save-file', data, path),
     newApp: (data: object) => ipcRenderer.send('new-app', data),
     deleteApp: (appName: string) => ipcRenderer.send('delete-app', appName),
     updateApp: (newData: object, oldData: object) =>
       ipcRenderer.send('update-app', newData, oldData),
     getAllProjectsInfo: () => ipcRenderer.invoke('get-all-projects-info')
+  }
+
+  // @ts-ignore (define in dts)
+  window.workSpace = {
+    getActiveSessionData: (fileName: string) =>
+      ipcRenderer.invoke('get-active-session-data', fileName)
   }
 }

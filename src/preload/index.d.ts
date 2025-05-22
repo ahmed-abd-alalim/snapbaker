@@ -9,12 +9,15 @@ declare global {
       toggleMaximizeWindow: () => void
     }
     homeScreen: {
-      getPath: () => Promise<string | null>
+      getUserImg: () => Promise<string | null>
       WriteFile: (data: object, path: string) => void
       newApp: (data: object) => void
       deleteApp: (appName: string) => void
       updateApp: (newData: object, oldData: object) => void
       getAllProjectsInfo: () => Promise<object[]>
+    }
+    workSpace: {
+      getActiveSessionData: (fileName: string) => Promise<object>
     }
   }
 }

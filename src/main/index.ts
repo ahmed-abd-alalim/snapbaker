@@ -15,11 +15,22 @@ import {
   getAllProjectsInfo
 } from './home-screen'
 
+// workSpace funcs
+import { GetActiveSessionData } from './workspace'
+
 // app icon
 import icon from '../../resources/icon.png?asset'
 
 // array for func in appReady func
-const funAppReady = [GetUserImagePath, WriteFile, NewApp, DeleteApp, updateApp, getAllProjectsInfo]
+const funAppReady = [
+  GetUserImagePath,
+  WriteFile,
+  NewApp,
+  DeleteApp,
+  updateApp,
+  getAllProjectsInfo,
+  GetActiveSessionData
+]
 
 // array for func out appReady func
 const funOut = [Close, Minimize, Maximize]
