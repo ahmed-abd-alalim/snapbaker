@@ -4,7 +4,6 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 // import json data
 import setting from '@storage/setting.json'
 import accountInfo from '@storage/account.json'
-import projects from '@storage/projects.json'
 
 // import config
 import { app } from '@/config'
@@ -24,7 +23,7 @@ export interface SettingState {
 const initialState: SettingState = {
   activeSessionName: '',
   colorTheme: setting.colorTheme.length !== 0 ? setting.colorTheme : app.theme.default,
-  projectsData: projects,
+  projectsData: [],
   account: {
     fName: accountInfo.fName,
     lName: accountInfo.lName,
