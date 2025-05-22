@@ -17,9 +17,9 @@ export default (): void => {
 
     if (oldData.siteName !== newData.siteName) {
       fs.renameSync(oldProjectsPath, newProjectsPath)
-      fs.writeFileSync(`${newProjectsPath}/app.js`, JSON.stringify(newData))
+      fs.writeFileSync(`${newProjectsPath}/app.json`, JSON.stringify(newData))
     } else {
-      fs.writeFileSync(`${oldProjectsPath}/app.js`, JSON.stringify(newData))
+      fs.writeFileSync(`${oldProjectsPath}/app.json`, JSON.stringify(newData))
     }
   })
 }
