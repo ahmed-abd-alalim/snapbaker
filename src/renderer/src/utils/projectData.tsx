@@ -1,20 +1,25 @@
 import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 // import state
 import { projectsData } from '@/state/slice/settingSlice'
+import { RootState } from '@/state'
 
 const ProjectData = (): null => {
   const dispatch = useDispatch()
+  const pageData = useSelector((state: RootState) => state.project.pageData)
 
   // project Data
-  useEffect(() => {
-    const fetchData = async (): Promise<void> => {
-      // Send IPC message to Electron backend
+  const fetchData = (): void => {
+    // Send IPC message to Electron backend
+    setTimeout(async (): Promise<void> => {
       dispatch(projectsData(await window.homeScreen.getAllProjectsInfo()))
-    }
+    }, 100)
+  }
+
+  useEffect(() => {
     fetchData()
-  }, [])
+  }, [pageData])
   return null
 }
 
