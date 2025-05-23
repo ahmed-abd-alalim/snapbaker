@@ -82,10 +82,10 @@ const Index = ({ data }: { data?: projectFromOpjectType }): React.JSX.Element =>
       if (!uniqueName.length) {
         dispatch(projectsData([...projectsinfo, inbutDtata]))
         HandleCardClose()
+        window.homeScreen.newApp(inbutDtata)
         if (!activeSession) {
           dispatch(activeSessionName(inbutDtata.siteName!))
           window.newWindow.openNewWindow()
-          window.homeScreen.newApp(inbutDtata)
         }
       } else {
         setErrorMessage('This name is already used change it.')
