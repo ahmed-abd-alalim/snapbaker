@@ -1,6 +1,7 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit'
 
 import { account, colorTheme } from '@/state/slice/settingSlice'
+import { pageData, componentData } from '@/state/slice/projectSlice'
 
 // import json data
 import settingInfo from '@storage/setting.json'
@@ -8,7 +9,9 @@ import accountInfo from '@storage/account.json'
 
 const listenerMiddleware = createListenerMiddleware()
 
+// ############
 // Listen to all actions from the 'setting' slice
+// ############
 listenerMiddleware.startListening({
   actionCreator: colorTheme,
   effect: async (_, listenerApi) => {
@@ -31,6 +34,45 @@ listenerMiddleware.startListening({
     // save account data in account file
     if (JSON.stringify(accountInfo) !== JSON.stringify(setting.account)) {
       window.homeScreen.WriteFile(setting.account, 'account.json')
+    }
+  }
+})
+
+// ############
+// Listen to all actions from the 'project' slice
+// ############
+let fcountPageData = 0
+let fcountcomponentData = 0
+
+listenerMiddleware.startListening({
+  actionCreator: pageData,
+  effect: async (_, listenerApi) => {
+    // @ts-ignore (define in dts)
+    const { project } = await listenerApi.getState()
+
+    // save account data in account file
+    if (fcountPageData) {
+      window.workSpace.UpdateFile(project.pageData, `${project.appInfo.siteName}/pages.json`)
+    } else {
+      fcountPageData++
+    }
+  }
+})
+
+listenerMiddleware.startListening({
+  actionCreator: componentData,
+  effect: async (_, listenerApi) => {
+    // @ts-ignore (define in dts)
+    const { project } = await listenerApi.getState()
+
+    // save account data in account file
+    if (fcountcomponentData) {
+      window.workSpace.UpdateFile(
+        project.componentData,
+        `${project.appInfo.siteName}/components.json`
+      )
+    } else {
+      fcountcomponentData++
     }
   }
 })

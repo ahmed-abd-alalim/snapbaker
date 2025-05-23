@@ -18,6 +18,7 @@ declare global {
     }
     workSpace: {
       getActiveSessionData: (fileName: string) => Promise<object>
+      UpdateFile: (data: object, path: string) => void
     }
   }
 }

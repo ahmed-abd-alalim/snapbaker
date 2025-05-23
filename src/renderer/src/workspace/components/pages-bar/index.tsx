@@ -92,39 +92,30 @@ const Index = (): React.JSX.Element => {
     const pageInfo: pageDataType[] = items.filter((page) => page.id === pageId)
 
     const ErrorMessage = (Message: string): void => {
-      setItems((prveData) =>
-        prveData.map((item) =>
-          item.id === pageId
-            ? {
-                ...item,
-                pageNameInbut: {
-                  ...item.pageNameInbut,
-                  error: Message
-                }
-              }
-            : item
-        )
+      const addMessage = items.map((page) =>
+        page.id === pageId
+          ? {
+              ...page,
+              pageNameInbut: { ...page.pageNameInbut, error: Message }
+            }
+          : page
       )
+      setItems(addMessage)
     }
 
     if (pageInfo[0].pageNameInbut.inbut) {
       if (!allPageName.includes(pageInfo[0].pageNameInbut.inbut)) {
-        setItems((prveData) =>
-          prveData.map((item) =>
-            item.id === pageId
-              ? {
-                  ...item,
-                  name: item.pageNameInbut.inbut,
-                  pageNameInbut: {
-                    inbut: '',
-                    isOpen: 0,
-                    error: ''
-                  }
-                }
-              : item
-          )
+        const newPageData = items.map((page) =>
+          page.id === pageId
+            ? {
+                id: pageId,
+                name: page.pageNameInbut.inbut,
+                pageNameInbut: { isOpen: 0, inbut: '', error: '' }
+              }
+            : page
         )
-        dispatch(pageData(items))
+        setItems(newPageData)
+        dispatch(pageData(newPageData))
       } else {
         ErrorMessage('this name was used before')
       }
@@ -135,8 +126,9 @@ const Index = (): React.JSX.Element => {
 
   const HandleDeletPage = (pageId: number): void => {
     const newPageData = items.filter((page) => page.id !== pageId)
-    setItems(newPageData)
-    dispatch(pageData(newPageData))
+    const giveDtatNewId = newPageData.map((page, index) => ({ ...page, id: index }))
+    setItems(giveDtatNewId)
+    dispatch(pageData(giveDtatNewId))
   }
 
   useEffect(() => {

@@ -16,7 +16,7 @@ import {
 } from './home-screen'
 
 // workSpace funcs
-import { GetActiveSessionData } from './workspace'
+import { GetActiveSessionData, UpdateFile } from './workspace'
 
 // app icon
 import icon from '../../resources/icon.png?asset'
@@ -29,7 +29,8 @@ const funAppReady = [
   DeleteApp,
   updateApp,
   getAllProjectsInfo,
-  GetActiveSessionData
+  GetActiveSessionData,
+  UpdateFile
 ]
 
 // array for func out appReady func

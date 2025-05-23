@@ -1,9 +1,5 @@
 import { contextBridge, ipcRenderer } from 'electron'
 
-// Use `contextBridge` APIs to expose Electron APIs to
-// renderer only if context isolation is enabled, otherwise
-// just add to the DOM global.
-
 if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('newWindow', {
@@ -25,7 +21,8 @@ if (process.contextIsolated) {
     })
     contextBridge.exposeInMainWorld('workSpace', {
       getActiveSessionData: (fileName: string) =>
-        ipcRenderer.invoke('get-active-session-data', fileName)
+        ipcRenderer.invoke('get-active-session-data', fileName),
+      UpdateFile: (data: object, path: string) => ipcRenderer.send('update-file', data, path)
     })
   } catch (error) {
     console.error(error)
@@ -57,6 +54,7 @@ if (process.contextIsolated) {
   // @ts-ignore (define in dts)
   window.workSpace = {
     getActiveSessionData: (fileName: string) =>
-      ipcRenderer.invoke('get-active-session-data', fileName)
+      ipcRenderer.invoke('get-active-session-data', fileName),
+    UpdateFile: (data: object, path: string) => ipcRenderer.send('update-file', data, path)
   }
 }
