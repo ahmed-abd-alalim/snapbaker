@@ -11,6 +11,7 @@
     align-items: center;
     padding: 1.5rem 0 1rem 0;
     position: relative;
+    z-index: 50;
 }
 
 
@@ -29,8 +30,8 @@
 
 #menubar .bar_border .curved_top,
 #menubar .bar_border .curved_botton {
-    width: 48px;
-    height: 48px;
+    width: 25px;
+    height: 25px;
     overflow: hidden;
     position: relative;
     margin-left: var(--dashboard-menubar-width);
@@ -50,13 +51,13 @@
 #menubar .bar_border .curved_top:before {
     top: 0;
     left: 0;
-    box-shadow: -50px -50px 0 0 var(--color-primary);
+    box-shadow: -25px -25px 0 0 var(--color-primary);
 }
 
 #menubar .bar_border .curved_botton:before {
     bottom: 0;
     left: 0;
-    box-shadow: -50px 50px 0 0 var(--color-primary);
+    box-shadow: -25px 25px 0 0 var(--color-primary);
 }
 
 

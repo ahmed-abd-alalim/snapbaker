@@ -1,0 +1,72 @@
+/* ############
+--> components Editor
+############### */
+:root {
+    --componentsEditor-display: none
+}
+
+[componentsEditor="on"] {
+    --componentsEditor-display: block
+}
+
+#componentsEditor {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 45;
+    background-color: var(--color-background-transparent);
+    display: var(--componentsEditor-display);
+}
+
+#componentsEditor .editor_card {
+    width: 45.5rem;
+    height: 32.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(1.5rem) translateY(.4rem);
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius_8);
+    border: 1px solid var(--color-secondary);
+    overflow: hidden;
+}
+
+#componentsEditor .editor_card .close_icon {
+    width: 1.7rem;
+    height: 1.7rem;
+    font-size: 1.05rem;
+    background-color: var(--color-primary);
+    color: var(--text-accent-color);
+    position: absolute;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--color-secondary);
+    border-bottom: 1px solid var(--color-secondary);
+    border-radius: 0 0 0 var(--border-radius_3);
+    cursor: pointer;
+    transition: var(--transition_2);
+}
+
+#componentsEditor .editor_card .close_icon:hover {
+    color: var(--text-color);
+    background-color: var(--color-red-transparent);
+}
+
+#componentsEditor .editor_card .work_space {
+    height: 60%;
+    opacity: .9;
+    background-color: var(--color-secondary);
+    mask-image: url("/images/patterns/boxes.svg");
+    mask-repeat: repeat;
+    mask-position: center;
+}
+
+#componentsEditor .editor_card .constroler_section {
+    height: 40%;
+    border-top: 1px solid var(--color-secondary);
+}

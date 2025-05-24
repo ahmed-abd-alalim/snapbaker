@@ -48,6 +48,8 @@ const Index = (): React.JSX.Element => {
   }
 
   const HandleAddButtom = (): void => {
+    document.documentElement.setAttribute('componentsEditor', 'on')
+
     const newComponentData = [...items, { id: items.length }]
     setItems(newComponentData)
     dispatch(componentData(newComponentData))
@@ -105,7 +107,12 @@ const Index = (): React.JSX.Element => {
               {items.map((component) => (
                 <div className="component_card" key={component.id}>
                   <div className="up_layer">
-                    <div className="edit_icon">
+                    <div
+                      className="edit_icon"
+                      onClick={() =>
+                        document.documentElement.setAttribute('componentsEditor', 'on')
+                      }
+                    >
                       <TbEdit />
                     </div>
                     <div className="delet_icon" onClick={() => HandleDeletButtom(component.id)}>

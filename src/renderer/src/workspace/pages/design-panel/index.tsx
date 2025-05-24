@@ -2,7 +2,7 @@ import './designPanel.css'
 import { useSelector } from 'react-redux'
 
 // import components
-import { Mouse, PropertiesPanel, PagesBar, ComponentsBar } from '../../components'
+import { Mouse, PropertiesPanel, PagesBar, ComponentsBar, ComponentsEditor } from '../../components'
 
 // import state
 import { RootState } from '@/state'
@@ -16,6 +16,7 @@ const Index = (): React.JSX.Element => {
         cursor: designPanelCursor
       }}
     >
+      <ComponentsEditor />
       <div className="bg_mask" />
       <Mouse />
       <PropertiesPanel />

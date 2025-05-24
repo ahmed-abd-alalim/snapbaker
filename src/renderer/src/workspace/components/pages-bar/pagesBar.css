@@ -26,7 +26,7 @@
 
 #pagesBar {
     position: fixed;
-    z-index: 7;
+    z-index: 41;
     margin-left: 1.6rem;
     margin-top: 2.5rem;
     cursor: default;
