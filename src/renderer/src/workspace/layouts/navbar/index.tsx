@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 
 // import state
 import { activeSessionName } from '@/state/slice/settingSlice'
+import { messageAdd } from '@/state/slice/workspaceSlice'
 
 // import icon
 import { IoClose, IoPhonePortraitOutline } from 'react-icons/io5'
@@ -39,6 +40,7 @@ const Index = (): React.JSX.Element => {
     }
     const handleOffline = (): void => {
       setIsOnline(false)
+      dispatch(messageAdd('internet connection off'))
     }
 
     // Attach listeners

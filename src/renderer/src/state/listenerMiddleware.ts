@@ -1,6 +1,7 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit'
 
 import { account, colorTheme } from '@/state/slice/settingSlice'
+import { messageAdd, settingIsRead } from '@/state/slice/workspaceSlice'
 // import { pageData, componentData } from '@/state/slice/projectSlice'
 
 // import json data
@@ -34,6 +35,21 @@ listenerMiddleware.startListening({
     // save account data in account file
     if (JSON.stringify(accountInfo) !== JSON.stringify(setting.account)) {
       window.homeScreen.WriteFile(setting.account, 'account.json')
+    }
+  }
+})
+
+// ############
+// Listen to all actions from the 'workspace' slice
+// ############
+listenerMiddleware.startListening({
+  actionCreator: messageAdd,
+  effect: async (_, listenerApi) => {
+    // @ts-ignore (define in dts)
+    const { workspace } = await listenerApi.getState()
+
+    if (!workspace.notification.settings.isOpen && workspace.notification.settings.isRead) {
+      listenerApi.dispatch(settingIsRead(false))
     }
   }
 })

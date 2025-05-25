@@ -72,3 +72,13 @@ export type addCardInputType = {
 
 // component Data Type
 export type componentDataType = { id: number }
+
+//  notification Data Type
+export type notificationMessageType = string
+export type notificationType = {
+  settings: {
+    isOpen: boolean
+    isRead: boolean
+  }
+  messages: notificationMessageType[]
+}
