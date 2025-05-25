@@ -27,9 +27,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) translateX(1.5rem) translateY(.4rem);
-    background-color: var(--color-primary);
+    background-color: var(--color-background);
     border-radius: var(--border-radius_8);
-    border: 1px solid var(--color-secondary);
+    border: var(--border_1);
     overflow: hidden;
 }
 
@@ -45,8 +45,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-left: 1px solid var(--color-secondary);
-    border-bottom: 1px solid var(--color-secondary);
+    border-left: var(--border_1);
+    border-bottom: var(--border_1);
     border-radius: 0 0 0 var(--border-radius_3);
     cursor: pointer;
     transition: var(--transition_2);
@@ -68,5 +68,6 @@
 
 #componentsEditor .editor_card .constroler_section {
     height: 40%;
-    border-top: 1px solid var(--color-secondary);
+    border-top: var(--border_1);
+    background-color: var(--color-primary);
 }

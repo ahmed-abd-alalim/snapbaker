@@ -1,0 +1,354 @@
+/* #############
+--> tools Bar
+################# */
+:root {
+    --toolsBar-bar_content-animation: none;
+    --toolsBar-bar_content-navbar-car-close-icon-animation: none;
+    --toolsBar-bar_content-navbar_card-layer_icon-font-size: 1.4rem;
+    --toolsBar-bar_content-navbar_card-border: none;
+}
+
+[tools-bar="on"] {
+    --toolsBar-bar_content-animation: toolsBarBarContent .3s ease forwards;
+    --toolsBar-bar_content-navbar-car-close-icon-animation: toolsBarBarContentNavbarCardCloseIcon .3s ease forwards;
+    --toolsBar-bar_content-navbar_card-layer_icon-font-size: 1.2rem;
+    --toolsBar-bar_content-navbar_card-border: 1px solid var(--color-secondary);
+
+}
+
+[tools-bar="off"] {
+    --toolsBar-bar_content-animation: toolsBarBarContentReverse .3s ease forwards;
+    --toolsBar-bar_content-navbar-car-close-icon-animation: toolsBarBarContentNavbarCardCloseIconReverse .3s ease forwards;
+    --toolsBar-bar_content-navbar_card-layer_icon-font-size: 1.4rem;
+    --toolsBar-bar_content-navbar_card-border: none;
+
+}
+
+#toolsBar {
+    position: fixed;
+    z-index: 39;
+    margin-left: 1.6rem;
+    margin-top: 9.5rem;
+    cursor: default;
+}
+
+
+/* ------> bar content */
+#toolsBar .bar_content {
+    width: 2.3rem;
+    height: 100%;
+    padding: 2px 0;
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius_8);
+    border: var(--border_1);
+    animation: var(--toolsBar-bar_content-animation);
+    transition: var(--transition_4);
+}
+
+
+/* ---->  navbar card*/
+#toolsBar .bar_content .navbar_card {
+    height: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .4rem;
+    border-bottom: var(--toolsBar-bar_content-navbar_card-border);
+}
+
+#toolsBar .bar_content .navbar_card .layer_icon {
+    color: var(--text-accent-color);
+    font-size: var(--toolsBar-bar_content-navbar_card-layer_icon-font-size);
+    transition: var(--transition_2);
+}
+
+#toolsBar .bar_content .navbar_card .bar-name {
+    color: var(--text-accent-color);
+    font-weight: 500;
+    font-size: .75rem;
+    text-transform: capitalize;
+    animation: toolsBarBarContentNavbarCardBarName .3s ease forwards;
+}
+
+#toolsBar .bar_content .navbar_card .close_icon {
+    cursor: pointer;
+    color: var(--text-accent-color);
+    font-size: 1.2rem;
+    animation: var(--toolsBar-bar_content-navbar-car-close-icon-animation);
+    transition: var(--transition_2);
+}
+
+#toolsBar .bar_content .navbar_card .close_icon:hover {
+    color: var(--text-color);
+}
+
+#toolsBar .bar_content .navbar_card.active {
+    cursor: pointer;
+}
+
+#toolsBar .bar_content .navbar_card.active:hover .layer_icon {
+    color: var(--text-color);
+}
+
+
+/* ---->  tool layers*/
+#toolsBar .bar_content .tool_layers {
+    width: 100%;
+    max-height: calc(var(--dashboard-menubar-hight) - 7.15rem);
+    overflow: auto;
+    padding: 0rem 3px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#toolsBar .bar_content .tool_layers.mt-spec {
+    margin-top: .14rem;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card {
+    width: 47.75%;
+    height: 7rem;
+    margin-top: .15rem;
+    margin-bottom: .15rem;
+    border-radius: var(--border-radius_5);
+    animation: toolsBarBarContenttoollayerstoolCard .2s ease-in forwards;
+}
+
+#toolsBar .bar_content .tool_layers::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* -----> component card */
+#toolsBar .bar_content .tool_layers .tool_card {
+    position: relative;
+    background-color: var(--color-secondary);
+    overflow: hidden;
+    transition: var(--transition_2);
+}
+
+/* ---> up layer */
+#toolsBar .bar_content .tool_layers .tool_card .up_layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    background-color: var(--color-tertiary);
+    transition: var(--transition_3);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: .5rem;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card:hover .up_layer {
+    opacity: .7;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer span {
+    color: var(--text-accent-color);
+    font-weight: 500;
+    font-size: .9rem;
+    margin-bottom: .8rem;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .square_layer {
+    cursor: pointer;
+    width: 90%;
+    height: 2.5rem;
+    position: relative;
+    z-index: 2;
+    border: 1px dashed var(--text-accent-color);
+    border-radius: var(--border-radius_5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-accent-color);
+    font-size: 1.2rem;
+    transition: var(--transition_3);
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .square_layer:hover {
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .edit_icon,
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .delet_icon {
+    width: 1.8rem;
+    height: 1.8rem;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition_3);
+    color: var(--text-accent-color);
+    font-size: 1.1rem;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .edit_icon {
+    top: 0%;
+    left: 0%;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .delet_icon {
+    top: 0%;
+    right: 0%;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .edit_icon:hover {
+    color: var(--text-color);
+    background-color: var(--text-accent-color);
+    border-radius: 0 0 var(--border-radius_5) 0;
+}
+
+#toolsBar .bar_content .tool_layers .tool_card .up_layer .delet_icon:hover {
+    color: var(--text-color);
+    background-color: var(--color-red-transparent);
+    border-radius: 0 0 0 var(--border-radius_5);
+}
+
+
+/* ---> inbut layer */
+#toolsBar .bar_content .tool_layers .inbut_layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    background-color: var(--color-tertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer .error_message {
+    width: 100%;
+    font-size: .7rem;
+    color: var(--color-red-transparent);
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer input {
+    all: unset;
+    width: 100%;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--border-radius_5);
+    box-sizing: border-box;
+    padding: .3rem .4rem;
+    color: var(--text-color);
+    font-size: .9rem;
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer input::placeholder {
+    color: var(--text-accent-color);
+    font-size: .8rem;
+    opacity: .5;
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer .button_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: .7rem;
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer .button_box button {
+    all: unset;
+    width: 45%;
+    height: 1.9rem;
+    border-radius: var(--border-radius_3);
+    cursor: pointer;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .2rem;
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer .button_box .cre_button {
+    background-color: var(--text-color);
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer .button_box .can_button {
+    background-color: var(--color-secondary);
+    color: var(--text-color);
+}
+
+#toolsBar .bar_content .tool_layers .inbut_layer .button_box button:hover {
+    opacity: .8;
+}
+
+/* #############
+--> Animation
+################# */
+@keyframes toolsBarBarContent {
+    from {
+        width: 2.3rem;
+    }
+
+    to {
+        width: 14rem;
+    }
+}
+
+@keyframes toolsBarBarContentReverse {
+    from {
+        width: 14rem;
+    }
+
+    to {
+        width: 2.3rem;
+    }
+}
+
+@keyframes toolsBarBarContentNavbarCardBarName {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes toolsBarBarContentNavbarCardCloseIcon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes toolsBarBarContentNavbarCardCloseIconReverse {
+    from {
+        transform: rotate(90deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes toolsBarBarContenttoollayerstoolCard {
+    from {
+        opacity: .5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -2,7 +2,14 @@ import './designPanel.css'
 import { useSelector } from 'react-redux'
 
 // import components
-import { Mouse, PropertiesPanel, PagesBar, ComponentsBar, ComponentsEditor } from '../../components'
+import {
+  Mouse,
+  PropertiesPanel,
+  ToolBar,
+  PagesBar,
+  ComponentsBar,
+  ComponentsEditor
+} from '../../components'
 
 // import state
 import { RootState } from '@/state'
@@ -22,6 +29,7 @@ const Index = (): React.JSX.Element => {
       <PropertiesPanel />
       <PagesBar />
       <ComponentsBar />
+      <ToolBar />
     </section>
   )
 }
