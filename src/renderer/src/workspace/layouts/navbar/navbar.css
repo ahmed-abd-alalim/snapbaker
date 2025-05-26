@@ -153,8 +153,8 @@
 }
 
 #navbar .page_name .name span {
-    font-size: .72rem;
-    font-weight: 600;
+    font-size: .7rem;
+    font-weight: 500;
     color: var(--text-color);
 }
 
