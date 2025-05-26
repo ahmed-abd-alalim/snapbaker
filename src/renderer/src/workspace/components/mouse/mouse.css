@@ -1,11 +1,11 @@
 #mouse {
     width: 13.6rem;
-    height: 2.8rem;
+    height: 2.5rem;
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     background-color: var(--color-primary);
     border-radius: var(--border-radius_5);
     border: var(--border_1);
@@ -25,7 +25,7 @@
 }
 
 #mouse .mouse_section .mouse_icon {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     color: var(--text-accent-color);
 }
 
