@@ -1,7 +1,12 @@
 import { createListenerMiddleware } from '@reduxjs/toolkit'
 
 import { account, colorTheme } from '@/state/slice/settingSlice'
-import { messageAdd, settingIsRead } from '@/state/slice/workspaceSlice'
+import {
+  messageAdd,
+  messageUpdate,
+  settingIsRead,
+  settingIsOpen
+} from '@/state/slice/workspaceSlice'
 // import { pageData, componentData } from '@/state/slice/projectSlice'
 
 // import json data
@@ -50,6 +55,22 @@ listenerMiddleware.startListening({
 
     if (!workspace.notification.settings.isOpen && workspace.notification.settings.isRead) {
       listenerApi.dispatch(settingIsRead(false))
+    }
+  }
+})
+
+listenerMiddleware.startListening({
+  actionCreator: settingIsOpen,
+  effect: async (_, listenerApi) => {
+    // @ts-ignore (define in dts)
+    const { workspace } = await listenerApi.getState()
+
+    if (!workspace.notification.settings.isOpen && workspace.notification.settings.isRead) {
+      const updateMessages = workspace.notification.messages.map((message) => ({
+        ...message,
+        isRead: true
+      }))
+      listenerApi.dispatch(messageUpdate(updateMessages))
     }
   }
 })

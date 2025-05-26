@@ -40,7 +40,7 @@ const Index = (): React.JSX.Element => {
     }
     const handleOffline = (): void => {
       setIsOnline(false)
-      dispatch(messageAdd('internet connection off'))
+      dispatch(messageAdd({ isRead: false, text: 'internet connection off' }))
     }
 
     // Attach listeners

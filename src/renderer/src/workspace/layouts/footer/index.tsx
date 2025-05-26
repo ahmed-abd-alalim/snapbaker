@@ -8,13 +8,14 @@ import { messageUpdate, settingIsRead, settingIsOpen } from '@/state/slice/works
 // import icon
 import { VscBell, VscBellDot, VscChevronDown } from 'react-icons/vsc'
 import { PiTrash } from 'react-icons/pi'
+import { GiCheckMark } from 'react-icons/gi'
 
 const Index = (): React.JSX.Element => {
   const dispatch = useDispatch()
   const { settings, messages } = useSelector((state: RootState) => state.workspace.notification)
 
   const HandeldeleteNotification = (messageIndex: number): void => {
-    const newMessage = messages.filter((_, index) => messageIndex !== index)
+    const newMessage = messages.filter((_, index) => messageIndex !== index).reverse()
     dispatch(messageUpdate(newMessage))
   }
 
@@ -46,23 +47,25 @@ const Index = (): React.JSX.Element => {
             </div>
           </div>
           <div className="notfcation-body">
-            {messages.map((item, i) => (
-              <div className="d-flex align-items-center" key={i}>
-                <div className="message_numper">
-                  <span>{i + 1}</span>
-                </div>
-                <div className={`notfcation-layer ${i === 0 && 'my-1'}`}>
-                  <div className="left_section">
-                    <span>{item}</span>
+            {messages
+              .map((item, i) => (
+                <div className="d-flex align-items-center" key={i}>
+                  <div className="message_numper">
+                    {item.isRead && <GiCheckMark className="check_icon" />}
                   </div>
-                  <div className="right_section">
-                    <div className="Trash_icon" onClick={() => HandeldeleteNotification(i)}>
-                      <PiTrash />
+                  <div className={`notfcation-layer ${i === 0 && 'my-1'}`}>
+                    <div className="left_section">
+                      <span>{item.text}</span>
+                    </div>
+                    <div className="right_section">
+                      <div className="Trash_icon" onClick={() => HandeldeleteNotification(i)}>
+                        <PiTrash />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+              .reverse()}
           </div>
         </div>
       )}

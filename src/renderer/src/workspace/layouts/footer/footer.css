@@ -91,27 +91,29 @@
 }
 
 #footer .notfcation_card .notfcation-body .message_numper {
-    width: 2rem;
-    height: 1.75rem;
+    width: .8rem;
+    height: .7rem;
     border: var(--border_1);
     border-radius: var(--border-radius_50);
     margin-right: .3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 }
 
-#footer .notfcation_card .notfcation-body .message_numper span {
-    font-size: .75rem;
-    font-weight: 500;
-    color: var(--text-accent-color);
+
+#footer .notfcation_card .notfcation-body .message_numper .check_icon {
+    font-size: .7rem;
+    color: var(--color-tertiary);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(-.1rem) translateX(.1rem);
 }
 
 #footer .notfcation_card .notfcation-body .notfcation-layer {
     width: 20rem;
     border: var(--border_1);
     border-radius: var(--border-radius_3);
-    margin: .5rem 0;
+    margin: .4rem 0;
     display: flex;
     justify-content: space-around;
     overflow: hidden;
@@ -134,7 +136,7 @@
 
 #footer .notfcation_card .notfcation-body .notfcation-layer .right_section .Trash_icon {
     width: 100%;
-    height: 1.8rem;
+    height: 1.9rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
