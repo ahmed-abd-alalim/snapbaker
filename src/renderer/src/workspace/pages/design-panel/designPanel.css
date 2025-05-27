@@ -5,6 +5,9 @@
     width: var(--dashboard-pages-width);
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* -----> bg mask */
@@ -16,4 +19,16 @@
     mask-image: url("/images/patterns/boxes.svg");
     mask-repeat: repeat;
     mask-position: center;
+}
+
+/* -----> edit paper */
+#designPanel .edit_paper {
+    width: 45%;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+    background-color: var(--color-white);
+    transform: scale(.7);
+    border-radius: var(--border-radius_3);
+    box-shadow: var(--dark-box-shadow);
 }

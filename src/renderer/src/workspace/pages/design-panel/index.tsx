@@ -23,8 +23,9 @@ const Index = (): React.JSX.Element => {
         cursor: designPanelCursor
       }}
     >
-      <ComponentsEditor />
       <div className="bg_mask" />
+      <div className="edit_paper"></div>
+      <ComponentsEditor />
       <Mouse />
       <PropertiesPanel />
       <PagesBar />
