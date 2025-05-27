@@ -22,7 +22,7 @@
 
 <p>
     <a href="#">
-        <img src="https://skillicons.dev/icons?i=html,css,js,ts,md&perline=5" alt="Languages"/>
+        <img src="https://skillicons.dev/icons?i=html,css,ts,md&perline=5" alt="Languages"/>
     </a>
 </p>
 
