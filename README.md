@@ -26,22 +26,9 @@
 ## Languages
 
 <p>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=html&perline=1" alt="html"/>
+    <a href="#">
+        <img src="https://skillicons.dev/icons?i=html,css,js,ts,md&perline=5" alt="html"/>
     </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=css&perline=1" alt="css"/>
-    </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=js&perline=1" alt="js"/>
-    </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=ts&perline=1" alt="ts"/>
-    </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=md&perline=1" alt="md"/>
-    </a>
-
 </p>
 
 ## Frameworks
