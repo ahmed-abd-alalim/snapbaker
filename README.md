@@ -8,7 +8,6 @@
 ## Docs
 
 - #### [Example](#example)
-- #### [Requirements](#requirements)
 - #### [Features](#languages)
   - [Languages](#languages)
   - [Frameworks](#frameworks)
@@ -18,20 +17,6 @@
   - [Installing SnapBaker](#installing-snapbaker)
   - [SnapBaker Setup](#snapbaker-setup)
 - #### [License](#license)
-
-## Requirements
-
-<p>
-    <a href="#">
-        <img src="https://skillicons.dev/icons?i=nodejs,vscode&perline=2" alt="Requirements"/>
-    </a>   
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://dbaeumer.gallerycdn.vsassets.io/extensions/dbaeumer/vscode-eslint/3.0.13/1723549114106/Microsoft.VisualStudio.Services.Icons.Default" width="48" height="48" alt="eSLint download"/>
-    </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://esbenp.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/11.0.0/1723648421534/Microsoft.VisualStudio.Services.Icons.Default" width="48" height="48" style="border-radius: 11px" alt="prettier download"/>
-    </a>
-</p>
 
 ## Languages
 
@@ -73,7 +58,17 @@
 
 Before you begin, ensure you have met the following requirements:
 
-- [Git](https://git-scm.com/downloads 'Download Git') must be installed on your operating system.
+<p>
+    <a href="#">
+        <img src="https://skillicons.dev/icons?i=git,nodejs,vscode&perline=3" alt="Requirements"/>
+    </a>   
+    <a href="#" style="margin: 0 5px;">
+        <img src="https://dbaeumer.gallerycdn.vsassets.io/extensions/dbaeumer/vscode-eslint/3.0.13/1723549114106/Microsoft.VisualStudio.Services.Icons.Default" width="48" height="48" alt="eSLint download"/>
+    </a>
+    <a href="#" style="margin: 0 5px;">
+        <img src="https://esbenp.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/11.0.0/1723648421534/Microsoft.VisualStudio.Services.Icons.Default" width="48" height="48" style="border-radius: 11px" alt="prettier download"/>
+    </a>
+</p>
 
 ## Installing SnapBaker
 
