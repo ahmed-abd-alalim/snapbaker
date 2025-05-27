@@ -7,16 +7,16 @@
 
 ## Docs
 
-- #### [Example](#example)
-- #### [Features](#languages)
+- ### [Example](#example)
+- ### [Features](#languages)
   - [Languages](#languages)
   - [Frameworks](#frameworks)
   - [Libraries](#libraries)
-- #### [use](#prerequisites)
+- ### [use](#prerequisites)
   - [Prerequisites](#prerequisites)
   - [Installing SnapBaker](#installing-snapbaker)
   - [SnapBaker Setup](#snapbaker-setup)
-- #### [License](#license)
+- ### [License](#license)
 
 ## Languages
 
