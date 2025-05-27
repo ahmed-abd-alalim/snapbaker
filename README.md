@@ -51,13 +51,13 @@
         <img src="https://skillicons.dev/icons?i=bootstrap&perline=1" alt="bootstrap"/>
     </a>
     <a href="#" style="margin: 0 5px;">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"  width="48" height="48" alt="vite"/>
+        <img src="https://skillicons.dev/icons?i=react&perline=1" alt="react"/>
     </a>
     <a href="#" style="margin: 0 5px;">
-        <img src="https://vite.dev/logo.svg"  width="48" height="48" alt="vite"/>
+        <img src="https://skillicons.dev/icons?i=vite&perline=1"  alt="vite"/>
     </a>
     <a href="#" style="margin: 0 5px;">
-        <img src="https://www.electronjs.org/assets/img/logo.svg"  width="48" height="48" alt="electron js"/>
+        <img src="https://skillicons.dev/icons?i=electron&perline=1" alt="electron"/>
     </a>
     <a href="https://electron-vite.org/" style="margin: 0 5px;">
         <img src="https://electron-vite.org/favicon.svg"  width="48" height="48" style="border-radius: 11px" alt="electron vite"/>
