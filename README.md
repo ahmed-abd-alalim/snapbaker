@@ -34,13 +34,13 @@
 ## Frameworks
 
 <p>
-    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" style="pading: 0 5px;">
+    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" style="margin-right:5px">
         <img src="https://skillicons.dev/icons?i=bootstrap&perline=1" alt="bootstrap"/>
     </a>
     <a href="#">
         <img src="https://skillicons.dev/icons?i=react,vite,electron&perline=3" alt="react"/>
     </a>
-    <a href="https://electron-vite.org/" style="pading: 0 5px;">
+    <a href="https://electron-vite.org/" style="margin-left:5px">
         <img src="https://electron-vite.org/favicon.svg"  width="48" height="48" style="border-radius: 11px" alt="electron vite"/>
     </a>
 </p>
@@ -48,16 +48,16 @@
 ## Libraries
 
 <p>
-    <a href="https://reactrouter.com/6.30.1" style="margin: 0 5px;">
+    <a href="https://reactrouter.com/6.30.1" style="margin-right:5px">
         <img src="https://reactrouter.com/_brand/React%20Router%20Brand%20Assets/React%20Router%20Logo/Light.svg"  width="48" height="48" style="border-radius: 11px" alt="React Router"/>
     </a>
-    <a href="https://react-icons.github.io/react-icons/" style="margin: 0 5px;">
+    <a href="https://react-icons.github.io/react-icons/" style="margin-right:5px">
         <img src="https://raw.githubusercontent.com/react-icons/react-icons/master/react-icons.svg"  width="48" height="48" style="border-radius: 11px" alt="React Icons"/>
     </a>
-    <a href="https://redux-toolkit.js.org/" style="margin: 0 5px;">
+    <a href="https://redux-toolkit.js.org/" style="margin-right:5px">
         <img src="https://redux-toolkit.js.org/img/redux.svg"  width="48" height="48" style="border-radius: 11px" alt="Redux Toolkit"/>
     </a>
-    <a href="https://www.npmjs.com/package/redux-state-sync" style="margin: 0 5px;">
+    <a href="https://www.npmjs.com/package/redux-state-sync">
         <img src="https://raw.githubusercontent.com/aohua/redux-state-sync/master/logo.png"  width="48" height="48" style="border-radius: 11px" alt="redux state sync"/>
     </a>
 </p>
