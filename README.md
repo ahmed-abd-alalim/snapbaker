@@ -5,6 +5,18 @@
 
 <h3 align="center">Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.</h3>
 
+## Docs
+
+- [Example](#example)
+- [Requirements](#requirements)
+- [Languages](#languages)
+- [Frameworks](#frameworks)
+- [Libraries](#libraries)
+- [Prerequisites](#prerequisites)
+- [Installing SnapBaker](#installing-snapbaker)
+- [SnapBaker Setup](#snapbaker-setup)
+- [License](#license)
+
 ## Requirements
 
 <p>
