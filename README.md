@@ -8,16 +8,13 @@
 ## Requirements
 
 <p>
-    <a href="https://nodejs.org/en/download" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=nodejs&perline=1" alt="nodejs download"/>
+    <a href="#">
+        <img src="https://skillicons.dev/icons?i=nodejs,vscode&perline=2" alt="Requirements"/>
     </a>   
-    <a href="https://code.visualstudio.com/download" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=vscode&perline=1" alt="visual studio code download"/>
-    </a>
-    <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" style="margin: 0 5px;">
+    <a href="#" style="margin: 0 5px;">
         <img src="https://dbaeumer.gallerycdn.vsassets.io/extensions/dbaeumer/vscode-eslint/3.0.13/1723549114106/Microsoft.VisualStudio.Services.Icons.Default" width="48" height="48" alt="eSLint download"/>
     </a>
-    <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" style="margin: 0 5px;">
+    <a href="#" style="margin: 0 5px;">
         <img src="https://esbenp.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/11.0.0/1723648421534/Microsoft.VisualStudio.Services.Icons.Default" width="48" height="48" style="border-radius: 11px" alt="prettier download"/>
     </a>
 </p>
