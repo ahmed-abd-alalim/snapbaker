@@ -1,10 +1,9 @@
-<h1 align="center">SnapBaker - Front-end baker</h1>
+<p align="center"><img align="center" width="280" src="./github-repository-assets/snapbaker.png#gh-dark-mode-only"/></p>
+<p align="center"><img align="center" width="280" src="./github-repository-assets/snapbaker-light.png#gh-light-mode-only"/></p>
+<h3 align="center">SnapBaker - Front-end baker</h3>
+<hr>
 
-<div>
-<img src="./github-repository-assets/snapbaker.png"   alt="snapBaker" width="100%"/>
-</div>
-
-<p align="center">SnapBaker - Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.</p>
+<h4 align="center">SnapBaker - Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.</h4>
 
 ## Requirements
 
@@ -27,18 +26,15 @@
 
 <p>
     <a href="#">
-        <img src="https://skillicons.dev/icons?i=html,css,js,ts,md&perline=5" alt="html"/>
+        <img src="https://skillicons.dev/icons?i=html,css,js,ts,md&perline=5" alt="Languages"/>
     </a>
 </p>
 
 ## Frameworks
 
 <p>
-    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" style="margin-right:5px">
-        <img src="https://skillicons.dev/icons?i=bootstrap&perline=1" alt="bootstrap"/>
-    </a>
     <a href="#">
-        <img src="https://skillicons.dev/icons?i=react,vite,electron&perline=3" alt="react"/>
+        <img src="https://skillicons.dev/icons?i=bootstrap,react,vite,electron&perline=4" alt="Frameworks"/>
     </a>
     <a href="https://electron-vite.org/" style="margin-left:5px">
         <img src="https://electron-vite.org/favicon.svg"  width="48" height="48" style="border-radius: 11px" alt="electron vite"/>
