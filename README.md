@@ -74,7 +74,7 @@ Before you begin, ensure you have met the following requirements:
 
 To install **SnapBaker**, follow these steps:
 
-Windows:
+#### Windows:
 
 ```bash
 git clone https://github.com/ahmed-abd-alalim/snapbaker.git
@@ -84,19 +84,19 @@ cd snapbaker
 
 ## SnapBaker Setup
 
-#### Install
+#### Install:
 
 ```bash
 $ npm install
 ```
 
-#### Development
+#### Development:
 
 ```bash
 $ npm run dev
 ```
 
-#### Build
+#### Build:
 
 ```bash
 # For windows
