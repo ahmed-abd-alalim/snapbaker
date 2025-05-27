@@ -16,7 +16,7 @@
   - [Prerequisites](#prerequisites)
   - [Installing SnapBaker](#installing-snapbaker)
   - [SnapBaker Setup](#snapbaker-setup)
-- ### [License](#license)
+- ### [License](#project-license)
 
 ## Languages
 
@@ -109,7 +109,7 @@ $ npm run build:mac
 $ npm run build:linux
 ```
 
-## License
+## Project License
 
 Copyright (c) 2025 Ahmed Abd Alalim. All rights reserved.
 
