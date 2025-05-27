@@ -9,12 +9,14 @@
 
 - #### [Example](#example)
 - #### [Requirements](#requirements)
-- #### [Languages](#languages)
-- #### [Frameworks](#frameworks)
-- #### [Libraries](#libraries)
-- #### [Prerequisites](#prerequisites)
-- #### [Installing SnapBaker](#installing-snapbaker)
-- #### [SnapBaker Setup](#snapbaker-setup)
+- #### [Features](#languages)
+  - [Languages](#languages)
+  - [Frameworks](#frameworks)
+  - [Libraries](#libraries)
+- #### [use](#prerequisites)
+  - [Prerequisites](#prerequisites)
+  - [Installing SnapBaker](#installing-snapbaker)
+  - [SnapBaker Setup](#snapbaker-setup)
 - #### [License](#license)
 
 ## Requirements
