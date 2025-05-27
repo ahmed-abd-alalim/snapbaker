@@ -34,19 +34,13 @@
 ## Frameworks
 
 <p>
-    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" style="margin: 0 5px;">
+    <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" style="pading: 0 5px;">
         <img src="https://skillicons.dev/icons?i=bootstrap&perline=1" alt="bootstrap"/>
     </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=react&perline=1" alt="react"/>
+    <a href="#">
+        <img src="https://skillicons.dev/icons?i=react,vite,electron&perline=3" alt="react"/>
     </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=vite&perline=1"  alt="vite"/>
-    </a>
-    <a href="#" style="margin: 0 5px;">
-        <img src="https://skillicons.dev/icons?i=electron&perline=1" alt="electron"/>
-    </a>
-    <a href="https://electron-vite.org/" style="margin: 0 5px;">
+    <a href="https://electron-vite.org/" style="pading: 0 5px;">
         <img src="https://electron-vite.org/favicon.svg"  width="48" height="48" style="border-radius: 11px" alt="electron vite"/>
     </a>
 </p>
