@@ -3,7 +3,7 @@
 <h3 align="center">Bake your website with ease!</h3>
 <hr>
 
-<h4 align="center">Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.</h4>
+<h3 align="center">Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.</h3>
 
 ## Requirements
 
