@@ -1,3 +1,11 @@
+/* import font */
+@font-face {
+  font-family: Cucciolo;
+  src: url(/fonts/Cucciolo.ttf);
+}
+
+
+
 :root {
   /* view port size */
 
@@ -36,6 +44,9 @@
   --transition_2: .2s ease all;
   --transition_3: .3s ease all;
   --transition_4: .4s ease all;
+
+  /* fonts */
+  --dicrotion-font: Cucciolo;
 }
 
 /* color theme */

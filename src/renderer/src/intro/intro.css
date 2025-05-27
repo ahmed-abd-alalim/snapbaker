@@ -55,9 +55,8 @@
 }
 
 #Intro .name_section span {
-    font-size: 1.1rem;
-    letter-spacing: .8px;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-family: var(--dicrotion-font);
     color: var(--text-color);
     /* animation: flicker .37s 3s ease forwards; */
     text-transform: uppercase;
@@ -103,7 +102,7 @@
     }
 
     100% {
-        transform: translate(-50%, -50%) scale(1) translateX(-28%) translateY(0);
+        transform: translate(-50%, -50%) scale(1) translateX(-44.5%) translateY(0);
     }
 }
 
