@@ -7,15 +7,15 @@
 
 ## Docs
 
-- [Example](#example)
-- [Requirements](#requirements)
-- [Languages](#languages)
-- [Frameworks](#frameworks)
-- [Libraries](#libraries)
-- [Prerequisites](#prerequisites)
-- [Installing SnapBaker](#installing-snapbaker)
-- [SnapBaker Setup](#snapbaker-setup)
-- [License](#license)
+- #### [Example](#example)
+- #### [Requirements](#requirements)
+- #### [Languages](#languages)
+- #### [Frameworks](#frameworks)
+- #### [Libraries](#libraries)
+- #### [Prerequisites](#prerequisites)
+- #### [Installing SnapBaker](#installing-snapbaker)
+- #### [SnapBaker Setup](#snapbaker-setup)
+- #### [License](#license)
 
 ## Requirements
 
