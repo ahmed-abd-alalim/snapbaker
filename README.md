@@ -1,6 +1,6 @@
 <p align="center"><img align="center" width="280" src="./github-repository-assets/snapbaker.png#gh-dark-mode-only"/></p>
 <p align="center"><img align="center" width="280" src="./github-repository-assets/snapbaker-light.png#gh-light-mode-only"/></p>
-<h3 align="center">SnapBaker - Front-end baker</h3>
+<h3 align="center">Bake your website with ease!</h3>
 <hr>
 
 <h4 align="center">Desktop application enables designers and developers to transform their designs and ideas into clean, responsive front-end code for web applications.</h4>
