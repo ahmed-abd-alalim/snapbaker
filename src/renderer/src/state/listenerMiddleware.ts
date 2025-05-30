@@ -7,7 +7,7 @@ import {
   settingIsRead,
   settingIsOpen
 } from '@/state/slice/workspaceSlice'
-// import { pageData, componentData } from '@/state/slice/projectSlice'
+import { pageData, componentData } from '@/state/slice/projectSlice'
 
 // import json data
 import settingInfo from '@storage/setting.json'
@@ -78,40 +78,40 @@ listenerMiddleware.startListening({
 // ############
 // Listen to all actions from the 'project' slice
 // ############
-// let fcountPageData = 0
-// let fcountcomponentData = 0
+let fcountPageData = 0
+let fcountcomponentData = 0
 
-// listenerMiddleware.startListening({
-//   actionCreator: pageData,
-//   effect: async (_, listenerApi) => {
-//     // @ts-ignore (define in dts)
-//     const { project } = await listenerApi.getState()
+listenerMiddleware.startListening({
+  actionCreator: pageData,
+  effect: async (_, listenerApi) => {
+    // @ts-ignore (define in dts)
+    const { project } = await listenerApi.getState()
 
-//     // save account data in account file
-//     if (fcountPageData) {
-//       window.workSpace.UpdateFile(project.pageData, `${project.appInfo.siteName}/pages.json`)
-//     } else {
-//       fcountPageData++
-//     }
-//   }
-// })
+    // save account data in account file
+    if (fcountPageData) {
+      window.workSpace.UpdateFile(project.pageData, `${project.appInfo.siteName}/pages.json`)
+    } else {
+      fcountPageData++
+    }
+  }
+})
 
-// listenerMiddleware.startListening({
-//   actionCreator: componentData,
-//   effect: async (_, listenerApi) => {
-//     // @ts-ignore (define in dts)
-//     const { project } = await listenerApi.getState()
+listenerMiddleware.startListening({
+  actionCreator: componentData,
+  effect: async (_, listenerApi) => {
+    // @ts-ignore (define in dts)
+    const { project } = await listenerApi.getState()
 
-//     // save account data in account file
-//     if (fcountcomponentData) {
-//       window.workSpace.UpdateFile(
-//         project.componentData,
-//         `${project.appInfo.siteName}/components.json`
-//       )
-//     } else {
-//       fcountcomponentData++
-//     }
-//   }
-// })
+    // save account data in account file
+    if (fcountcomponentData) {
+      window.workSpace.UpdateFile(
+        project.componentData,
+        `${project.appInfo.siteName}/components.json`
+      )
+    } else {
+      fcountcomponentData++
+    }
+  }
+})
 
 export default listenerMiddleware
