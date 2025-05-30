@@ -18,8 +18,8 @@
 
 ## Docs
 
-- **[What Is SnapBaker ?](#what-is-snapbaker)**
-- **[How Does It Work ?](#how-does-it-work)**
+- **[What Is SnapBaker ?](#what-is-snapbaker-)**
+- **[How Does It Work ?](#how-does-it-work-)**
 - **[Features](#languages)**
 
   - [Languages](#languages)
@@ -35,7 +35,7 @@
   - [Installing SnapBaker](#installing-snapbaker)
   - [SnapBaker Setup](#snapbaker-setup)
 
-- **[For Open Source Developers !](#for-open-source-developers)**
+- **[For Open Source Developers !](#for-open-source-developers-)**
 - **[License](#project-license)**
 
 ## What Is SnapBaker ?
