@@ -35,7 +35,7 @@
   - [Installing SnapBaker](#installing-snapbaker)
   - [SnapBaker Setup](#snapbaker-setup)
 
-- **[For Open Source Developers](#for-open-source-developers)**
+- **[For Open Source Developers !](#for-open-source-developers)**
 - **[License](#project-license)**
 
 ## What Is SnapBaker ?
