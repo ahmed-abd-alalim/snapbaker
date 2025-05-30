@@ -169,14 +169,13 @@ By collaborating on SnapBaker, you'll be part of an exciting journey to create a
 
 <p>
     <a href="./Contributing.md" target="_blank">
-        <img src="https://img.shields.io/badge/
-important-Rules-red?style=for-the-badge&logoColor=white" style="border-radius: 30px">
+        <img src="https://img.shields.io/badge/important-Rules-red?style=for-the-badge&logoColor=white">
     </a>
 </p>
 
 <p>
     <a href="./ROADMAP.md" target="_blank">
-        <img src="https://img.shields.io/badge/Project-Roadmap-%23f7a617?style=for-the-badge&logoColor=white" style="border-radius: 30px">
+        <img src="https://img.shields.io/badge/Project-Roadmap-%23f7a617?style=for-the-badge&logoColor=white">
     </a>
 </p>
 
